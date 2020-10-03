@@ -3,6 +3,7 @@ import StyleWrapperEdit from './BlockStyleWrapper/Edit';
 import StyleWrapperView from './BlockStyleWrapper/View';
 import StyleSelectWidget from './Widgets/StyleSelect';
 import AlignWidget from './Widgets/Align';
+import TextAlignWidget from './Widgets/TextAlign';
 import SizeWidget from './Widgets/Size';
 import SimpleColorPicker from './Widgets/SimpleColorPicker';
 
@@ -36,6 +37,7 @@ const applyConfig = (config) => {
 
   config.widgets.widget.style_select = StyleSelectWidget;
   config.widgets.widget.style_align = AlignWidget; // avoid conflict for now
+  config.widgets.widget.style_text_align = TextAlignWidget; // avoid conflict for now
   config.widgets.widget.style_size = SizeWidget; // avoid conflict for now
   config.widgets.widget.style_simple_color = SimpleColorPicker;
 
