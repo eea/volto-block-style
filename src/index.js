@@ -9,24 +9,30 @@ import SimpleColorPicker from './Widgets/SimpleColorPicker';
 import './styles.less';
 
 const applyConfig = (config) => {
-  const whitelist = ['maps'];
+  const { settings } = config;
+  const whitelist = settings.pluggableStylesBlocksWhitelist;
+  const blacklist = settings.pluggableStylesBlocksBlacklist; // || ['tabsBlock']
   const { blocksConfig } = config.blocks;
-  Object.keys(blocksConfig)
-    .filter((name) => whitelist.includes(name))
-    .forEach((name) => {
-      const EditComponent = blocksConfig[name].edit;
-      const ViewComponent = blocksConfig[name].view;
-      blocksConfig[name].edit = (props) => (
-        <StyleWrapperEdit {...props}>
-          <EditComponent {...props} />
-        </StyleWrapperEdit>
-      );
-      blocksConfig[name].view = (props) => (
-        <StyleWrapperView {...props}>
-          <ViewComponent {...props} />
-        </StyleWrapperView>
-      );
-    });
+
+  const okBlocks = Object.keys(blocksConfig).filter(
+    (name) =>
+      (blacklist ? !blacklist.includes(name) : true) &&
+      (whitelist ? whitelist.includes(name) : true),
+  );
+  okBlocks.forEach((name) => {
+    const EditComponent = blocksConfig[name].edit;
+    const ViewComponent = blocksConfig[name].view;
+    blocksConfig[name].edit = (props) => (
+      <StyleWrapperEdit {...props}>
+        <EditComponent {...props} />
+      </StyleWrapperEdit>
+    );
+    blocksConfig[name].view = (props) => (
+      <StyleWrapperView {...props}>
+        <ViewComponent {...props} />
+      </StyleWrapperView>
+    );
+  });
 
   config.widgets.widget.style_select = StyleSelectWidget;
   config.widgets.widget.style_align = AlignWidget; // avoid conflict for now
