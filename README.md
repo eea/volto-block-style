@@ -14,7 +14,7 @@ Ideally it should be loaded as the last addon in Volto project configuration.
 
 ###
 
-Demo GIF
+![Screenshot](./screenshot.png)
 
 ## Getting started
 
