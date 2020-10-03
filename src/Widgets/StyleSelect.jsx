@@ -32,7 +32,9 @@ const StyleSelectWidget = (props) => {
               <Card
                 as="div"
                 name={style.id}
-                onClick={() => onChange(id, style.id)}
+                onClick={() =>
+                  onChange(id, style.id === value ? null : style.id)
+                }
                 key={style.id}
                 className={cx({ active: style.id === value })}
               >
