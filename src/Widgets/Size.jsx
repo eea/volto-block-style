@@ -9,6 +9,8 @@ import React from 'react';
 import { FormFieldWrapper } from '@plone/volto/components';
 import ImageSizeWidget from '@plone/volto/components/manage/Blocks/Image/ImageSizeWidget';
 
+// TODO: copy the styles from Volto's stylesheet
+
 const SizeWidget = (props) => {
   const { id, onChange, value } = props;
   return (
