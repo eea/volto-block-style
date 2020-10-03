@@ -5,6 +5,8 @@
 
 ## Features
 
+A generic framework to style blocks and other components.
+
 ###
 
 Demo GIF
