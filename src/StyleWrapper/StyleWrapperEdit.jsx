@@ -1,5 +1,6 @@
 import React from 'react';
 import { Portal } from 'react-portal';
+import { Button } from 'semantic-ui-react';
 import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
 import { Icon } from '@plone/volto/components';
 import themeSVG from '@plone/volto/icons/theme.svg';
@@ -55,7 +56,21 @@ export default (props) => {
           <SidebarPopup open={isOpen} ref={nodeRef}>
             <InlineForm
               schema={schema}
-              title={schema.title}
+              title={
+                <div>
+                  <Button
+                    floated="right"
+                    basic
+                    circular
+                    icon="close"
+                    size="mini"
+                    onClick={() => {
+                      setIsOpen(false);
+                    }}
+                  ></Button>
+                  {schema.title}
+                </div>
+              }
               onChangeField={(id, value) => {
                 onChangeValue(id, value);
               }}
