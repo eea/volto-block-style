@@ -1,0 +1,41 @@
+@type: 'extra';
+@element: 'custom';
+
+@import (multiple, reference) '../../theme.config';
+
+#open-styles-button {
+  width: 100%;
+  padding: 0 1em;
+  margin: auto 0;
+  text-align: right;
+
+  button {
+    color: @linkColor;
+  }
+}
+
+.style-select-widget {
+  .card.active {
+    .extra.content {
+      background-color: #eee;
+      font-weight: bold;
+    }
+  }
+}
+
+.green-demo-box {
+  -webkit-box-shadow: 0 1px 6px 0 #c7d5d8;
+  box-shadow: 0 1px 6px 0 #c7d5d8;
+  border-radius: 5px;
+  padding: 1em;
+  background-color: #aef2de;
+}
+
+.preview-blue-demo-box {
+  background: #1b217d;
+  color: white !important;
+  padding: 0.3rem;
+  -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}

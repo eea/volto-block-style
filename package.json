@@ -22,5 +22,8 @@
   "scripts": {
     "release": "release-it",
     "bootstrap": "./bootstrap"
+  },
+  "dependencies": {
+    "react-color": "2.18.1"
   }
 }
