@@ -4,7 +4,12 @@ export const StyleSchema = () => ({
     {
       id: 'default',
       title: 'Default',
-      fields: ['style_name', 'textAlign', 'align', 'size'],
+      fields: ['style_name'],
+    },
+    {
+      id: 'standard',
+      title: 'Standard',
+      fields: ['textAlign', 'align', 'size'],
     },
     {
       id: 'advanced',
