@@ -28,7 +28,7 @@ export default (props) => {
         'block align',
         style?.cssClass,
         {
-          center: !Boolean(align),
+          left: !Boolean(align),
         },
         align,
       )}

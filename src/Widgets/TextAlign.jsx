@@ -18,22 +18,24 @@ export default (props) => {
   const { value, onChange, id } = props;
   return (
     <FormFieldWrapper {...props}>
-      <Button.Group>
+      <div className="align-tools">
         {VALUE_MAP.map(([name, icon]) => (
-          <Button
-            icon
-            basic
-            compact
-            active={value === name}
-            aria-label={name}
-            onClick={() => {
-              onChange(id, name);
-            }}
-          >
-            <Icon name={icon} size="24px" />
-          </Button>
+          <Button.Group>
+            <Button
+              icon
+              basic
+              compact
+              active={value === name}
+              aria-label={name}
+              onClick={() => {
+                onChange(id, name);
+              }}
+            >
+              <Icon name={icon} size="24px" />
+            </Button>
+          </Button.Group>
         ))}
-      </Button.Group>
+      </div>
     </FormFieldWrapper>
   );
 };
