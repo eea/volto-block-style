@@ -6,7 +6,7 @@ import cx from 'classnames';
 
 const StyleSelectWidget = (props) => {
   const { id, value, onChange } = props;
-  const { pluggableStyles = [], previewText = 'Lorem lipsum' } = settings;
+  const { pluggableStyles = [], previewText = 'Block content' } = settings;
 
   const renderPreview = React.useCallback(
     (style) => {
