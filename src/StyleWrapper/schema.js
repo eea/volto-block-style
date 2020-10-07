@@ -1,3 +1,5 @@
+import { settings } from '~/config';
+
 export const StyleSchema = () => ({
   title: 'Styles',
   fieldsets: [
@@ -33,11 +35,13 @@ export const StyleSchema = () => ({
       title: 'Background color',
       type: 'color',
       widget: 'style_simple_color',
+      available_colors: settings.available_colors,
     },
     textColor: {
       title: 'Text color',
       type: 'color',
       widget: 'style_simple_color',
+      available_colors: settings.available_colors,
     },
   },
   required: [],
