@@ -25,7 +25,7 @@ export default (props) => {
   return (
     <div
       className={cx(
-        'align',
+        'block align',
         style?.cssClass,
         {
           center: !Boolean(align),

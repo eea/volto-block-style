@@ -68,6 +68,16 @@ export const installDemoStyles = (config) => {
       ),
       // TODO: support also editComponent ?
     },
+    {
+      id: 'borderBlock',
+      title: 'Border',
+      cssClass: 'border-block',
+    },
+    {
+      id: 'dividedBlock',
+      title: 'Divided',
+      cssClass: 'divided-block',
+    },
   ];
 
   return config;
