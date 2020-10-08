@@ -1,6 +1,6 @@
 import React from 'react';
-import StyleWrapperEdit from './BlockStyleWrapper/Edit';
-import StyleWrapperView from './BlockStyleWrapper/View';
+import BlockStyleWrapperEdit from './BlockStyleWrapper/Edit';
+import BlockStyleWrapperView from './BlockStyleWrapper/View';
 import StyleSelectWidget from './Widgets/StyleSelect';
 import AlignWidget from './Widgets/Align';
 import TextAlignWidget from './Widgets/TextAlign';
@@ -12,7 +12,7 @@ import './styles.less';
 const applyConfig = (config) => {
   const { settings } = config;
   const whitelist = settings.pluggableStylesBlocksWhitelist;
-  const blacklist = settings.pluggableStylesBlocksBlacklist; // || ['tabsBlock']
+  const blacklist = settings.pluggableStylesBlocksBlacklist;
   const { blocksConfig } = config.blocks;
 
   const okBlocks = Object.keys(blocksConfig).filter(
@@ -24,14 +24,14 @@ const applyConfig = (config) => {
     const EditComponent = blocksConfig[name].edit;
     const ViewComponent = blocksConfig[name].view;
     blocksConfig[name].edit = (props) => (
-      <StyleWrapperEdit {...props}>
+      <BlockStyleWrapperEdit {...props}>
         <EditComponent {...props} />
-      </StyleWrapperEdit>
+      </BlockStyleWrapperEdit>
     );
     blocksConfig[name].view = (props) => (
-      <StyleWrapperView {...props}>
+      <BlockStyleWrapperView {...props}>
         <ViewComponent {...props} />
-      </StyleWrapperView>
+      </BlockStyleWrapperView>
     );
   });
 
@@ -67,16 +67,6 @@ export const installDemoStyles = (config) => {
         <div className="blue-demo-box">{props.children}</div>
       ),
       // TODO: support also editComponent ?
-    },
-    {
-      id: 'borderBlock',
-      title: 'Border',
-      cssClass: 'border-block',
-    },
-    {
-      id: 'dividedBlock',
-      title: 'Divided',
-      cssClass: 'divided-block',
     },
   ];
 

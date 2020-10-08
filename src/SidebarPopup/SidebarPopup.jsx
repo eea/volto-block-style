@@ -25,6 +25,7 @@ const SidebarPopup = ({ children, open }, ref) => {
           ref={ref}
           key="sidebarpopup"
           className="sidebar-container"
+          style={{ overflowY: 'auto' }}
         >
           {children}
         </aside>

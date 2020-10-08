@@ -11,7 +11,7 @@ export const StyleSchema = () => ({
     {
       id: 'standard',
       title: 'Standard',
-      fields: ['textAlign', 'align', 'size'],
+      fields: ['textAlign', 'fontSize', 'align', 'size'],
     },
     {
       id: 'advanced',
@@ -32,8 +32,22 @@ export const StyleSchema = () => ({
       title: 'Align',
       widget: 'style_align',
     },
+    fontSize: {
+      title: 'Font size',
+      description: 'Relative to normal size of text in the block',
+      choices: [
+        ['xx-small', 'xx-small'],
+        ['x-small', 'x-small'],
+        ['small', 'small'],
+        ['medium', 'medium'],
+        ['large', 'large'],
+        ['x-large', 'x-large'],
+        ['xx-large', 'xx-large'],
+        ['xxx-large', 'xxx-large'],
+      ],
+    },
     size: {
-      title: 'Size',
+      title: 'Box size',
       widget: 'style_size',
     },
     backgroundColor: {

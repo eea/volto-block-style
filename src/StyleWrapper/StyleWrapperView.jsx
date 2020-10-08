@@ -7,6 +7,7 @@ export function getStyles(data) {
     backgroundColor: data.backgroundColor,
     color: data.textColor,
     textAlign: data.textAlign,
+    fontSize: data.fontSize,
     // fill in more
   };
 }
@@ -20,15 +21,11 @@ export default (props) => {
   const { data = {}, children } = props;
   const { style_name, align, size } = data;
   const style = getStyle(style_name);
-  const ViewWrapper = style?.viewComponent;
+  const ViewComponentWrapper = style?.viewComponent;
 
   return (
     <div
-      className={cx(
-        'block align',
-        style?.cssClass,
-        align,
-      )}
+      className={cx('block align', style?.cssClass, align)}
       style={getStyles(data)}
     >
       <div
@@ -39,7 +36,7 @@ export default (props) => {
           small: size === 's',
         })}
       >
-        {ViewWrapper ? <ViewWrapper {...props} /> : children}
+        {ViewComponentWrapper ? <ViewComponentWrapper {...props} /> : children}
       </div>
     </div>
   );
