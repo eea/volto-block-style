@@ -43,7 +43,6 @@ export default (props) => {
           >
             <div id="open-styles-button">
               <button
-                compact
                 onClick={() => {
                   setIsOpen(true);
                 }}
