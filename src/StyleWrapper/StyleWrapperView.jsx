@@ -26,7 +26,7 @@ const StyleWrapperView = (props) => {
 
   return Object.keys(inlineStyles).length > 0 || style || align || size ? (
     <div
-      className={cx('block styled', style?.cssClass, { align }, align)}
+      className={cx('styled', style?.cssClass, { align }, align)}
       style={inlineStyles}
     >
       {size ? (
