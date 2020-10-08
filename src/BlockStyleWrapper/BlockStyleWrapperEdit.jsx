@@ -4,7 +4,7 @@ import { StyleWrapperEdit, StyleWrapperView } from '../StyleWrapper';
 // For blocks, store the style data in data.styles, then
 // adapt the data.styles.[align,size,...] info to default data.align, data.size, etc.
 
-export default (props) => {
+const BlockStyleWrapperEdit = (props) => {
   const { block, data = {}, onChangeBlock } = props;
 
   return (
@@ -32,3 +32,5 @@ export default (props) => {
     </StyleWrapperEdit>
   );
 };
+
+export default BlockStyleWrapperEdit;

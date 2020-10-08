@@ -17,7 +17,7 @@ export function getStyle(name) {
   return pluggableStyles.find(({ id }) => id === name);
 }
 
-export default (props) => {
+const StyleWrapperView = (props) => {
   const { data = {}, children } = props;
   const { style_name, align, size } = data;
   const style = getStyle(style_name);
@@ -25,7 +25,10 @@ export default (props) => {
   const ViewComponentWrapper = style?.viewComponent;
 
   return Object.keys(inlineStyles).length > 0 || style || align || size ? (
-    <div className={cx(style?.cssClass, { align }, align)} style={inlineStyles}>
+    <div
+      className={cx('styled', style?.cssClass, { align }, align)}
+      style={inlineStyles}
+    >
       {size ? (
         <div
           className={cx({
@@ -53,3 +56,5 @@ export default (props) => {
     children
   );
 };
+
+export default StyleWrapperView;

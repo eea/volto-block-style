@@ -1,6 +1,8 @@
 import React from 'react';
-import BlockStyleWrapperEdit from './BlockStyleWrapper/Edit';
-import BlockStyleWrapperView from './BlockStyleWrapper/View';
+import {
+  BlockStyleWrapperEdit,
+  BlockStyleWrapperView,
+} from './BlockStyleWrapper';
 import StyleSelectWidget from './Widgets/StyleSelect';
 import AlignWidget from './Widgets/Align';
 import TextAlignWidget from './Widgets/TextAlign';
@@ -28,11 +30,14 @@ const applyConfig = (config) => {
         <EditComponent {...props} />
       </BlockStyleWrapperEdit>
     );
+    blocksConfig[name].edit.displayName = 'EditBlockWithStyleWrapper';
+
     blocksConfig[name].view = (props) => (
       <BlockStyleWrapperView {...props}>
         <ViewComponent {...props} />
       </BlockStyleWrapperView>
     );
+    blocksConfig[name].view.displayName = 'ViewBlockWithStyleWrapper';
   });
 
   config.widgets.widget.style_select = StyleSelectWidget;

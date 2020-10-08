@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleWrapperView } from '../StyleWrapper';
 
-export default ({ data, children }) => (
+const BlockStyleWrapperView = ({ data, children }) => (
   <StyleWrapperView data={data.styles || {}}>{children}</StyleWrapperView>
 );
+export default BlockStyleWrapperView;

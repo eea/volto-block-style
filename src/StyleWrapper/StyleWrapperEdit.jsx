@@ -8,7 +8,7 @@ import InlineForm from '@plone/volto/components/manage/Form/InlineForm';
 import { StyleSchema } from './schema';
 import clearSVG from '@plone/volto/icons/clear.svg';
 
-export default (props) => {
+const StyleWrapperEdit = (props) => {
   const { children, selected, onChangeValue, data } = props;
   const [isOpen, setIsOpen] = React.useState(false);
   const nodeRef = React.useRef();
@@ -82,3 +82,5 @@ export default (props) => {
     </>
   );
 };
+
+export default StyleWrapperEdit;
