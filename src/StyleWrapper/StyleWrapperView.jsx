@@ -27,9 +27,6 @@ export default (props) => {
       className={cx(
         'block align',
         style?.cssClass,
-        {
-          left: !Boolean(align),
-        },
         align,
       )}
       style={getStyles(data)}
