@@ -28,7 +28,7 @@ const BlockStyleWrapperEdit = (props) => {
         })
       }
     >
-      <StyleWrapperView {...props} data={data.styles || {}} />
+      <StyleWrapperView mode="edit" {...props} styleData={data.styles || {}} />
     </StyleWrapperEdit>
   );
 };

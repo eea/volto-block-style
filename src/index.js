@@ -46,6 +46,11 @@ const applyConfig = (config) => {
   config.widgets.widget.style_size = SizeWidget; // avoid conflict for now
   config.widgets.widget.style_simple_color = SimpleColorPicker;
 
+  // types of blocks that natively integrate with the volto-block-style and
+  // allow passing the style as a prop;
+  config.settings.integratesBlockStyles = [
+    ...(config.settings.integratesBlockStyles || []),
+  ];
   return config;
 };
 
