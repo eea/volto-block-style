@@ -24,17 +24,18 @@ const StyleWrapperView = (props) => {
 
   const style = getStyle(style_name);
   const inlineStyles = getInlineStyles(styleData);
-  const addStyles =
-    Object.keys(inlineStyles).length > 0 || style || align || size;
+  const styled = Object.keys(inlineStyles).length > 0 || style || align || size;
 
   const attrs = {
-    className: cx(style?.cssClass, { align, styled: addStyles }, align, {
+    style: inlineStyles,
+    className: cx(style?.cssClass, align, {
+      align,
+      styled,
       'full-width': align === 'full',
       large: size === 'l',
       medium: size === 'm',
       small: size === 's',
     }),
-    style: inlineStyles,
   };
 
   const nativeIntegration =
@@ -52,7 +53,7 @@ const StyleWrapperView = (props) => {
 
   const ViewComponentWrapper = style?.viewComponent;
 
-  return addStyles ? (
+  return styled ? (
     nativeIntegration ? (
       children
     ) : (
