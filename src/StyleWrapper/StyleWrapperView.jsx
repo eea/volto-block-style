@@ -19,7 +19,7 @@ export function getStyle(name) {
 
 const StyleWrapperView = (props) => {
   const { styleData = {}, data = {}, mode = 'view' } = props;
-  const { style_name, align, size } = styleData;
+  const { style_name, align, size, customClass } = styleData;
   const containerType = data['@type'];
 
   const style = getStyle(style_name);
@@ -28,7 +28,7 @@ const StyleWrapperView = (props) => {
 
   const attrs = {
     style: inlineStyles,
-    className: cx(style?.cssClass, align, {
+    className: cx(style?.cssClass, customClass, align, {
       align,
       styled,
       'full-width': align === 'full',
