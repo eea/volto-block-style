@@ -24,7 +24,12 @@ const StyleWrapperView = (props) => {
 
   const style = getStyle(style_name);
   const inlineStyles = getInlineStyles(styleData);
-  const styled = Object.keys(inlineStyles).length > 0 || style || align || size;
+  const styled =
+    Object.keys(inlineStyles).length > 0 ||
+    style ||
+    align ||
+    size ||
+    customClass;
 
   const attrs = {
     style: inlineStyles,
