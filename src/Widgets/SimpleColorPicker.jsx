@@ -4,7 +4,7 @@ import { Button } from 'semantic-ui-react';
 import clearSVG from '@plone/volto/icons/clear.svg';
 
 import loadable from '@loadable/component';
-const ReactColor = loadable.lib(() => import('react-color'));
+const GithubPicker = loadable(() => import('react-color/lib/Github'));
 
 export default (props) => {
   const { id, value, onChange, available_colors } = props;
@@ -37,23 +37,17 @@ export default (props) => {
         </Button.Group>
 
         {showPicker ? (
-          <ReactColor>
-            {({ GithubPicker }) => {
-              return (
-                <GithubPicker
-                  width="220px"
-                  triangle="top"
-                  className="color-picker"
-                  colors={available_colors}
-                  color={value || '#000'}
-                  onChangeComplete={(value) => {
-                    setShowPicker(false);
-                    onChange(id, value.hex);
-                  }}
-                />
-              );
+          <GithubPicker
+            width="220px"
+            triangle="top"
+            className="color-picker"
+            colors={available_colors}
+            color={value || '#000'}
+            onChangeComplete={(value) => {
+              setShowPicker(false);
+              onChange(id, value.hex);
             }}
-          </ReactColor>
+          />
         ) : (
           ''
         )}
