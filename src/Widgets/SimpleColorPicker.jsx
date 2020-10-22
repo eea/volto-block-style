@@ -1,8 +1,10 @@
 import React from 'react';
-import { GithubPicker } from 'react-color';
 import { FormFieldWrapper, Icon } from '@plone/volto/components';
 import { Button } from 'semantic-ui-react';
 import clearSVG from '@plone/volto/icons/clear.svg';
+
+import loadable from '@loadable/component';
+const GithubPicker = loadable(() => import('react-color/lib/Github'));
 
 export default (props) => {
   const { id, value, onChange, available_colors } = props;
