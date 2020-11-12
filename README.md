@@ -15,7 +15,7 @@ Ideally it should be loaded as the last addon in Volto project configuration.
 
 ###
 
-![Screenshot](./screenshot.png)
+![Screenshot](https://github.com/eea/volto-block-style/raw/docs/docs/screenshot.png)
 
 ## Getting started
 
