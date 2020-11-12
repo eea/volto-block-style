@@ -8,6 +8,7 @@
   "homepage": "https://github.com/eea/volto-block-style",
   "keywords": [
     "volto-addon",
+    "volto-block-style",
     "volto",
     "plone",
     "react"
@@ -21,7 +22,7 @@
   },
   "scripts": {
     "release": "release-it",
-    "bootstrap": "./bootstrap"
+    "bootstrap": "node bootstrap"
   },
   "dependencies": {
     "react-color": "2.18.1"
