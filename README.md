@@ -55,7 +55,7 @@ Ideally it should be **loaded as the last addon** in Volto project configuration
 
 ## How to contribute
 
-See [DEVELOP.md](https://github.com/eea/volto-block-style/blob/master/DEVELOP.md2).
+See [DEVELOP.md](https://github.com/eea/volto-block-style/blob/master/DEVELOP.md).
 
 ## Copyright and license
 
