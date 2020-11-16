@@ -1,5 +1,6 @@
 import React from 'react';
 import { Portal } from 'react-portal';
+import PropTypes from 'prop-types';
 import { CSSTransition } from 'react-transition-group';
 
 const DEFAULT_TIMEOUT = 500;
@@ -32,6 +33,10 @@ const SidebarPopup = ({ children, open }, ref) => {
       </Portal>
     </CSSTransition>
   );
+};
+
+SidebarPopup.propTypes = {
+  open: PropTypes.bool,
 };
 
 export default React.forwardRef(SidebarPopup);
