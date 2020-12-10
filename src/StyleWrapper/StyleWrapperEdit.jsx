@@ -46,7 +46,11 @@ const StyleWrapperEdit = (props) => {
                 onClick={() => {
                   setIsOpen(true);
                 }}
-                title="Style palette"
+                title={`${
+                  props.type
+                    ? 'Style palette for ' + props.type
+                    : 'Style pallete'
+                }`}
               >
                 <Icon name={themeSVG} size="18px" />
               </button>
