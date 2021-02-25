@@ -1,12 +1,15 @@
 import React from 'react';
 import { Card, Item } from 'semantic-ui-react';
 import { FormFieldWrapper } from '@plone/volto/components';
-import { settings } from '~/config';
+import config from '@plone/volto/registry';
 import cx from 'classnames';
 
 const StyleSelectWidget = (props) => {
   const { id, value, onChange } = props;
-  const { pluggableStyles = [], previewText = 'Block content' } = settings;
+  const {
+    pluggableStyles = [],
+    previewText = 'Block content',
+  } = config.settings;
 
   const renderPreview = React.useCallback(
     (style) => {

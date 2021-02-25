@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import { settings } from '~/config';
+import config from '@plone/volto/registry';
 
 export function getInlineStyles(data) {
   return {
@@ -13,7 +13,7 @@ export function getInlineStyles(data) {
 }
 
 export function getStyle(name) {
-  const { pluggableStyles = [] } = settings;
+  const { pluggableStyles = [] } = config.settings;
   return pluggableStyles.find(({ id }) => id === name);
 }
 
@@ -44,7 +44,8 @@ const StyleWrapperView = (props) => {
   };
 
   const nativeIntegration =
-    mode === 'view' && settings.integratesBlockStyles.includes(containerType);
+    mode === 'view' &&
+    config.settings.integratesBlockStyles.includes(containerType);
 
   const children = nativeIntegration
     ? React.Children.map(props.children, (child) => {

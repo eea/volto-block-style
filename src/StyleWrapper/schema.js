@@ -1,4 +1,4 @@
-import { settings } from '~/config';
+import config from '@plone/volto/registry';
 
 export const StyleSchema = () => ({
   title: 'Styles',
@@ -54,13 +54,13 @@ export const StyleSchema = () => ({
       title: 'Background color',
       type: 'color',
       widget: 'style_simple_color',
-      available_colors: settings.available_colors,
+      available_colors: config.settings.available_colors,
     },
     textColor: {
       title: 'Text color',
       type: 'color',
       widget: 'style_simple_color',
-      available_colors: settings.available_colors,
+      available_colors: config.settings.available_colors,
     },
     customClass: {
       title: 'Custom CSS Class',
