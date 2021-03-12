@@ -1,12 +1,12 @@
 import React from 'react';
 import { Portal } from 'react-portal';
-import PropTypes from 'prop-types';
 import { CSSTransition } from 'react-transition-group';
 
 const DEFAULT_TIMEOUT = 500;
 // TODO: add CSS transition on display
 
-const SidebarPopup = ({ children, open }, ref) => {
+const SidebarPopup = (props, ref) => {
+  const { children, open } = props;
   return (
     <CSSTransition
       in={open}
@@ -33,10 +33,6 @@ const SidebarPopup = ({ children, open }, ref) => {
       </Portal>
     </CSSTransition>
   );
-};
-
-SidebarPopup.propTypes = {
-  open: PropTypes.bool,
 };
 
 export default React.forwardRef(SidebarPopup);
