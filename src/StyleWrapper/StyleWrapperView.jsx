@@ -8,6 +8,7 @@ export function getInlineStyles(data) {
     ...(data.textColor ? { color: data.textColor } : {}),
     ...(data.textAlign ? { textAlign: data.textAlign } : {}),
     ...(data.fontSize ? { fontSize: data.fontSize } : {}),
+    ...(data.customStyle?.style || {}),
     // fill in more
   };
 }

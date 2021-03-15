@@ -29,6 +29,7 @@
     "lint:fix": "../../../node_modules/eslint/bin/eslint.js --fix 'src/**/*.{js,jsx}'"
   },
   "dependencies": {
-    "react-color": "~2.18.1"
+    "react-color": "~2.18.1",
+    "css-to-react-native": "3.0.0"
   }
 }

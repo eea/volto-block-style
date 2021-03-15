@@ -17,7 +17,13 @@ const SizeWidget = (props) => {
     <FormFieldWrapper {...props}>
       <div className="align-tools">
         <ImageSizeWidget
-          onChangeBlock={(id, { size }) => onChange(id, size)}
+          onChangeBlock={(id, { size }) => {
+            if (value === size) {
+              onChange(id, null);
+            } else {
+              onChange(id, size);
+            }
+          }}
           data={{ size: value }}
           block={id}
         />
