@@ -19,7 +19,7 @@ export function getStyle(name) {
 
 const StyleWrapperView = (props) => {
   const { styleData = {}, data = {}, mode = 'view' } = props;
-  const { style_name, align, size, customClass } = styleData;
+  const { style_name, align, size, customClass, customId } = styleData;
   const containerType = data['@type'];
 
   const style = getStyle(style_name);
@@ -29,7 +29,8 @@ const StyleWrapperView = (props) => {
     style ||
     align ||
     size ||
-    customClass;
+    customClass ||
+    customId;
 
   const attrs = {
     style: inlineStyles,
@@ -41,6 +42,7 @@ const StyleWrapperView = (props) => {
       medium: size === 'm',
       small: size === 's',
     }),
+    customId,
   };
 
   const nativeIntegration =

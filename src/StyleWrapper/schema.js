@@ -16,7 +16,7 @@ export const StyleSchema = () => ({
     {
       id: 'advanced',
       title: 'Advanced',
-      fields: ['backgroundColor', 'textColor', 'customClass'],
+      fields: ['backgroundColor', 'textColor', 'customClass', 'customId'],
     },
   ],
   properties: {
@@ -65,6 +65,10 @@ export const StyleSchema = () => ({
     customClass: {
       title: 'Custom CSS Class',
       description: 'A custom CSS class, aplicable just to this block',
+    },
+    customId: {
+      title: 'Custom Id',
+      description: 'A custom id, applicable just to this block',
     },
   },
   required: [],
