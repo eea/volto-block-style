@@ -42,7 +42,7 @@ const StyleWrapperView = (props) => {
       medium: size === 'm',
       small: size === 's',
     }),
-    customId,
+    id: customId,
   };
 
   const nativeIntegration =
