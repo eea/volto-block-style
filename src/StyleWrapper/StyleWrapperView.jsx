@@ -19,7 +19,14 @@ export function getStyle(name) {
 
 const StyleWrapperView = (props) => {
   const { styleData = {}, data = {}, mode = 'view' } = props;
-  const { style_name, align, size, customClass, customId } = styleData;
+  const {
+    style_name,
+    align,
+    size,
+    customClass,
+    customId,
+    isDropCap,
+  } = styleData;
   const containerType = data['@type'];
 
   const style = getStyle(style_name);
@@ -30,6 +37,7 @@ const StyleWrapperView = (props) => {
     align ||
     size ||
     customClass ||
+    isDropCap ||
     customId;
 
   const attrs = {
@@ -41,6 +49,7 @@ const StyleWrapperView = (props) => {
       large: size === 'l',
       medium: size === 'm',
       small: size === 's',
+      'drop-cap': isDropCap,
     }),
     id: customId,
   };

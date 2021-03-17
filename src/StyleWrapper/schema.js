@@ -11,7 +11,7 @@ export const StyleSchema = () => ({
     {
       id: 'standard',
       title: 'Standard',
-      fields: ['textAlign', 'fontSize', 'align', 'size'],
+      fields: ['textAlign', 'fontSize', 'align', 'size', 'isDropCap'],
     },
     {
       id: 'advanced',
@@ -69,6 +69,11 @@ export const StyleSchema = () => ({
     customId: {
       title: 'Custom Id',
       description: 'A custom id, applicable just to this block',
+    },
+    isDropCap: {
+      title: 'Drop cap',
+      description: 'First letter is styled as a drop cop',
+      type: 'boolean',
     },
   },
   required: [],
