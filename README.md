@@ -12,7 +12,7 @@ A generic framework to style blocks and other components.
 To configure it, set `settings.pluggableStylesBlocksWhitelist` as a list of
 block types that you want to enable. By default it is enabled for all blocks.
 
-#### Ideally it should be **loaded as the last addon** in Volto project configuration.
+#### IMPORTANT! Because of the way it works, you should always load this addon as the last addon in Volto project configuration.
 
 ###
 
