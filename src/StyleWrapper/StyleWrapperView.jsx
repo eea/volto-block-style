@@ -43,6 +43,7 @@ const StyleWrapperView = (props) => {
       small: size === 's',
     }),
     id: customId,
+    ...(props.role ? { role: props.role } : {}),
   };
 
   const nativeIntegration =
