@@ -52,6 +52,7 @@ const BlockStyleWrapperEdit = (props) => {
             ...data,
             ...(id === 'align' ? { align: value } : {}),
             ...(id === 'size' ? { size: value } : {}),
+            ...(id === 'customId' ? { id: value } : {}),
             styles: {
               ...data?.styles,
               [id]: value,
