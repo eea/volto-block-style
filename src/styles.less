@@ -49,6 +49,18 @@
   &.right {
     float: right;
   }
+
+  &.drop-cap {
+    padding-top: 2em;
+
+    &:first-child:first-letter,
+    &:first-letter {
+      padding-right: 0.5%;
+      float: left;
+      font-size: 400%;
+      line-height: 50%;
+    }
+  }
 }
 
 // Fix overrides
