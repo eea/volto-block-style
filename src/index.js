@@ -51,6 +51,12 @@ const applyConfig = (config) => {
   config.settings.integratesBlockStyles = [
     ...(config.settings.integratesBlockStyles || []),
   ];
+
+  // Restrict block settings to Layout
+  if (config.settings.layoutOnlyBlockStyles === undefined) {
+    config.settings.layoutOnlyBlockStyles = false;
+  }
+
   return config;
 };
 

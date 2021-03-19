@@ -3,13 +3,16 @@ import { StyleWrapperEdit, StyleWrapperView } from '../StyleWrapper';
 import { Portal } from 'react-portal';
 import themeSVG from '@plone/volto/icons/theme.svg';
 import { Icon } from '@plone/volto/components';
+import config from '@plone/volto/registry';
 
 // For blocks, store the style data in data.styles, then
 // adapt the data.styles.[align,size,...] info to default data.align, data.size, etc.
 
 const BlockStyleWrapperEdit = (props) => {
-  const { selected, block, data = {}, onChangeBlock } = props;
+  const { selected, block, data = {}, onChangeBlock, manage } = props;
   const [isVisible, setIsVisible] = React.useState(false);
+  const visible =
+    selected && (config.settings.layoutOnlyBlockStyles ? manage : true);
 
   const tabsNode =
     __CLIENT__ &&
@@ -36,7 +39,7 @@ const BlockStyleWrapperEdit = (props) => {
 
   return (
     <>
-      {selected ? triggerButton : ''}
+      {visible ? triggerButton : ''}
       <StyleWrapperEdit
         {...props}
         isVisible={isVisible}
