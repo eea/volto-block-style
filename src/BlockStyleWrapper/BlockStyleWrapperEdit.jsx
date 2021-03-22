@@ -22,7 +22,7 @@ const BlockStyleWrapperEdit = (props) => {
 
   const triggerButton = (
     <Portal node={tabsNode}>
-      <div id="open-styles-button">
+      <div className="open-styles-button">
         <button
           onClick={() => {
             setIsVisible(true);

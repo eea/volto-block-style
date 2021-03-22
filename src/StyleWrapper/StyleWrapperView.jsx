@@ -1,13 +1,15 @@
 import React from 'react';
 import cx from 'classnames';
 import config from '@plone/volto/registry';
+import { withScreenHeight } from '@eeacms/volto-block-style/hocs';
 
-export function getInlineStyles(data) {
+export function getInlineStyles(data, props = {}) {
   return {
     ...(data.backgroundColor ? { backgroundColor: data.backgroundColor } : {}),
     ...(data.textColor ? { color: data.textColor } : {}),
     ...(data.textAlign ? { textAlign: data.textAlign } : {}),
     ...(data.fontSize ? { fontSize: data.fontSize } : {}),
+    ...(data.isScreenHeight ? { minHeight: props.screenHeight } : {}),
     // fill in more
   };
 }
@@ -26,13 +28,16 @@ const StyleWrapperView = (props) => {
     customClass,
     customId,
     isDropCap,
+    isScreenHeight,
   } = styleData;
   const containerType = data['@type'];
+  const backgroundImage = styleData.backgroundImage;
 
   const style = getStyle(style_name);
-  const inlineStyles = getInlineStyles(styleData);
+  const inlineStyles = getInlineStyles(styleData, props);
   const styled =
     Object.keys(inlineStyles).length > 0 ||
+    backgroundImage ||
     style ||
     align ||
     size ||
@@ -45,6 +50,7 @@ const StyleWrapperView = (props) => {
     className: cx(style?.cssClass, customClass, align, {
       align,
       styled,
+      'screen-height': isScreenHeight,
       'full-width': align === 'full',
       large: size === 'l',
       medium: size === 'm',
@@ -75,7 +81,17 @@ const StyleWrapperView = (props) => {
     nativeIntegration ? (
       children
     ) : (
-      <div {...attrs}>
+      <div {...attrs} ref={props.setRef}>
+        {backgroundImage ? (
+          <div
+            className="bg"
+            style={{
+              backgroundImage: `url(${backgroundImage}/@@images/image`,
+            }}
+          />
+        ) : (
+          ''
+        )}
         {ViewComponentWrapper ? <ViewComponentWrapper {...props} /> : children}
       </div>
     )
@@ -86,4 +102,4 @@ const StyleWrapperView = (props) => {
   );
 };
 
-export default StyleWrapperView;
+export default withScreenHeight(StyleWrapperView);

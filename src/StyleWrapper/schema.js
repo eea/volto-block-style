@@ -16,7 +16,14 @@ export const StyleSchema = () => ({
     {
       id: 'advanced',
       title: 'Advanced',
-      fields: ['backgroundColor', 'textColor', 'customClass', 'customId'],
+      fields: [
+        'isScreenHeight',
+        'backgroundImage',
+        'backgroundColor',
+        'textColor',
+        'customClass',
+        'customId',
+      ],
     },
   ],
   properties: {
@@ -49,6 +56,15 @@ export const StyleSchema = () => ({
     size: {
       title: 'Box size',
       widget: 'style_size',
+    },
+    isScreenHeight: {
+      title: 'Screen height',
+      description: 'Block height follows viewport height',
+      type: 'boolean',
+    },
+    backgroundImage: {
+      title: 'Background image',
+      widget: 'object_by_path',
     },
     backgroundColor: {
       title: 'Background color',

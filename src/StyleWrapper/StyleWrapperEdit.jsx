@@ -14,8 +14,21 @@ const StyleWrapperEdit = (props) => {
 
   const closeSidebar = React.useCallback(
     (e) => {
-      if (isVisible && !doesNodeContainClick(nodeRef.current, e))
+      let containClick = false;
+      const sidebars =
+        document.querySelectorAll('aside.sidebar-container') || [];
+      sidebars.forEach((sidebar) => {
+        if (doesNodeContainClick(sidebar, e) && !containClick) {
+          containClick = true;
+        }
+      });
+      if (
+        isVisible &&
+        !containClick &&
+        !doesNodeContainClick(nodeRef.current, e)
+      ) {
         setIsVisible(false);
+      }
     },
     [isVisible, setIsVisible],
   );
@@ -27,8 +40,8 @@ const StyleWrapperEdit = (props) => {
     };
   }, [closeSidebar]);
 
-  return selected && isVisible ? (
-    <SidebarPopup open={isVisible} ref={nodeRef}>
+  return (
+    <SidebarPopup open={selected && isVisible} ref={nodeRef}>
       <InlineForm
         schema={schema}
         title={
@@ -50,8 +63,6 @@ const StyleWrapperEdit = (props) => {
         formData={data}
       />
     </SidebarPopup>
-  ) : (
-    ''
   );
 };
 
