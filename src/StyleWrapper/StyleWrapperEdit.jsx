@@ -26,8 +26,9 @@ const StyleWrapperEdit = (props) => {
         isVisible &&
         !containClick &&
         !doesNodeContainClick(nodeRef.current, e)
-      )
+      ) {
         setIsVisible(false);
+      }
     },
     [isVisible, setIsVisible],
   );

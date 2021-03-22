@@ -25,7 +25,7 @@ const SidebarPopup = (props, ref) => {
           }}
           ref={ref}
           key="sidebarpopup"
-          className="sidebar-container shit"
+          className="sidebar-container"
           style={{ overflowY: 'auto' }}
         >
           {children}

@@ -4,7 +4,6 @@ import { Portal } from 'react-portal';
 import themeSVG from '@plone/volto/icons/theme.svg';
 import { Icon } from '@plone/volto/components';
 import config from '@plone/volto/registry';
-import cx from 'classnames';
 
 // For blocks, store the style data in data.styles, then
 // adapt the data.styles.[align,size,...] info to default data.align, data.size, etc.
@@ -12,7 +11,6 @@ import cx from 'classnames';
 const BlockStyleWrapperEdit = (props) => {
   const { selected, block, data = {}, onChangeBlock, manage } = props;
   const [isVisible, setIsVisible] = React.useState(false);
-  const stylesButton = React.useRef(null);
   const visible =
     selected && (config.settings.layoutOnlyBlockStyles ? manage : true);
 
@@ -24,12 +22,7 @@ const BlockStyleWrapperEdit = (props) => {
 
   const triggerButton = (
     <Portal node={tabsNode}>
-      <div
-        className={cx({
-          'open-styles-button': true,
-        })}
-        ref={stylesButton}
-      >
+      <div className="open-styles-button">
         <button
           onClick={() => {
             setIsVisible(true);
