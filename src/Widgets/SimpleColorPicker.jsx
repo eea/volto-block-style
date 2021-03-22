@@ -16,7 +16,7 @@ export default (props) => {
       draggable={false}
       className="simple-color-picker-widget"
     >
-      <div>
+      <div className="wrapper">
         <Button.Group>
           <Button
             color={value}
@@ -30,7 +30,10 @@ export default (props) => {
           <Button
             compact
             style={{ paddingLeft: '8px', paddingRight: '0px' }}
-            onClick={() => onChange(id, null)}
+            onClick={() => {
+              setShowPicker(false);
+              onChange(id, null);
+            }}
           >
             <Icon name={clearSVG} size="18px" color="red" />
           </Button>

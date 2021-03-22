@@ -3,7 +3,7 @@
 
 @import (multiple, reference) '../../theme.config';
 
-#open-styles-button {
+.open-styles-button {
   width: 100%;
   padding: 0 1em;
   margin: auto 0;
@@ -30,6 +30,13 @@
 
 // Size
 .styled {
+  position: relative;
+
+  &.screen-height {
+    display: flex;
+    flex-direction: column;
+  }
+
   &.small {
     max-width: 25%;
   }
@@ -61,6 +68,18 @@
       line-height: 50%;
     }
   }
+
+  .bg {
+    /* Set up positioning */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
 }
 
 // Fix overrides
@@ -71,6 +90,21 @@
 .blocks-chooser {
   .ui.image {
     max-width: 100% !important;
+  }
+}
+
+#page-edit {
+  .block.slate {
+    .styled {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: inherit;
+      }
+    }
   }
 }
 
@@ -99,4 +133,12 @@
   -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 11px rgba(0, 0, 0, 0.2);
   color: white !important;
+}
+
+.simple-color-picker-widget {
+  .color-picker {
+    position: absolute !important;
+    top: 0 !important;
+    transform: translateY(-100%);
+  }
 }
