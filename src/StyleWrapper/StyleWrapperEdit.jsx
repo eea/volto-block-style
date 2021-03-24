@@ -9,24 +9,19 @@ import clearSVG from '@plone/volto/icons/clear.svg';
 const StyleWrapperEdit = (props) => {
   const { selected, onChangeValue, data, isVisible, setIsVisible } = props;
 
-  const nodeRef = React.useRef();
   const schema = React.useMemo(() => StyleSchema(), []);
 
   const closeSidebar = React.useCallback(
     (e) => {
-      let containClick = false;
+      let clickInSidebars = false;
       const sidebars =
         document.querySelectorAll('aside.sidebar-container') || [];
       sidebars.forEach((sidebar) => {
-        if (doesNodeContainClick(sidebar, e) && !containClick) {
-          containClick = true;
+        if (doesNodeContainClick(sidebar, e) && !clickInSidebars) {
+          clickInSidebars = true;
         }
       });
-      if (
-        isVisible &&
-        !containClick &&
-        !doesNodeContainClick(nodeRef.current, e)
-      ) {
+      if (isVisible && !clickInSidebars) {
         setIsVisible(false);
       }
     },
@@ -41,7 +36,7 @@ const StyleWrapperEdit = (props) => {
   }, [closeSidebar]);
 
   return (
-    <SidebarPopup open={selected && isVisible} ref={nodeRef}>
+    <SidebarPopup open={selected && isVisible}>
       <InlineForm
         schema={schema}
         title={
