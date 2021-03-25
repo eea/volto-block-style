@@ -19,7 +19,6 @@ export default (props) => {
       <div className="wrapper">
         <Button.Group>
           <Button
-            color={value}
             style={{ backgroundColor: value }}
             onClick={() => setShowPicker(true)}
             size="huge"
@@ -42,7 +41,6 @@ export default (props) => {
         {showPicker ? (
           <GithubPicker
             width="220px"
-            triangle="top"
             className="color-picker"
             colors={available_colors}
             color={value || '#000'}

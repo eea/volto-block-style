@@ -19,8 +19,8 @@ export default (props) => {
   return (
     <FormFieldWrapper {...props}>
       <div className="align-tools">
-        {VALUE_MAP.map(([name, icon]) => (
-          <Button.Group>
+        {VALUE_MAP.map(([name, icon], index) => (
+          <Button.Group key={`button-group-${name}-${index}`}>
             <Button
               icon
               basic
