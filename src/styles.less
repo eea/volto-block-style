@@ -1,7 +1,22 @@
 @type: 'extra';
 @element: 'custom';
 
-@import (multiple, reference) '../../theme.config';
+@import (multiple, reference, optional) '../../theme.config';
+
+@addon: 'volto-addons';
+@addontype: 'blockstyle';
+@addonelement: 'styles';
+@styledPadding: 1rem;
+
+/* Helper to load variables */
+.loadAddonVariables() {
+  @import (optional) '@{addonelement}.variables';
+  @import (optional)
+  '@{siteFolder}/../addons/@{addon}/@{addontype}s/@{addonelement}.variables';
+}
+
+
+.loadAddonVariables();
 
 .open-styles-button {
   width: 100%;
@@ -80,6 +95,9 @@
     background-position: center;
     background-size: cover;
   }
+}
+.styled-with-bg {
+  padding: @styledPadding;
 }
 
 // Fix overrides

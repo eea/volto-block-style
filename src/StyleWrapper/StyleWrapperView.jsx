@@ -50,6 +50,7 @@ const StyleWrapperView = (props) => {
     className: cx(style?.cssClass, customClass, align, {
       align,
       styled,
+      'styled-with-bg': styleData.backgroundColor,
       'screen-height': isScreenHeight,
       'full-width': align === 'full',
       large: size === 'l',
