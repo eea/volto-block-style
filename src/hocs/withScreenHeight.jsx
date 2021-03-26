@@ -54,7 +54,7 @@ export default function withScreenHeight(WrappedComponent) {
         }
       };
       /* eslint-disable-next-line */
-    }, []);
+    }, [isScreenHeight]);
 
     const getScreenHeight = () => {
       if (!screenHeight) return null;
