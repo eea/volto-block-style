@@ -1,7 +1,6 @@
 import React from 'react';
 import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
-import { Icon } from '@plone/volto/components';
-import SidebarPopup from '../SidebarPopup/SidebarPopup';
+import { Icon, SidebarPopup } from '@plone/volto/components';
 import InlineForm from '@plone/volto/components/manage/Form/InlineForm';
 import { StyleSchema } from './schema';
 import clearSVG from '@plone/volto/icons/clear.svg';
