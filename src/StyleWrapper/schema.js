@@ -59,7 +59,7 @@ export const StyleSchema = () => ({
     },
     isScreenHeight: {
       title: 'Screen height',
-      description: 'Block height follows viewport height',
+      description: 'Maximize block to viewport height',
       type: 'boolean',
     },
     backgroundImage: {

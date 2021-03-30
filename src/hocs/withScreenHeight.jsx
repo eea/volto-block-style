@@ -13,33 +13,51 @@ export default function withScreenHeight(WrappedComponent) {
 
     const updateHeight = () => {
       if (__CLIENT__) {
-        const headerWrapper = document.querySelector('.header-wrapper');
-        const contentArea = document.querySelector('.ui.segment.content-area');
-        const view = document.querySelector(
-          '.ui.segment.content-area #view #page-document',
+        const headerWrapper = document.querySelector(
+          '.header-wrapper:not(.mobile)',
         );
-        let childNth = 0;
+        const contentArea = document.querySelector('.ui.segment.content-area');
+        const toolbar = document.querySelector('#toolbar .toolbar.expanded');
+        const firstHeading = document.querySelector('.documentFirstHeading');
+        // const view = document.querySelector(
+        //   '.ui.segment.content-area #view #page-document',
+        // );
+        // let childNth = 0;
 
-        if (view) {
-          view.childNodes.forEach((child, index) => {
-            if (child === styleWrapper.current) {
-              childNth = index;
-            }
-          });
-        }
+        // if (view) {
+        //   view.childNodes.forEach((child, index) => {
+        //     if (child === styleWrapper.current) {
+        //       childNth = index;
+        //     }
+        //   });
+        // }
+
+        const screenHeight =
+          window.innerHeight ||
+          document.documentElement.clientHeight ||
+          document.body.clientHeight ||
+          0;
+
+        const headerWrapperStyle = headerWrapper
+          ? window.getComputedStyle(headerWrapper)
+          : {};
         const contentAreaStyle =
-          contentArea && childNth < 2
+          contentArea && !firstHeading
             ? window.getComputedStyle(contentArea)
             : { marginTop: '0px', paddingTop: '0px' };
-        const offsetHeight =
-          childNth < 2
-            ? (headerWrapper?.offsetHeight || 0) +
-              (pixelToNumber(contentAreaStyle.marginTop) +
-                pixelToNumber(contentAreaStyle.paddingTop) || 0)
-            : 0;
 
-        setOffsetHeight(offsetHeight || 0);
-        setScreenHeight(window.innerHeight);
+        const offsetHeight =
+          (headerWrapperStyle.display !== 'none'
+            ? headerWrapper?.offsetHeight || 0
+            : 0) +
+          (pixelToNumber(contentAreaStyle.marginTop) +
+            pixelToNumber(contentAreaStyle.paddingTop) || 0) +
+          ((toolbar?.offsetHeight || 0) < screenHeight
+            ? toolbar?.offsetHeight || 0
+            : 0);
+
+        setOffsetHeight(offsetHeight);
+        setScreenHeight(screenHeight);
       }
     };
 

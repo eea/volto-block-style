@@ -34,7 +34,7 @@ const StyleWrapperEdit = (props) => {
     };
   }, [closeSidebar]);
 
-  return (
+  return selected && isVisible ? (
     <SidebarPopup open={selected && isVisible}>
       <InlineForm
         schema={schema}
@@ -57,6 +57,8 @@ const StyleWrapperEdit = (props) => {
         formData={data}
       />
     </SidebarPopup>
+  ) : (
+    ''
   );
 };
 
