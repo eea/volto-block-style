@@ -1,7 +1,10 @@
 import React from 'react';
 import cx from 'classnames';
 import config from '@plone/volto/registry';
-import { withScreenHeight } from '@eeacms/volto-block-style/hocs';
+import {
+  withCachedImages,
+  withScreenHeight,
+} from '@eeacms/volto-block-style/hocs';
 
 export function getInlineStyles(data, props = {}) {
   return {
@@ -83,16 +86,18 @@ const StyleWrapperView = (props) => {
       children
     ) : (
       <div {...attrs} ref={props.setRef}>
-        {backgroundImage ? (
-          <div
-            className="bg"
-            style={{
-              backgroundImage: `url(${backgroundImage}/@@images/image`,
-            }}
+        {Object.keys(props.images || {}).map((bgImage) => (
+          <img
+            key={`styled-bg-image-${bgImage}`}
+            alt=""
+            src={props.images[bgImage]?.src}
+            className={cx('bg', {
+              hidden:
+                backgroundImage !== bgImage || !props.images[bgImage]?.src,
+            })}
           />
-        ) : (
-          ''
-        )}
+        ))}
+
         {ViewComponentWrapper ? <ViewComponentWrapper {...props} /> : children}
       </div>
     )
@@ -103,4 +108,8 @@ const StyleWrapperView = (props) => {
   );
 };
 
-export default withScreenHeight(StyleWrapperView);
+export default withScreenHeight(
+  withCachedImages(StyleWrapperView, {
+    getImage: (props) => props.styleData.backgroundImage || null,
+  }),
+);

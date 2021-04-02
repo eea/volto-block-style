@@ -1,3 +1,4 @@
+import withCachedImages from './withCachedImages';
 import withScreenHeight from './withScreenHeight';
 
-export { withScreenHeight };
+export { withCachedImages, withScreenHeight };
