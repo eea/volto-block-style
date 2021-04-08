@@ -1,10 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import cx from 'classnames';
 import config from '@plone/volto/registry';
-import {
-  withCachedImages,
-  withScreenHeight,
-} from '@eeacms/volto-block-style/hocs';
+import { withCachedImages } from '@eeacms/volto-block-style/hocs';
 
 export function getInlineStyles(data, props = {}) {
   return {
@@ -12,7 +10,13 @@ export function getInlineStyles(data, props = {}) {
     ...(data.textColor ? { color: data.textColor } : {}),
     ...(data.textAlign ? { textAlign: data.textAlign } : {}),
     ...(data.fontSize ? { fontSize: data.fontSize } : {}),
-    ...(data.isScreenHeight ? { minHeight: props.screenHeight } : {}),
+    ...(data.isScreenHeight && props.screen.screenHeight
+      ? {
+          minHeight: (
+            props.screen.screenHeight - props.screen.offsetHeight
+          ).toPixel(),
+        }
+      : {}),
     // fill in more
   };
 }
@@ -39,6 +43,7 @@ const StyleWrapperView = (props) => {
   const style = getStyle(style_name);
   const inlineStyles = getInlineStyles(styleData, props);
   const styled =
+    props.styled ||
     Object.keys(inlineStyles).length > 0 ||
     backgroundImage ||
     style ||
@@ -108,7 +113,9 @@ const StyleWrapperView = (props) => {
   );
 };
 
-export default withScreenHeight(
+export default connect((state, props) => ({
+  screen: state.screen,
+}))(
   withCachedImages(StyleWrapperView, {
     getImage: (props) => props.styleData.backgroundImage || null,
   }),
