@@ -13,7 +13,7 @@ Number.prototype.toPixel = function toPixel() {
 };
 
 const ScreenSize = (props) => {
-  const updateScreen = () => {
+  const updateScreen = (e) => {
     const screenHeight =
       window.innerHeight ||
       document.documentElement.clientHeight ||
