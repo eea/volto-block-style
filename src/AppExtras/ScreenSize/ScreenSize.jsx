@@ -3,6 +3,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { setScreen } from '@eeacms/volto-block-style/actions';
+import { detectTouchScreen } from './utils';
+
+const IS_TOUCHSCREEN = detectTouchScreen();
 
 const pixelToNumber = (pixel) => {
   return parseInt(pixel.replace('px', ''));
@@ -59,11 +62,21 @@ const ScreenSize = (props) => {
   React.useEffect(() => {
     if (__CLIENT__) {
       updateScreen();
-      window.addEventListener('resize', updateScreen);
+
+      if (IS_TOUCHSCREEN) {
+        window.addEventListener('orientationchange', function () {
+          setTimeout(function () {
+            updateScreen();
+          }, 500);
+        });
+      } else {
+        window.addEventListener('resize', updateScreen);
+      }
     }
     return () => {
       if (__CLIENT__) {
         window.removeEventListener('resize', updateScreen);
+        window.removeEventListener('orientationchange', updateScreen);
       }
     };
     /* eslint-disable-next-line */
