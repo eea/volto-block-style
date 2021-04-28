@@ -24,7 +24,8 @@ const BlockStyleWrapperEdit = (props) => {
     <Portal node={tabsNode}>
       <div className="open-styles-button">
         <button
-          onClick={() => {
+          onClick={(e) => {
+            e.nativeEvent.stopImmediatePropagation();
             setIsVisible(true);
           }}
           title={`${
