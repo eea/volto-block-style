@@ -1,7 +1,7 @@
 SHELL=/bin/bash
 
 DIR=$(shell basename $$(pwd))
-ADDON ?= volto-block-style:installDemoStyles
+ADDON ?= @eeacms/volto-block-style:installDemoStyles
 
 # We like colors
 # From: https://coderwall.com/p/izxssa/colored-makefile-for-golang-projects
@@ -10,7 +10,7 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
-make-frontend:
+project:		## Make a demo Volto project
 	npm install -g yo
 	npm install -g @plone/generator-volto
 	npm install -g mrs-developer
