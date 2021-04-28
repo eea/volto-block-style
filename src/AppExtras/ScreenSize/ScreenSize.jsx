@@ -5,8 +5,6 @@ import { compose } from 'redux';
 import { setScreen } from '@eeacms/volto-block-style/actions';
 import { detectTouchScreen } from './utils';
 
-const IS_TOUCHSCREEN = detectTouchScreen();
-
 const pixelToNumber = (pixel) => {
   return parseInt(pixel.replace('px', ''));
 };
@@ -63,6 +61,7 @@ const ScreenSize = (props) => {
     if (__CLIENT__) {
       updateScreen();
 
+      const IS_TOUCHSCREEN = detectTouchScreen();
       if (IS_TOUCHSCREEN) {
         window.addEventListener('orientationchange', function () {
           setTimeout(function () {
