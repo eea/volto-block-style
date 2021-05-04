@@ -68,30 +68,20 @@ const ScreenSize = (props) => {
   React.useEffect(() => {
     if (__CLIENT__) {
       updateScreen();
-<<<<<<< Updated upstream
 
       const IS_TOUCHSCREEN = detectTouchScreen();
       if (IS_TOUCHSCREEN) {
         window.addEventListener('orientationchange', function () {
-          setTimeout(function () {
-            updateScreen();
-          }, 500);
+          setTimeout(debounce(updateScreen), 500);
         });
       } else {
-        window.addEventListener('resize', updateScreen);
+        window.addEventListener('resize', debounce(updateScreen));
       }
     }
     return () => {
       if (__CLIENT__) {
-        window.removeEventListener('resize', updateScreen);
-        window.removeEventListener('orientationchange', updateScreen);
-=======
-      window.addEventListener('resize', debounce(updateScreen));
-    }
-    return () => {
-      if (__CLIENT__) {
         window.removeEventListener('resize', debounce(updateScreen));
->>>>>>> Stashed changes
+        window.removeEventListener('orientationchange', debounce(updateScreen));
       }
     };
     /* eslint-disable-next-line */
