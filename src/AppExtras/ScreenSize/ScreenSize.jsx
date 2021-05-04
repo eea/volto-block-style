@@ -13,6 +13,14 @@ Number.prototype.toPixel = function toPixel() {
   return `${this}px`;
 };
 
+const debounce = (func) => {
+  let timer;
+  return (event) => {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(func, 100, event);
+  };
+};
+
 const ScreenSize = (props) => {
   const updateScreen = (e) => {
     const screenHeight =
@@ -60,6 +68,7 @@ const ScreenSize = (props) => {
   React.useEffect(() => {
     if (__CLIENT__) {
       updateScreen();
+<<<<<<< Updated upstream
 
       const IS_TOUCHSCREEN = detectTouchScreen();
       if (IS_TOUCHSCREEN) {
@@ -76,6 +85,13 @@ const ScreenSize = (props) => {
       if (__CLIENT__) {
         window.removeEventListener('resize', updateScreen);
         window.removeEventListener('orientationchange', updateScreen);
+=======
+      window.addEventListener('resize', debounce(updateScreen));
+    }
+    return () => {
+      if (__CLIENT__) {
+        window.removeEventListener('resize', debounce(updateScreen));
+>>>>>>> Stashed changes
       }
     };
     /* eslint-disable-next-line */
