@@ -13,6 +13,14 @@ Number.prototype.toPixel = function toPixel() {
   return `${this}px`;
 };
 
+const debounce = (func) => {
+  let timer;
+  return (event) => {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(func, 100, event);
+  };
+};
+
 const ScreenSize = (props) => {
   const updateScreen = (e) => {
     const screenHeight =
@@ -64,18 +72,16 @@ const ScreenSize = (props) => {
       const IS_TOUCHSCREEN = detectTouchScreen();
       if (IS_TOUCHSCREEN) {
         window.addEventListener('orientationchange', function () {
-          setTimeout(function () {
-            updateScreen();
-          }, 500);
+          setTimeout(debounce(updateScreen), 500);
         });
       } else {
-        window.addEventListener('resize', updateScreen);
+        window.addEventListener('resize', debounce(updateScreen));
       }
     }
     return () => {
       if (__CLIENT__) {
-        window.removeEventListener('resize', updateScreen);
-        window.removeEventListener('orientationchange', updateScreen);
+        window.removeEventListener('resize', debounce(updateScreen));
+        window.removeEventListener('orientationchange', debounce(updateScreen));
       }
     };
     /* eslint-disable-next-line */
