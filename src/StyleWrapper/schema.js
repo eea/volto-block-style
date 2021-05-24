@@ -11,7 +11,7 @@ export const StyleSchema = () => ({
     {
       id: 'standard',
       title: 'Standard',
-      fields: ['textAlign', 'fontSize', 'align', 'size', 'isDropCap'],
+      fields: ['textAlign', 'fontSize', 'align', 'size', 'isDropCap', 'hidden'],
     },
     {
       id: 'advanced',
@@ -89,6 +89,11 @@ export const StyleSchema = () => ({
     isDropCap: {
       title: 'Drop cap',
       description: 'First letter is styled as a drop cop',
+      type: 'boolean',
+    },
+    hidden: {
+      title: 'Hidden',
+      description: 'Hide this block',
       type: 'boolean',
     },
   },

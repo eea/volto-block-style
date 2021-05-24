@@ -4,12 +4,27 @@ import cx from 'classnames';
 import config from '@plone/volto/registry';
 import { withCachedImages } from '@eeacms/volto-block-style/hocs';
 
+const getLineHeight = (fontSize) => {
+  switch (fontSize) {
+    case 'large':
+      return '110%';
+    case 'x-large':
+      return '130%';
+    default:
+      return;
+  }
+};
+
 export function getInlineStyles(data, props = {}) {
+  // console.log('props', props);
   return {
+    ...(data.hidden && props.mode !== 'edit' ? { display: 'none' } : {}),
     ...(data.backgroundColor ? { backgroundColor: data.backgroundColor } : {}),
     ...(data.textColor ? { color: data.textColor } : {}),
     ...(data.textAlign ? { textAlign: data.textAlign } : {}),
-    ...(data.fontSize ? { fontSize: data.fontSize } : {}),
+    ...(data.fontSize
+      ? { fontSize: data.fontSize, lineHeight: getLineHeight(data.fontSize) }
+      : {}),
     ...(data.isScreenHeight && props.screen.screenHeight
       ? {
           minHeight: (
@@ -36,6 +51,7 @@ const StyleWrapperView = (props) => {
     customId,
     isDropCap,
     isScreenHeight,
+    hidden = false,
   } = styleData;
   const containerType = data['@type'];
   const backgroundImage = styleData.backgroundImage;
@@ -51,6 +67,7 @@ const StyleWrapperView = (props) => {
     size ||
     customClass ||
     isDropCap ||
+    hidden ||
     customId;
 
   const attrs = {
