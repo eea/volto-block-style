@@ -17,10 +17,14 @@
     "type": "git",
     "url": "git@github.com:eea/volto-block-style.git"
   },
+  "addons": [
+    "@eeacms/volto-resize-helper"
+  ],
   "dependencies": {
     "react-color": "~2.18.1"
   },
   "devDependencies": {
+    "@eeacms/volto-resize-helper": "^0.1.0",
     "@cypress/code-coverage": "^3.9.5",
     "babel-plugin-transform-class-properties": "^6.24.1"
   },

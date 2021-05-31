@@ -1,6 +1,4 @@
 import React from 'react';
-import installAppExtras from './AppExtras';
-import installReducers from './reducers';
 import {
   BlockStyleWrapperEdit,
   BlockStyleWrapperView,
@@ -59,10 +57,7 @@ const applyConfig = (config) => {
     config.settings.layoutOnlyBlockStyles = false;
   }
 
-  return [installAppExtras, installReducers].reduce(
-    (acc, apply) => apply(acc),
-    config,
-  );
+  return config;
 };
 
 export default applyConfig;
