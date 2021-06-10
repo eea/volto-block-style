@@ -10,10 +10,12 @@ export function getInlineStyles(data, props = {}) {
     ...(data.textColor ? { color: data.textColor } : {}),
     ...(data.textAlign ? { textAlign: data.textAlign } : {}),
     ...(data.fontSize ? { fontSize: data.fontSize } : {}),
-    ...(data.isScreenHeight && props.screen.screenHeight
+    ...(data.isScreenHeight && props.screen.height
       ? {
           minHeight: (
-            props.screen.screenHeight - props.screen.offsetHeight
+            props.screen.height -
+            props.screen.browserToolbarHeight -
+            props.screen.content.offsetTop
           ).toPixel(),
         }
       : {}),
