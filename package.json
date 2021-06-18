@@ -1,6 +1,6 @@
 {
   "name": "@eeacms/volto-block-style",
-  "version": "3.3.1",
+  "version": "3.3.2",
   "description": "volto-block-style: Volto add-on",
   "main": "src/index.js",
   "author": "European Environment Agency: IDM2 A-Team",
@@ -21,10 +21,10 @@
     "@eeacms/volto-resize-helper"
   ],
   "dependencies": {
-    "react-color": "~2.18.1"
+    "react-color": "~2.18.1",
+    "@eeacms/volto-resize-helper": ">=0.2.2"
   },
   "devDependencies": {
-    "@eeacms/volto-resize-helper": "^0.2.0",
     "@cypress/code-coverage": "^3.9.5",
     "babel-plugin-transform-class-properties": "^6.24.1"
   },
