@@ -21,10 +21,10 @@
     "@eeacms/volto-resize-helper"
   ],
   "dependencies": {
-    "react-color": "~2.18.1"
+    "react-color": "~2.18.1",
+    "@eeacms/volto-resize-helper": ">=0.2.2"
   },
   "devDependencies": {
-    "@eeacms/volto-resize-helper": "^0.2.0",
     "@cypress/code-coverage": "^3.9.5",
     "babel-plugin-transform-class-properties": "^6.24.1"
   },
