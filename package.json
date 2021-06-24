@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "react-color": "~2.18.1",
-    "@eeacms/volto-resize-helper": ">=0.2.2"
+    "@eeacms/volto-resize-helper": "*"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.9.5",
