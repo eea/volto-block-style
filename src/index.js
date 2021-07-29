@@ -30,7 +30,7 @@ export const applyStyleWrapperToBlock = (blockConfig) => {
 
   const BaseViewComponent = blockConfig.view;
   let ViewComponent = BaseViewComponent;
-  if (ViewComponent._styleWrapped) {
+  if (!ViewComponent._styleWrapped) {
     ViewComponent = (props) => (
       <BlockStyleWrapperView {...props}>
         <BaseViewComponent {...props} />
