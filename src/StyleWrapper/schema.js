@@ -19,6 +19,11 @@ export const StyleSchema = () => ({
       fields: ['shadowDepth', 'shadowColor', 'borderRadius'],
     },
     {
+      id: 'decorations',
+      title: 'Decorations',
+      fields: ['shadowDepth', 'shadowColor', 'borderRadius'],
+    },
+    {
       id: 'advanced',
       title: 'Advanced',
       fields: [
