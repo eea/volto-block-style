@@ -34,6 +34,21 @@ export function getInlineStyles(data, props = {}) {
           ).toPixel(),
         }
       : {}),
+    ...(data.shadowDepth &&
+      {
+        // TODO: calculate proper shadow CSS
+        // shadowColor: data.shadowColor || '#000',
+        // shadowOffset: {
+        //   width: 0,
+        //   height: data.shadowDepth,
+        // },
+        // shadowOpacity: (data.shadowDepth * 100) / 24 / 100,
+        // shadowRadius: 1 + (data.shadowDepth * 100) / 16,
+        // elevation: data.shadowDepth,
+      }),
+    ...(data.borderRadius && {
+      borderRadius: data.borderRadius,
+    }),
     // fill in more
   };
 }
