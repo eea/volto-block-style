@@ -28,7 +28,9 @@ export function getInlineStyles(data, props = {}) {
     ...(data.isScreenHeight && props.screen.screenHeight
       ? {
           minHeight: (
-            props.screen.screenHeight - props.screen.offsetHeight
+            props.screen.height -
+            props.screen.browserToolbarHeight -
+            props.screen.content.offsetTop
           ).toPixel(),
         }
       : {}),

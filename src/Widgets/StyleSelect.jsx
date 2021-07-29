@@ -28,28 +28,30 @@ const StyleSelectWidget = (props) => {
 
   return (
     <>
-      <FormFieldWrapper {...props}>
-        <Card.Group itemsPerRow={2} className="style-select-widget">
-          {pluggableStyles.map((style) => {
-            return (
-              <Card
-                as="div"
-                name={style.id}
-                onClick={() =>
-                  onChange(id, style.id === value ? null : style.id)
-                }
-                key={style.id}
-                className={cx({ active: style.id === value })}
-              >
-                <Card.Content>
-                  <Item.Image size="tiny">{renderPreview(style)}</Item.Image>
-                </Card.Content>
-                <Card.Content extra>{style.title}</Card.Content>
-              </Card>
-            );
-          })}
-        </Card.Group>
-      </FormFieldWrapper>
+      {pluggableStyles.length > 0 && (
+        <FormFieldWrapper {...props}>
+          <Card.Group itemsPerRow={2} className="style-select-widget">
+            {pluggableStyles.map((style) => {
+              return (
+                <Card
+                  as="div"
+                  name={style.id}
+                  onClick={() =>
+                    onChange(id, style.id === value ? null : style.id)
+                  }
+                  key={style.id}
+                  className={cx({ active: style.id === value })}
+                >
+                  <Card.Content>
+                    <Item.Image size="tiny">{renderPreview(style)}</Item.Image>
+                  </Card.Content>
+                  <Card.Content extra>{style.title}</Card.Content>
+                </Card>
+              );
+            })}
+          </Card.Group>
+        </FormFieldWrapper>
+      )}
     </>
   );
 };

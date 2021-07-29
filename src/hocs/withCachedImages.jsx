@@ -13,7 +13,7 @@ export default function withCachedImages(WrappedComponent, config = {}) {
       if (!mounted.current) mounted.current = true;
       if (image && !images[image]) {
         const newImage = new Image();
-        newImage.src = `${image}/@@images/image/panoramic`;
+        newImage.src = `${image}/@@images/image`;
         setImages({ ...images, [image]: null });
         newImage.onload = () => {
           if (mounted.current) {
