@@ -43,7 +43,7 @@ const StyleSelectWidget = (props) => {
                   className={cx({ active: style.id === value })}
                 >
                   <Card.Content>
-                    <Item.Image size="tiny">{renderPreview(style)}</Item.Image>
+                    <Item.Image>{renderPreview(style)}</Item.Image>
                   </Card.Content>
                   <Card.Content extra>{style.title}</Card.Content>
                 </Card>

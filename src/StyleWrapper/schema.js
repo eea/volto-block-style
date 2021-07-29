@@ -6,17 +6,17 @@ export const StyleSchema = () => ({
     {
       id: 'default',
       title: 'Default',
+      fields: [],
+    },
+    {
+      id: 'presets',
+      title: 'Preset styles',
       fields: ['style_name'],
     },
     {
       id: 'standard',
       title: 'Standard',
       fields: ['textAlign', 'fontSize', 'align', 'size', 'isDropCap', 'hidden'],
-    },
-    {
-      id: 'decorations',
-      title: 'Decorations',
-      fields: ['shadowDepth', 'shadowColor', 'borderRadius'],
     },
     {
       id: 'decorations',
