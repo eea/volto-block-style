@@ -11,6 +11,40 @@ import SimpleColorPicker from './Widgets/SimpleColorPicker';
 
 import './styles.less';
 
+/**
+ * Given a block's config object, it wrapps the view and edit in style wrappers
+ */
+export const applyStyleWrapperToBlock = (blockConfig) => {
+  const BaseEditComponent = blockConfig.edit;
+  let EditComponent = BaseEditComponent;
+  if (!EditComponent._styleWrapped) {
+    EditComponent = (props) => (
+      <BlockStyleWrapperEdit {...props}>
+        <BaseEditComponent {...props} />
+      </BlockStyleWrapperEdit>
+    );
+    EditComponent.displayName = `<EditBlockWithStyleWrapperFor(${blockConfig.id})>`;
+    EditComponent._styleWrapped = true;
+  }
+
+  const BaseViewComponent = blockConfig.view;
+  let ViewComponent = BaseViewComponent;
+  if (ViewComponent._styleWrapped) {
+    ViewComponent = (props) => (
+      <BlockStyleWrapperView {...props}>
+        <BaseViewComponent {...props} />
+      </BlockStyleWrapperView>
+    );
+    ViewComponent.displayName = `<ViewBlockWithStyleWrapperFor(${blockConfig.id})>`;
+    ViewComponent._styleWrapped = true;
+  }
+  return {
+    ...blockConfig,
+    view: ViewComponent,
+    edit: EditComponent,
+  };
+};
+
 const applyConfig = (config) => {
   const { settings } = config;
   const whitelist = settings.pluggableStylesBlocksWhitelist;
@@ -23,21 +57,7 @@ const applyConfig = (config) => {
       (whitelist ? whitelist.includes(name) : true),
   );
   okBlocks.forEach((name) => {
-    const EditComponent = blocksConfig[name].edit;
-    const ViewComponent = blocksConfig[name].view;
-    blocksConfig[name].edit = (props) => (
-      <BlockStyleWrapperEdit {...props}>
-        <EditComponent {...props} />
-      </BlockStyleWrapperEdit>
-    );
-    blocksConfig[name].edit.displayName = 'EditBlockWithStyleWrapper';
-
-    blocksConfig[name].view = (props) => (
-      <BlockStyleWrapperView {...props}>
-        <ViewComponent {...props} />
-      </BlockStyleWrapperView>
-    );
-    blocksConfig[name].view.displayName = 'ViewBlockWithStyleWrapper';
+    blocksConfig[name] = applyStyleWrapperToBlock(blocksConfig[name]);
   });
 
   config.widgets.widget.style_select = StyleSelectWidget;
