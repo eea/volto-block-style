@@ -6,6 +6,7 @@ import {
 import StyleSelectWidget from './Widgets/StyleSelect';
 import AlignWidget from './Widgets/Align';
 import TextAlignWidget from './Widgets/TextAlign';
+import SliderWidget from './Widgets/Slider';
 import SizeWidget from './Widgets/Size';
 import SimpleColorPicker from './Widgets/SimpleColorPicker';
 
@@ -65,6 +66,7 @@ const applyConfig = (config) => {
   config.widgets.widget.style_text_align = TextAlignWidget; // avoid conflict for now
   config.widgets.widget.style_size = SizeWidget; // avoid conflict for now
   config.widgets.widget.style_simple_color = SimpleColorPicker;
+  config.widgets.widget.slider = SliderWidget;
 
   // types of blocks that natively integrate with the volto-block-style and
   // allow passing the style as a prop;

@@ -14,6 +14,11 @@ export const StyleSchema = () => ({
       fields: ['textAlign', 'fontSize', 'align', 'size', 'isDropCap'],
     },
     {
+      id: 'decorations',
+      title: 'Decorations',
+      fields: ['shadowDepth', 'shadowColor', 'borderRadius'],
+    },
+    {
       id: 'advanced',
       title: 'Advanced',
       fields: [
@@ -90,6 +95,32 @@ export const StyleSchema = () => ({
       title: 'Drop cap',
       description: 'First letter is styled as a drop cop',
       type: 'boolean',
+    },
+    shadowDepth: {
+      widget: 'slider',
+      title: 'Shadow depth',
+      settings: {
+        min: 0,
+        max: 24,
+        step: 1,
+        start: 0,
+      },
+    },
+    shadowColor: {
+      title: 'Shadow color',
+      type: 'color',
+      widget: 'style_simple_color',
+      available_colors: config.settings.available_colors,
+    },
+    borderRadius: {
+      widget: 'slider',
+      title: 'Rounded Corner',
+      settings: {
+        min: 0,
+        max: 24,
+        step: 1,
+        start: 0,
+      },
     },
   },
   required: [],
