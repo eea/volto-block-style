@@ -69,7 +69,6 @@ const applyConfig = (config) => {
   config.widgets.widget.style_simple_color = SimpleColorPicker;
   config.widgets.widget.slider = SliderWidget;
   config.widgets.widget.quad_size = QuadSizeWidget;
-  config.widgets.widget.four_sliders = FourSliders;
 
   // types of blocks that natively integrate with the volto-block-style and
   // allow passing the style as a prop;
