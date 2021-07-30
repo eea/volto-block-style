@@ -257,6 +257,7 @@ export class Slider extends Component {
     if (event.pageX) {
       pageX = event.pageX;
     } else {
+      // eslint-disable-next-line
       console.log('PageX undefined');
     }
     let value = this.determineValue(this.innerLeft, this.innerRight, pageX);
@@ -406,7 +407,9 @@ export class Slider extends Component {
                     : {}),
                   ...{ left: this.state.position + 'px' },
                 }}
-              />
+              >
+                {this.props.extra}
+              </div>
             )}
           </div>
         </div>
@@ -444,12 +447,19 @@ Slider.propTypes = {
 };
 
 const SliderWidget = (props) => {
-  const { id, onChange, settings = {}, ...rest } = props;
+  const { id, onChange, value, settings = {}, ...rest } = props;
   return (
     <FormFieldWrapper {...props}>
       <Slider
         {...rest}
-        settings={{ ...settings, onChange: (value) => onChange(id, value) }}
+        settings={{
+          ...settings,
+          onChange: (value) => {
+            onChange(id, value);
+          },
+        }}
+        value={value}
+        extra={<strong style={{ fontSize: 'x-small' }}>{value}</strong>}
       />
     </FormFieldWrapper>
   );
