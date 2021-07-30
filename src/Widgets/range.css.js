@@ -44,9 +44,9 @@ const styles = {
     height: '20px',
     width: '20px',
     background: '#fff linear-gradient(transparent, rgba(0, 0, 0, 0.5))',
-    background: '#fff -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.5))',
-    background: '#fff -o-linear-gradient(transparent, rgba(0, 0, 0, 0.5))',
-    background: '#fff -moz-linear-gradient(transparent, rgba(0, 0, 0, 0.5))',
+    // background: '#fff -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.5))',
+    // background: '#fff -o-linear-gradient(transparent, rgba(0, 0, 0, 0.5))',
+    // background: '#fff -moz-linear-gradient(transparent, rgba(0, 0, 0, 0.5))',
     borderRadius: '6px',
     backgroundColor: '#205c90',
     boxShadow:
