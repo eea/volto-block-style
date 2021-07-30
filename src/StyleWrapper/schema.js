@@ -16,24 +16,29 @@ export const StyleSchema = () => ({
     {
       id: 'standard',
       title: 'Standard',
-      fields: ['textAlign', 'fontSize', 'align', 'size', 'isDropCap', 'hidden'],
+      fields: ['textAlign', 'fontSize', 'align', 'size', 'isDropCap'],
     },
     {
       id: 'decorations',
       title: 'Decorations',
-      fields: ['shadowDepth', 'shadowColor', 'borderRadius'],
+      fields: [
+        'backgroundImage',
+        'backgroundColor',
+        'textColor',
+        'borderRadius',
+        'shadowDepth',
+        'shadowColor',
+      ],
+    },
+    {
+      id: 'layout',
+      title: 'Layout',
+      fields: ['margin', 'padding', 'size', 'align'], // todo: width, conflicts with size
     },
     {
       id: 'advanced',
       title: 'Advanced',
-      fields: [
-        'isScreenHeight',
-        'backgroundImage',
-        'backgroundColor',
-        'textColor',
-        'customClass',
-        'customId',
-      ],
+      fields: ['hidden', 'isScreenHeight', 'customClass', 'customId'],
     },
   ],
   properties: {
@@ -62,6 +67,14 @@ export const StyleSchema = () => ({
         ['xx-large', 'xx-large'],
         ['xxx-large', 'xxx-large'],
       ],
+    },
+    margin: {
+      title: 'Margin',
+      widget: 'quad_size',
+    },
+    padding: {
+      title: 'Padding',
+      widget: 'quad_size',
     },
     size: {
       title: 'Box size',

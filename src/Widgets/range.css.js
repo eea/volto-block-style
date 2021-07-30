@@ -51,6 +51,11 @@ const styles = {
     backgroundColor: '#205c90',
     boxShadow:
       '0 1px 2px 0 rgba(34,36,38,.15),0 0 0 1px rgba(34,36,38,.15) inset',
+    display: 'flex',
+    color: 'white',
+    flexDirection: 'column',
+    textAlign: 'center',
+    fontSize: 'xx-small',
   },
   red: {
     backgroundColor: '#DB2828',
