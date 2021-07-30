@@ -32,6 +32,10 @@
 .style-select-widget {
   .card {
     cursor: pointer;
+
+    .extra.content {
+      padding: 0.4em !important;
+    }
   }
 
   .card.active {
@@ -52,14 +56,17 @@
   }
 
   &.small {
+    min-width: 10%;
     max-width: 25%;
   }
 
   &.medium {
+    min-width: 25%;
     max-width: 50%;
   }
 
   &.large {
+    min-width: 50%;
     max-width: 100%;
   }
 

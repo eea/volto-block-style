@@ -6,6 +6,11 @@ export const StyleSchema = () => ({
     {
       id: 'default',
       title: 'Default',
+      fields: [],
+    },
+    {
+      id: 'presets',
+      title: 'Preset styles',
       fields: ['style_name'],
     },
     {
@@ -14,16 +19,26 @@ export const StyleSchema = () => ({
       fields: ['textAlign', 'fontSize', 'align', 'size', 'isDropCap'],
     },
     {
-      id: 'advanced',
-      title: 'Advanced',
+      id: 'decorations',
+      title: 'Decorations',
       fields: [
-        'isScreenHeight',
         'backgroundImage',
         'backgroundColor',
         'textColor',
-        'customClass',
-        'customId',
+        'borderRadius',
+        'shadowDepth',
+        'shadowColor',
       ],
+    },
+    {
+      id: 'layout',
+      title: 'Layout',
+      fields: ['margin', 'padding', 'size', 'align'], // todo: width, conflicts with size
+    },
+    {
+      id: 'advanced',
+      title: 'Advanced',
+      fields: ['hidden', 'isScreenHeight', 'customClass', 'customId'],
     },
   ],
   properties: {
@@ -52,6 +67,14 @@ export const StyleSchema = () => ({
         ['xx-large', 'xx-large'],
         ['xxx-large', 'xxx-large'],
       ],
+    },
+    margin: {
+      title: 'Margin',
+      widget: 'quad_size',
+    },
+    padding: {
+      title: 'Padding',
+      widget: 'quad_size',
     },
     size: {
       title: 'Box size',
@@ -90,6 +113,37 @@ export const StyleSchema = () => ({
       title: 'Drop cap',
       description: 'First letter is styled as a drop cop',
       type: 'boolean',
+    },
+    hidden: {
+      title: 'Hidden',
+      description: 'Hide this block',
+      type: 'boolean',
+    },
+    shadowDepth: {
+      widget: 'slider',
+      title: 'Shadow depth',
+      settings: {
+        min: 0,
+        max: 24,
+        step: 1,
+        start: 0,
+      },
+    },
+    shadowColor: {
+      title: 'Shadow color',
+      type: 'color',
+      widget: 'style_simple_color',
+      available_colors: config.settings.available_colors,
+    },
+    borderRadius: {
+      widget: 'slider',
+      title: 'Rounded Corner',
+      settings: {
+        min: 0,
+        max: 24,
+        step: 1,
+        start: 0,
+      },
     },
   },
   required: [],
