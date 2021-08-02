@@ -8,6 +8,7 @@ import { FormFieldWrapper } from '@plone/volto/components';
 // import { withParentSize } from '@visx/responsive';
 
 import styles from './range.css.js';
+import './range.css';
 
 export class Slider extends Component {
   constructor(props) {
@@ -298,7 +299,7 @@ export class Slider extends Component {
 
   render() {
     return (
-      <div>
+      <div className="slider-widget-wrapper">
         <div
           tabIndex="-1"
           role="button"
