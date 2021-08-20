@@ -16,7 +16,14 @@ export const StyleSchema = () => ({
     {
       id: 'standard',
       title: 'Standard',
-      fields: ['textAlign', 'fontSize', 'align', "stretch", 'size', 'isDropCap'],
+      fields: [
+        'textAlign',
+        'fontSize',
+        'align',
+        'stretch',
+        'size',
+        'isDropCap',
+      ],
     },
     {
       id: 'decorations',
