@@ -16,7 +16,7 @@ export const StyleSchema = () => ({
     {
       id: 'standard',
       title: 'Standard',
-      fields: ['textAlign', 'fontSize', 'align', 'size', 'isDropCap'],
+      fields: ['textAlign', 'fontSize', 'align', "stretch", 'size', 'isDropCap'],
     },
     {
       id: 'decorations',
@@ -33,7 +33,7 @@ export const StyleSchema = () => ({
     {
       id: 'layout',
       title: 'Layout',
-      fields: ['margin', 'padding', 'size', 'align'], // todo: width, conflicts with size
+      fields: ['margin', 'padding', 'size', 'align', 'stretch'], // todo: width, conflicts with size
     },
     {
       id: 'advanced',
@@ -53,6 +53,10 @@ export const StyleSchema = () => ({
     align: {
       title: 'Align',
       widget: 'style_align',
+    },
+    stretch: {
+      title: 'Stretch',
+      widget: 'style_stretch',
     },
     fontSize: {
       title: 'Font size',
