@@ -3,3 +3,13 @@
   flex-direction: column;
   justify-content: center;
 }
+
+.stretch {
+  margin: 0 -1rem;
+}
+
+@media (max-width: 1199px) {
+  .stretch {
+    margin: 0 -0.65rem;
+  }
+}
