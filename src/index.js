@@ -5,6 +5,8 @@ import {
 } from './BlockStyleWrapper';
 import StyleSelectWidget from './Widgets/StyleSelect';
 import AlignWidget from './Widgets/Align';
+import StretchWidget from './Widgets/Stretch';
+
 import TextAlignWidget from './Widgets/TextAlign';
 import SliderWidget from './Widgets/Slider';
 import SizeWidget from './Widgets/Size';
@@ -64,6 +66,7 @@ const applyConfig = (config) => {
 
   config.widgets.widget.style_select = StyleSelectWidget;
   config.widgets.widget.style_align = AlignWidget; // avoid conflict for now
+  config.widgets.widget.style_stretch = StretchWidget; // Make stretch widget
   config.widgets.widget.style_text_align = TextAlignWidget; // avoid conflict for now
   config.widgets.widget.style_size = SizeWidget; // avoid conflict for now
   config.widgets.widget.style_simple_color = SimpleColorPicker;

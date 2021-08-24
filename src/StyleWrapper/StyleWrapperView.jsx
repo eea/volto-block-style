@@ -47,7 +47,7 @@ export function getInlineStyles(data, props = {}) {
     ...(data.fontSize
       ? { fontSize: data.fontSize, lineHeight: getLineHeight(data.fontSize) }
       : {}),
-    ...(data.isScreenHeight && props.screen.screenHeight
+    ...(data.isScreenHeight && props.screen.height
       ? {
           minHeight: (
             props.screen.height -
@@ -86,7 +86,9 @@ const StyleWrapperView = (props) => {
     isDropCap,
     isScreenHeight,
     hidden = false,
+    stretch,
   } = styleData;
+
   const containerType = data['@type'];
   const backgroundImage = styleData.backgroundImage;
 
@@ -102,7 +104,8 @@ const StyleWrapperView = (props) => {
     customClass ||
     isDropCap ||
     hidden ||
-    customId;
+    customId ||
+    stretch;
 
   const attrs = {
     style: inlineStyles,
@@ -112,6 +115,7 @@ const StyleWrapperView = (props) => {
       'styled-with-bg': styleData.backgroundColor || backgroundImage,
       'screen-height': isScreenHeight,
       'full-width': align === 'full',
+      stretch: stretch === 'stretch',
       large: size === 'l',
       medium: size === 'm',
       small: size === 's',
