@@ -9,7 +9,6 @@
   right: 50%;
   left: 50%;
   width: 100vw !important;
-  max-width: initial !important;
   margin-right: -50vw !important;
   margin-left: -50vw !important;
 }
@@ -24,7 +23,26 @@ body:not(.is-anonymous):not(.has-toolbar-collapsed) .stretch {
 }
 
 body:not(.is-anonymous):not(.has-toolbar) .stretch {
-  padding: 0 2.7rem;
+  padding: 0 2.6rem;
+}
+
+@media (min-width: 1700px) {
+  .stretch {
+    transform: translate(-50%, 0%);
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+  body:not(.is-anonymous):not(.has-toolbar) .stretch {
+    max-width: 1720px;
+  }
+
+  body:not(.is-anonymous):not(.has-toolbar-collapsed) .stretch {
+    max-width: 1778px;
+  }
+
+  body:not(.is-authenticated) .stretch {
+    max-width: 1700px;
+  }
 }
 
 @media (max-width: 786px) {
