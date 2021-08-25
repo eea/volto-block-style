@@ -32,14 +32,14 @@ body:not(.is-anonymous):not(.has-toolbar) .stretch {
 }
 @media (min-width: 1700px) {
   .stretch {
-    transform: translate(-50%, 0%);
     margin-right: 0 !important;
     margin-left: 0 !important;
+    transform: translate(-50%, 0%);
   }
 
   body:not(.view-viewview) .stretch {
-    transform: translate(-57.5%, 0%);
     max-width: 1790px !important;
+    transform: translate(-57.5%, 0%);
   }
 
   body:not(.is-anonymous):not(.has-toolbar) .stretch {
