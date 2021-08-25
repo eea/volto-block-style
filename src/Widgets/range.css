@@ -5,11 +5,30 @@
 }
 
 .stretch {
-  margin: 0 -1rem;
+  position: relative;
+  right: 50%;
+  left: 50%;
+  width: 100vw !important;
+  max-width: initial !important;
+  margin-right: -50vw !important;
+  margin-left: -50vw !important;
 }
 
-@media (max-width: 1199px) {
+/* detect if is authenticated or anon */
+body:not(.is-authenticated) .stretch {
+  padding: 0 2rem;
+}
+
+body:not(.is-anonymous):not(.has-toolbar-collapsed) .stretch {
+  padding: 0 4.5rem;
+}
+
+body:not(.is-anonymous):not(.has-toolbar) .stretch {
+  padding: 0 2.7rem;
+}
+
+@media (max-width: 786px) {
   .stretch {
-    margin: 0 -0.65rem;
+    padding: 0 !important;
   }
 }
