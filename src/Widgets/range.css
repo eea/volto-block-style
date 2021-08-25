@@ -18,6 +18,11 @@ body:not(.is-authenticated) .stretch {
   padding: 0 2rem;
 }
 
+/* detect if its in edit mode */
+body:not(.view-viewview) .stretch {
+  padding: 0 5.1rem !important;
+}
+
 body:not(.is-anonymous):not(.has-toolbar-collapsed) .stretch {
   padding: 0 4.5rem;
 }
@@ -25,13 +30,18 @@ body:not(.is-anonymous):not(.has-toolbar-collapsed) .stretch {
 body:not(.is-anonymous):not(.has-toolbar) .stretch {
   padding: 0 2.6rem;
 }
-
 @media (min-width: 1700px) {
   .stretch {
     transform: translate(-50%, 0%);
     margin-right: 0 !important;
     margin-left: 0 !important;
   }
+
+  body:not(.view-viewview) .stretch {
+    transform: translate(-57.5%, 0%);
+    max-width: 1790px !important;
+  }
+
   body:not(.is-anonymous):not(.has-toolbar) .stretch {
     max-width: 1720px;
   }
