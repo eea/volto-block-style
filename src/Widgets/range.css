@@ -18,13 +18,33 @@ body:not(.is-authenticated) .stretch {
   padding: 0 2rem;
 }
 
-/* detect if its in edit mode */
-body:not(.view-viewview) .stretch {
-  padding: 0 5.1rem !important;
+/* detect if is logged in but in view with toolbar open */
+body:not(.view-editview):not(.is-anonymous):not(.has-toolbar-collapsed)
+  .stretch {
+  padding: 0 4.5rem;
 }
 
-body:not(.is-anonymous):not(.has-toolbar-collapsed) .stretch {
-  padding: 0 4.5rem;
+/* detect if its in edit mode */
+
+/* detect if both sidebars open */
+body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
+  .stretch {
+  padding: 0 16.2rem;
+}
+/* detect if both sidebars closed */
+body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar) .stretch {
+  padding: 0 3.2rem;
+}
+
+/* detect if left sidebar open right sidebar closed */
+body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar-collapsed)
+  .stretch {
+  padding: 0 5.2rem;
+}
+/* detect if left sidebar closed right sidebar open */
+body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
+  .stretch {
+  padding: 0 14.3rem;
 }
 
 body:not(.is-anonymous):not(.has-toolbar) .stretch {
@@ -40,6 +60,10 @@ body:not(.is-anonymous):not(.has-toolbar) .stretch {
   body:not(.view-viewview) .stretch {
     max-width: 1790px !important;
     transform: translate(-57.5%, 0%);
+  }
+
+  body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar) .stretch {
+    transform: translate(-55.8%, 0%);
   }
 
   body:not(.is-anonymous):not(.has-toolbar) .stretch {
