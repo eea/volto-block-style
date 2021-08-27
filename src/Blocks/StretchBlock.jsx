@@ -36,6 +36,7 @@ const StretchBlock = ({ stretch, onChangeBlock, data, intl, block }) => {
         <Button
           icon
           basic
+          title={'Default'}
           aria-label={intl.formatMessage(messages.fit)}
           onClick={() => onStretchBlock('fit')}
           active={data.stretch === 'fit' || !data.stretch}
@@ -47,6 +48,7 @@ const StretchBlock = ({ stretch, onChangeBlock, data, intl, block }) => {
         <Button
           icon
           basic
+          title={'Stretch block to the edges'}
           aria-label={intl.formatMessage(messages.stretch)}
           onClick={() => onStretchBlock('stretch')}
           active={data.stretch === 'stretch'}
