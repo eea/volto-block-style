@@ -58,9 +58,9 @@ body:not(.is-anonymous):not(.has-toolbar) .stretch {
   }
 
   body:not(.view-viewview) .stretch {
+    width: auto !important;
     max-width: 1790px !important;
     transform: translate(-50%, 0%);
-    width: auto !important;
     padding: 0 !important;
     margin-right: -7.2rem !important;
   }
