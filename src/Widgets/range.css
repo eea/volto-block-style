@@ -59,11 +59,10 @@ body:not(.is-anonymous):not(.has-toolbar) .stretch {
 
   body:not(.view-viewview) .stretch {
     max-width: 1790px !important;
-    transform: translate(-57.5%, 0%);
-  }
-
-  body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar) .stretch {
-    transform: translate(-55.8%, 0%);
+    transform: translate(-50%, 0%);
+    width: auto !important;
+    padding: 0 !important;
+    margin-right: -7.2rem !important;
   }
 
   body:not(.is-anonymous):not(.has-toolbar) .stretch {
