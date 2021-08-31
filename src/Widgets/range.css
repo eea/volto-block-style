@@ -58,12 +58,11 @@ body:not(.is-anonymous):not(.has-toolbar) .stretch {
   }
 
   body:not(.view-viewview) .stretch {
+    width: auto !important;
     max-width: 1790px !important;
-    transform: translate(-57.5%, 0%);
-  }
-
-  body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar) .stretch {
-    transform: translate(-55.8%, 0%);
+    padding: 0 !important;
+    margin-right: -7.2rem !important;
+    transform: translate(-50%, 0%);
   }
 
   body:not(.is-anonymous):not(.has-toolbar) .stretch {
