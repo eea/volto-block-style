@@ -87,7 +87,7 @@ export const StyleSchema = () => ({
     },
     backgroundImage: {
       title: 'Background image',
-      widget: 'object_by_path',
+      widget: 'url',
     },
     backgroundColor: {
       title: 'Background color',
