@@ -4,7 +4,7 @@ pipeline {
   environment {
         GIT_NAME = "volto-block-style"
         NAMESPACE = "@eeacms"
-        SONARQUBE_TAGS = "volto.eea.europa.eu,climate-energy.eea.europa.eu,forest.eea.europa.eu,clms.land.copernicus.eu,biodiversity.europa.eu"
+        SONARQUBE_TAGS = "volto.eea.europa.eu,climate-energy.eea.europa.eu,forest.eea.europa.eu,clms.land.copernicus.eu,biodiversity.europa.eu,www.eea.europa.eu-ims"
         DEPENDENCIES = ""
     }
 
@@ -75,6 +75,12 @@ pipeline {
     }
 
     stage('Integration tests') {
+      // Exclude Pull-Requests. Already running on branch
+      when {
+        allOf {
+          environment name: 'CHANGE_ID', value: ''
+        }
+      }
       steps {
         parallel(
 
