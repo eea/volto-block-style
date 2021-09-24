@@ -487,7 +487,7 @@ const SliderWidget = (props) => {
         settings={{
           ...settings,
           onChange: (value) => {
-            console.log('onchange', value);
+            // console.log('onchange', value);
             onChange(id, value);
           },
         }}
