@@ -5,10 +5,14 @@ import PropTypes from 'prop-types';
 
 import ReactDOM from 'react-dom';
 import { FormFieldWrapper } from '@plone/volto/components';
-// import { withParentSize } from '@visx/responsive';
 
 import styles from './range.css.js';
 import './range.css';
+
+function isNumeric(str) {
+  if (typeof str != 'string') return false; // we only process strings!
+  return !isNaN(str);
+}
 
 export class Slider extends Component {
   constructor(props) {
@@ -25,10 +29,12 @@ export class Slider extends Component {
       offset: 10,
       precision: 0,
       mouseDown: false,
+      showNumericInput: false,
     };
     this.determinePosition = this.determinePosition.bind(this);
     this.rangeMouseUp = this.rangeMouseUp.bind(this);
     this.refresh = this.refresh.bind(this);
+    this.handleKnobClick = this.handleKnobClick.bind(this);
   }
 
   componentDidMount() {
@@ -297,94 +303,132 @@ export class Slider extends Component {
     });
   }
 
+  handleKnobClick(e) {
+    if (e.detail > 1 && !this.state.showNumericInput) {
+      this.setState({ showNumericInput: true });
+    }
+  }
+
   render() {
     return (
       <div className="slider-widget-wrapper">
-        <div
-          tabIndex="-1"
-          role="button"
-          onMouseDown={(event) => this.rangeMouseDown(false, event)}
-          onMouseMove={(event) => this.rangeMouseMove(false, event)}
-          onMouseUp={(event) => this.rangeMouseUp(false, event)}
-          onTouchEnd={(event) => this.rangeMouseUp(true, event)}
-          onTouchMove={(event) => this.rangeMouseMove(true, event)}
-          onTouchStart={(event) => this.rangeMouseDown(true, event)}
-          style={{
-            ...styles.range,
-            ...(this.props.disabled ? styles.disabled : {}),
-            ...(this.props.style ? this.props.style : {}),
-          }}
-        >
-          <div
-            className="semantic_ui_range_inner"
-            ref={(inner) => {
-              this.inner = inner;
+        {this.state.showNumericInput ? (
+          <input
+            defaultValue={this.props.value}
+            onKeyDown={(e) => {
+              // TODO: handle multiple knobs
+              if (e.key === 'Enter' && isNumeric(e.target.value)) {
+                const value = e.target.value;
+                this.setState({ showNumericInput: false }, () => {
+                  this.props.settings.onChange(parseInt(value));
+                });
+              }
             }}
+          />
+        ) : (
+          <div
+            tabIndex="-1"
+            role="button"
+            onMouseDown={(event) => this.rangeMouseDown(false, event)}
+            onMouseMove={(event) => this.rangeMouseMove(false, event)}
+            onMouseUp={(event) => this.rangeMouseUp(false, event)}
+            onTouchEnd={(event) => this.rangeMouseUp(true, event)}
+            onTouchMove={(event) => this.rangeMouseMove(true, event)}
+            onTouchStart={(event) => this.rangeMouseDown(true, event)}
             style={{
-              ...styles.inner,
-              ...(this.props.style
-                ? this.props.style.inner
-                  ? this.props.style.inner
-                  : {}
-                : {}),
+              ...styles.range,
+              ...(this.props.disabled ? styles.disabled : {}),
+              ...(this.props.style ? this.props.style : {}),
             }}
           >
             <div
-              className="slider-track"
-              ref={(track) => {
-                this.track = track;
+              className="semantic_ui_range_inner"
+              ref={(inner) => {
+                this.inner = inner;
               }}
               style={{
-                ...styles.track,
-                ...(this.props.inverted ? styles.invertedTrack : {}),
+                ...styles.inner,
                 ...(this.props.style
-                  ? this.props.style.track
+                  ? this.props.style.inner
+                    ? this.props.style.inner
+                    : {}
+                  : {}),
+              }}
+            >
+              <div
+                className="slider-track"
+                ref={(track) => {
+                  this.track = track;
+                }}
+                style={{
+                  ...styles.track,
+                  ...(this.props.inverted ? styles.invertedTrack : {}),
+                  ...(this.props.style
                     ? this.props.style.track
-                    : {}
-                  : {}),
-              }}
-            />
-            <div
-              className="slider-track-active"
-              ref={(trackFill) => {
-                this.trackFill = trackFill;
-              }}
-              style={{
-                ...styles.trackFill,
-                ...(this.props.inverted ? styles.invertedTrackFill : {}),
-                ...styles[
-                  this.props.inverted
-                    ? 'inverted-' + this.props.color
-                    : this.props.color
-                ],
-                ...(this.props.style
-                  ? this.props.style.trackFill
+                      ? this.props.style.track
+                      : {}
+                    : {}),
+                }}
+              />
+              <div
+                className="slider-track-active"
+                ref={(trackFill) => {
+                  this.trackFill = trackFill;
+                }}
+                style={{
+                  ...styles.trackFill,
+                  ...(this.props.inverted ? styles.invertedTrackFill : {}),
+                  ...styles[
+                    this.props.inverted
+                      ? 'inverted-' + this.props.color
+                      : this.props.color
+                  ],
+                  ...(this.props.style
                     ? this.props.style.trackFill
-                    : {}
-                  : {}),
-                ...(this.props.disabled ? styles.disabledTrackFill : {}),
-                ...(this.props.style
-                  ? this.props.style.disabledTrackFill
+                      ? this.props.style.trackFill
+                      : {}
+                    : {}),
+                  ...(this.props.disabled ? styles.disabledTrackFill : {}),
+                  ...(this.props.style
                     ? this.props.style.disabledTrackFill
-                    : {}
-                  : {}),
-                ...{ width: this.state.position + this.state.offset + 'px' },
-                ...(this.props.multiple && this.state.position.length > 0
-                  ? {
-                      left: this.state.position[0],
-                      width:
-                        this.state.position[this.state.numberOfKnobs - 1] -
-                        this.state.position[0],
-                    }
-                  : {}),
-              }}
-            />
+                      ? this.props.style.disabledTrackFill
+                      : {}
+                    : {}),
+                  ...{ width: this.state.position + this.state.offset + 'px' },
+                  ...(this.props.multiple && this.state.position.length > 0
+                    ? {
+                        left: this.state.position[0],
+                        width:
+                          this.state.position[this.state.numberOfKnobs - 1] -
+                          this.state.position[0],
+                      }
+                    : {}),
+                }}
+              />
 
-            {this.props.multiple ? (
-              this.state.position.map((pos, i) => (
+              {this.props.multiple ? (
+                this.state.position.map((pos, i) => (
+                  <div
+                    className="slider-knob multiple"
+                    key={i}
+                    style={{
+                      ...styles.knob,
+                      ...(this.props.style
+                        ? this.props.style.knob
+                          ? this.props.style.knob
+                          : {}
+                        : {}),
+                      ...{ left: pos + 'px' },
+                    }}
+                  />
+                ))
+              ) : (
                 <div
-                  className="slider-knob multiple"
-                  key={i}
+                  tabindex="-1"
+                  role="button"
+                  className="slider-knob single"
+                  onKeyDown={this.handleKnobKeydown}
+                  onClick={this.handleKnobClick}
                   style={{
                     ...styles.knob,
                     ...(this.props.style
@@ -392,28 +436,15 @@ export class Slider extends Component {
                         ? this.props.style.knob
                         : {}
                       : {}),
-                    ...{ left: pos + 'px' },
+                    ...{ left: this.state.position + 'px' },
                   }}
-                />
-              ))
-            ) : (
-              <div
-                className="slider-knob single"
-                style={{
-                  ...styles.knob,
-                  ...(this.props.style
-                    ? this.props.style.knob
-                      ? this.props.style.knob
-                      : {}
-                    : {}),
-                  ...{ left: this.state.position + 'px' },
-                }}
-              >
-                {this.props.extra}
-              </div>
-            )}
+                >
+                  {this.props.extra}
+                </div>
+              )}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     );
   }
@@ -456,6 +487,7 @@ const SliderWidget = (props) => {
         settings={{
           ...settings,
           onChange: (value) => {
+            // console.log('onchange', value);
             onChange(id, value);
           },
         }}
