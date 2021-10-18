@@ -41,8 +41,15 @@ const h2rgb = (hex) => {
 export function getInlineStyles(data, props = {}) {
   return {
     ...(data.hidden && props.mode !== 'edit' ? { display: 'none' } : {}),
-    ...(data.backgroundColor ? { backgroundColor: data.backgroundColor } : {}),
-    ...(data.textColor ? { color: data.textColor } : {}),
+    ...(data.backgroundColor
+      ? {
+          backgroundColor: data.backgroundColor,
+          '--background-color': data.backgroundColor,
+        }
+      : {}),
+    ...(data.textColor
+      ? { color: data.textColor, '--text-color': data.textColor }
+      : {}),
     ...(data.textAlign ? { textAlign: data.textAlign } : {}),
     ...(data.fontSize
       ? { fontSize: data.fontSize, lineHeight: getLineHeight(data.fontSize) }
