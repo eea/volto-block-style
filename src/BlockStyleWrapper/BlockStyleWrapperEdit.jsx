@@ -50,6 +50,7 @@ const BlockStyleWrapperEdit = (props) => {
           ...(data.align ? { align: data.align } : {}),
           ...(data.size ? { size: data.size } : {}),
         }}
+        blockData={data}
         choices={[]}
         onChangeValue={(id, value) =>
           onChangeBlock(block, {

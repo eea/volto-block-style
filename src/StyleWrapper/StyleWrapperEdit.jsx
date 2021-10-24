@@ -4,9 +4,19 @@ import { Icon, SidebarPopup } from '@plone/volto/components';
 import InlineForm from '@plone/volto/components/manage/Form/InlineForm';
 import { StyleSchema } from './schema';
 import clearSVG from '@plone/volto/icons/clear.svg';
+import deleteSVG from '@plone/volto/icons/delete.svg';
 
 const StyleWrapperEdit = (props) => {
-  const { selected, onChangeValue, data, isVisible, setIsVisible } = props;
+  const {
+    block,
+    blockData,
+    selected,
+    onChangeBlock,
+    onChangeValue,
+    data,
+    isVisible,
+    setIsVisible,
+  } = props;
 
   const schema = React.useMemo(() => StyleSchema(), []);
 
@@ -26,6 +36,14 @@ const StyleWrapperEdit = (props) => {
     },
     [isVisible, setIsVisible],
   );
+
+  const deleteAllStyle = React.useCallback(() => {
+    const newData = {
+      ...blockData,
+    };
+    delete newData.styles;
+    onChangeBlock(block, newData);
+  }, [block, blockData, onChangeBlock]);
 
   React.useEffect(() => {
     document.addEventListener('click', closeSidebar, false);
@@ -47,7 +65,10 @@ const StyleWrapperEdit = (props) => {
               }}
               style={{ float: 'right' }}
             >
-              <Icon name={clearSVG} size="24px" />
+              <Icon name={clearSVG} size="24px" title="Close" />
+            </button>
+            <button onClick={deleteAllStyle} style={{ float: 'right' }}>
+              <Icon name={deleteSVG} size="24px" title="Delete block style" />
             </button>
           </>
         }
