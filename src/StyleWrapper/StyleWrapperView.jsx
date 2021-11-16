@@ -73,6 +73,9 @@ export function getInlineStyles(data, props = {}) {
     ...(data.borderRadius && {
       borderRadius: data.borderRadius,
     }),
+    ...(data.clear && {
+      clear: data.clear,
+    }),
     // fill in more
   };
 }

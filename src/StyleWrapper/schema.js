@@ -45,7 +45,7 @@ export const StyleSchema = () => ({
     {
       id: 'advanced',
       title: 'Advanced',
-      fields: ['hidden', 'isScreenHeight', 'customClass', 'customId'],
+      fields: ['hidden', 'isScreenHeight', 'customClass', 'customId', 'clear'],
     },
   ],
   properties: {
@@ -155,6 +155,16 @@ export const StyleSchema = () => ({
         step: 1,
         start: 0,
       },
+    },
+    clear: {
+      title: 'Clear floats',
+      description: 'Pushes selected block under floated content',
+      choices: [
+        [null, 'None'],
+        ['left', 'Left'],
+        ['right', 'Right'],
+        ['both', 'Both'],
+      ],
     },
   },
   required: [],
