@@ -116,18 +116,24 @@ const StyleWrapperView = (props) => {
 
   const attrs = {
     style: inlineStyles,
-    className: cx(style?.cssClass, customClass, align, {
+    className: cx(
+      `styled-${containerType}`,
+      style?.cssClass,
+      customClass,
       align,
-      styled,
-      'styled-with-bg': styleData.backgroundColor || backgroundImage,
-      'screen-height': isScreenHeight,
-      'full-width': align === 'full',
-      stretch: stretch === 'stretch',
-      large: size === 'l',
-      medium: size === 'm',
-      small: size === 's',
-      'drop-cap': isDropCap,
-    }),
+      {
+        align,
+        styled,
+        'styled-with-bg': styleData.backgroundColor || backgroundImage,
+        'screen-height': isScreenHeight,
+        'full-width': align === 'full',
+        stretch: stretch === 'stretch',
+        large: size === 'l',
+        medium: size === 'm',
+        small: size === 's',
+        'drop-cap': isDropCap,
+      },
+    ),
     id: customId,
     ...(props.role ? { role: props.role } : {}),
   };
