@@ -20,7 +20,7 @@ export default (props) => {
         <Button.Group>
           <Button
             style={{ backgroundColor: value }}
-            onClick={() => setShowPicker(true)}
+            onClick={() => setShowPicker(!showPicker)}
             size="huge"
             title="Pick color"
           >

@@ -25,10 +25,12 @@ const updatedEEAColorcheme = [
   '#f7a600',
   '#b94b19',
   '#8d4107',
+  '#000000',
   '#6f6f6e',
   '#929291',
   '#bcbcbc',
   '#e3e3e3',
+  '#ffffff',
 ];
 
 export default updatedEEAColorcheme;
