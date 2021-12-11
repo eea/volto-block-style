@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import cx from 'classnames';
 import config from '@plone/volto/registry';
 import { withCachedImages } from '@eeacms/volto-block-style/hocs';
-import { Portal } from 'react-portal';
 
 const getLineHeight = (fontSize) => {
   switch (fontSize) {
