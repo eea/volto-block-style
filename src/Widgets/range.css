@@ -35,6 +35,10 @@ body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
   .stretch {
   padding: 0 16.2rem;
 }
+body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
+  .stretched-group {
+  margin: 0 -34px;
+}
 
 body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
   .stretch
@@ -72,6 +76,10 @@ body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
   .stretch {
   padding: 0 14.3rem;
 }
+body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
+  .stretched-group {
+  margin: 0 -34px;
+} 
 
 body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
   .stretch
