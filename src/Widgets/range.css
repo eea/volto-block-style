@@ -13,6 +13,11 @@
   margin-left: -50vw !important;
 }
 
+/* overrides for stretched section */
+.stretched-group {
+  margin: 0 -50px;
+}
+
 /* detect if is authenticated or anon */
 body:not(.is-authenticated) .stretch {
   padding: 0 2rem;
@@ -23,7 +28,6 @@ body:not(.view-editview):not(.is-anonymous):not(.has-toolbar-collapsed)
   .stretch {
   padding: 0 4.5rem;
 }
-
 /* detect if its in edit mode */
 
 /* detect if both sidebars open */
@@ -31,9 +35,28 @@ body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
   .stretch {
   padding: 0 16.2rem;
 }
+
+body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
+  .stretched-group {
+  margin: 0 -34px;
+}
+
+body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
+  .stretch
+  > fieldset
+  legend {
+  left: 19em !important;
+}
 /* detect if both sidebars closed */
 body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar) .stretch {
   padding: 0 3.2rem;
+}
+
+body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar)
+  .stretch
+  > fieldset
+  legend {
+  left: 9em !important;
 }
 
 /* detect if left sidebar open right sidebar closed */
@@ -41,10 +64,30 @@ body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar-collapsed)
   .stretch {
   padding: 0 5.2rem;
 }
+
+body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar-collapsed)
+  .stretch
+  > fieldset
+  legend {
+  left: 9em !important;
+}
+
 /* detect if left sidebar closed right sidebar open */
 body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
   .stretch {
   padding: 0 14.3rem;
+}
+
+body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
+  .stretched-group {
+  margin: 0 -34px;
+}
+
+body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
+  .stretch
+  > fieldset
+  legend {
+  left: 19em !important;
 }
 
 body:not(.is-anonymous):not(.has-toolbar) .stretch {
