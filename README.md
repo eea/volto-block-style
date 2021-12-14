@@ -1,9 +1,19 @@
 # volto-block-style
 [![Releases](https://img.shields.io/github/v/release/eea/volto-block-style)](https://github.com/eea/volto-block-style/releases)
-[![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2Fvolto-block-style%2Fmaster&subject=master)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/volto-block-style/job/master/display/redirect)
-[![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2Fvolto-block-style%2Fdevelop&subject=develop)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/volto-block-style/job/develop/display/redirect)
 
-[Volto](https://github.com/plone/volto) add-on
+[![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2Fvolto-block-style%2Fmaster&subject=master)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/volto-block-style/job/master/display/redirect)
+[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-block-style-master&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-block-style-master)
+[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-block-style-master&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-block-style-master)
+[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-block-style-master&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-block-style-master)
+[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-block-style-master&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-block-style-master)
+
+[![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2Fvolto-block-style%2Fdevelop&subject=develop)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/volto-block-style/job/develop/display/redirect)
+[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-block-style-develop&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-block-style-develop)
+[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-block-style-develop&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-block-style-develop)
+[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-block-style-develop&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-block-style-develop)
+[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-block-style-develop&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-block-style-develop)
+
+[Volto](https://github.com/plone/volto) add-on to style blocks and other components
 
 ## Features
 
