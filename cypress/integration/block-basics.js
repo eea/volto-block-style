@@ -27,8 +27,10 @@ describe('Blocks Tests', () => {
     //add text block
     cy.get('.ui.basic.icon.button.block-add-button').first().click();
     cy.get('.blocks-chooser .title').contains('Text').click();
-    cy.get('.content.active.text .button.text').contains('Text').click();
-    cy.get('.block-editor-text').last().type("This is a sample text");
+    cy.get('.content.active.text .button:first-of-type')
+      .contains('Text')
+      .click();
+    cy.get('.block-editor-text').last().type('This is a sample text');
 
     cy.get('.open-styles-button button').click();
     cy.get('.accordion.ui.fluid.styled').contains('Standard').click();
@@ -38,7 +40,6 @@ describe('Blocks Tests', () => {
     cy.get('.field-wrapper-align button').eq(1).click();
     cy.get('.field-wrapper-stretch button').eq(1).click();
     cy.get('.field-wrapper-size button').first().click();
-
 
     cy.get('.accordion.ui.fluid.styled').contains('Decorations').click();
     cy.get('.simple-color-picker-widget button').first().click();
@@ -51,9 +52,16 @@ describe('Blocks Tests', () => {
     cy.get('.simple-color-picker-widget button').eq(4).click();
     cy.get('.github-picker.color-picker span').eq(8).click();
 
-
-    cy.get('.slider-widget-wrapper .slider-knob').first().trigger('mousedown', { which: 1 }, { force: true }).trigger('mousemove', 70, 0, {force: true}).trigger('mouseup');
-    cy.get('.slider-widget-wrapper .slider-knob').eq(1).trigger('mousedown', { which: 1 }, { force: true }).trigger('mousemove', 70, 0, {force: true}).trigger('mouseup');
+    cy.get('.slider-widget-wrapper .slider-knob')
+      .first()
+      .trigger('mousedown', { which: 1 }, { force: true })
+      .trigger('mousemove', 70, 0, { force: true })
+      .trigger('mouseup');
+    cy.get('.slider-widget-wrapper .slider-knob')
+      .eq(1)
+      .trigger('mousedown', { which: 1 }, { force: true })
+      .trigger('mousemove', 70, 0, { force: true })
+      .trigger('mouseup');
 
     // Save
     cy.get('#toolbar-save').click();
