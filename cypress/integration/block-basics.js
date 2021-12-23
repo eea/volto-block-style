@@ -22,16 +22,6 @@ describe('Blocks Tests', () => {
     cy.get('.blocks-chooser .title').contains('Media').click();
     cy.get('.content.active.media .button.image').contains('Image').click();
 
-    cy.get('[contenteditable=true]').first().type('{enter}');
-
-    //add text block
-    cy.get('.ui.basic.icon.button.block-add-button').first().click();
-    cy.get('.blocks-chooser .title').contains('Text').click();
-    cy.get('.content.active.text .button:first-of-type')
-      .contains('Text')
-      .click();
-    cy.get('.block-editor-text').last().type('This is a sample text');
-
     cy.get('.open-styles-button button').click();
     cy.get('.accordion.ui.fluid.styled').contains('Standard').click();
     cy.get('.align-tools').first().click();
