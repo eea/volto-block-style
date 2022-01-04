@@ -11,6 +11,8 @@
   width: 100vw !important;
   margin-right: -50vw !important;
   margin-left: -50vw !important;
+
+  z-index: 3;
 }
 
 /* overrides for stretched section */
