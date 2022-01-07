@@ -6,8 +6,11 @@
 
 .stretch {
   position: relative;
+  border: none !important;
 
   z-index: 3;
+  background-clip: content-box;
+  box-shadow: none;
 
   right: 50%;
   left: 50%;
