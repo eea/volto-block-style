@@ -6,15 +6,17 @@
 
 .stretch {
   position: relative;
-  border: none !important;
 
   z-index: 3;
-  background-clip: content-box;
-  box-shadow: none;
 
+  border: none !important;
+
+  background-clip: content-box;
+  
   right: 50%;
   left: 50%;
 
+  box-shadow: none;
   width: 100vw !important;
 
   margin-right: -50vw !important;
