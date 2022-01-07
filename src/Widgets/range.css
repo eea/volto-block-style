@@ -6,16 +6,15 @@
 
 .stretch {
   position: relative;
-
   z-index: 3;
-
   right: 50%;
   left: 50%;
-
   width: 100vw !important;
-
+  border: none !important;
   margin-right: -50vw !important;
   margin-left: -50vw !important;
+  background-clip: content-box;
+  box-shadow: none;
 }
 
 /* overrides for stretched section */
