@@ -13,8 +13,8 @@
   border: none !important;
   margin-right: -50vw !important;
   margin-left: -50vw !important;
-  box-shadow: none;
   background-clip: content-box;
+  box-shadow: none;
 }
 
 /* overrides for stretched section */
