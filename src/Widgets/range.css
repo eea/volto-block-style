@@ -128,7 +128,7 @@ body:not(.is-authenticated).stretch {
     .stretch {
     padding: 0 2.5rem;
   }
-  
+
   body:not(.view-editview):not(.is-anonymous):not(.has-toolbar) .stretch {
     padding: 0;
   }
