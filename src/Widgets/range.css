@@ -9,15 +9,14 @@
 
   z-index: 3;
 
-  border: none !important;
-
-  background-clip: content-box;
   
+  background-clip: content-box;
   right: 50%;
   left: 50%;
-
-  box-shadow: none;
+  
+  border: none !important;
   width: 100vw !important;
+  box-shadow: none;
 
   margin-right: -50vw !important;
   margin-left: -50vw !important;
