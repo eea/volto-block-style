@@ -51,6 +51,7 @@ body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
   legend {
   left: 19em !important;
 }
+
 /* detect if both sidebars closed */
 body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar) .stretch {
   padding: 0 3.2rem;
@@ -97,7 +98,49 @@ body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
 body:not(.is-anonymous):not(.has-toolbar) .stretch {
   padding: 0 2.6rem;
 }
-@media (min-width: 1700px) {
+
+body:not(.is-authenticated).stretch {
+  padding: 0 !important;
+}
+/* fix for section border to come around the stretched zone */
+
+@media screen and (max-width: 767px) {
+  body:not(.is-authenticated) .stretch {
+    padding: 0 !important;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 787px) {
+  body:not(.is-authenticated) .stretch {
+    padding: 2rem !important;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 847px) {
+  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar-collapsed)
+    .stretch {
+    padding: 0 2.5rem !important;
+  }
+}
+
+@media screen and (max-width: 847px) {
+  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar-collapsed)
+    .stretch {
+    padding: 0 2.5rem;
+  }
+  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar) .stretch {
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 1654px) {
+  body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
+    .stretched-group {
+    margin: 0 -50px;
+  }
+}
+
+@media screen and (min-width: 1700px) {
   .stretch {
     margin-right: 0 !important;
     margin-left: 0 !important;
@@ -108,8 +151,15 @@ body:not(.is-anonymous):not(.has-toolbar) .stretch {
     width: auto !important;
     max-width: 1790px !important;
     padding: 0 !important;
-    margin-right: -7.2rem !important;
+    margin-right: -1.2rem !important;
+
     transform: translate(-50%, 0%);
+  }
+
+  /* detect if left sidebar closed right sidebar open */
+  body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
+    .stretch {
+    margin-right: -3.2rem !important;
   }
 
   body:not(.is-anonymous):not(.has-toolbar) .stretch {
@@ -123,10 +173,13 @@ body:not(.is-anonymous):not(.has-toolbar) .stretch {
   body:not(.is-authenticated) .stretch {
     max-width: 1700px;
   }
-}
 
-@media (max-width: 786px) {
-  .stretch {
-    padding: 0 !important;
+  /* media queries in edit both sidebars open */
+
+  body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
+    .stretch
+    > fieldset
+    legend {
+    left: 5em !important;
   }
 }
