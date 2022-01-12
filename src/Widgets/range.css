@@ -13,8 +13,8 @@
   border: none !important;
   margin-right: 0;
   margin-left: 0;
-  transform: translate(-50%, 0%);
   background-clip: content-box;
+  transform: translate(-50%, 0%);
   box-shadow: none;
 }
 
@@ -34,18 +34,18 @@ body:not(.view-viewview) .stretch {
 
 /* detect if is authenticated or anon */
 body:not(.is-authenticated) .stretch {
+  right: 0;
+  left: 0;
   width: auto;
   padding: 0;
   margin: 0 -1rem;
   transform: none;
-  left: 0;
-  right: 0;
 }
 
 /* detect if is logged in but in view with toolbar open */
 body:not(.view-editview):not(.is-anonymous) .stretch {
-  padding: 0 4.5rem;
   max-width: 1780px;
+  padding: 0 4.5rem;
 }
 
 body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
@@ -92,12 +92,12 @@ body:not(.is-authenticated).stretch {
 
 @media screen and (max-width: 1790px) {
   body:not(.view-editview):not(.is-anonymous) .stretch {
+    right: auto;
+    left: auto;
     width: auto;
     padding: 0;
     margin: 0 -1rem;
     transform: none;
-    right: auto;
-    left: auto;
   }
 }
 
