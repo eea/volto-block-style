@@ -9,12 +9,22 @@
   z-index: 3;
   right: 50%;
   left: 50%;
-  width: 100vw !important;
+  width: 100vw;
   border: none !important;
-  margin-right: -50vw !important;
-  margin-left: -50vw !important;
+  margin-right: 0;
+  margin-left: 0;
+  transform: translate(-50%, 0%);
   background-clip: content-box;
   box-shadow: none;
+}
+
+body:not(.view-viewview) .stretch {
+  width: auto !important;
+  max-width: 1790px !important;
+  padding: 0;
+  margin-right: -1.2rem !important;
+
+  transform: translate(-50%, 0%);
 }
 
 /* overrides for stretched section */
@@ -24,25 +34,23 @@
 
 /* detect if is authenticated or anon */
 body:not(.is-authenticated) .stretch {
-  padding: 0 2rem;
+  width: auto;
+  padding: 0;
+  margin: 0 -1rem;
+  transform: none;
+  left: 0;
+  right: 0;
 }
 
 /* detect if is logged in but in view with toolbar open */
-body:not(.view-editview):not(.is-anonymous):not(.has-toolbar-collapsed)
-  .stretch {
+body:not(.view-editview):not(.is-anonymous) .stretch {
   padding: 0 4.5rem;
-}
-/* detect if its in edit mode */
-
-/* detect if both sidebars open */
-body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
-  .stretch {
-  padding: 0 16.2rem;
+  max-width: 1780px;
 }
 
 body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
   .stretched-group {
-  margin: 0 -34px;
+  margin: 0 -50px;
 }
 
 body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
@@ -50,11 +58,6 @@ body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
   > fieldset
   legend {
   left: 19em !important;
-}
-
-/* detect if both sidebars closed */
-body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar) .stretch {
-  padding: 0 3.2rem;
 }
 
 body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar)
@@ -64,12 +67,6 @@ body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar)
   left: 9em !important;
 }
 
-/* detect if left sidebar open right sidebar closed */
-body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar-collapsed)
-  .stretch {
-  padding: 0 5.2rem;
-}
-
 body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar-collapsed)
   .stretch
   > fieldset
@@ -77,15 +74,9 @@ body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar-collapsed)
   left: 9em !important;
 }
 
-/* detect if left sidebar closed right sidebar open */
-body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
-  .stretch {
-  padding: 0 14.3rem;
-}
-
 body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
   .stretched-group {
-  margin: 0 -34px;
+  margin: 0 -51px;
 }
 
 body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
@@ -95,42 +86,35 @@ body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
   left: 19em !important;
 }
 
-body:not(.is-anonymous):not(.has-toolbar) .stretch {
-  padding: 0 2.6rem;
-}
-
 body:not(.is-authenticated).stretch {
-  padding: 0 !important;
+  padding: 0;
 }
-/* fix for section border to come around the stretched zone */
 
-@media screen and (min-width: 1654px) {
-  body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
-    .stretched-group {
-    margin: 0 -50px;
+@media screen and (max-width: 1790px) {
+  body:not(.view-editview):not(.is-anonymous) .stretch {
+    width: auto;
+    padding: 0;
+    margin: 0 -1rem;
+    transform: none;
+    right: auto;
+    left: auto;
   }
 }
 
-@media screen and (min-width: 1700px) {
+@media screen and (max-width: 1700px) {
   .stretch {
-    margin-right: 0 !important;
-    margin-left: 0 !important;
+    margin-right: 0;
+    margin-left: 0;
     transform: translate(-50%, 0%);
   }
 
   body:not(.view-viewview) .stretch {
     width: auto !important;
     max-width: 1790px !important;
-    padding: 0 !important;
+    padding: 0;
     margin-right: -1.2rem !important;
 
     transform: translate(-50%, 0%);
-  }
-
-  /* detect if left sidebar closed right sidebar open */
-  body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
-    .stretch {
-    margin-right: -3.2rem !important;
   }
 
   body:not(.is-anonymous):not(.has-toolbar) .stretch {
@@ -155,32 +139,71 @@ body:not(.is-authenticated).stretch {
   }
 }
 
+/* fix for section border to come around the stretched zone */
+
+@media screen and (max-width: 1654px) {
+  body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
+    .stretched-group {
+    margin: 0 -34px;
+  }
+}
+
+@media screen and (max-width: 1595px) {
+  body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
+    .stretched-group {
+    margin: 0px -35px;
+  }
+}
+
+@media screen and (max-width: 1299px) {
+  .stretched-group {
+    margin: 0 -33px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar-collapsed)
+    .stretch {
+    margin: 0 -0.6rem;
+  }
+
+  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar) .stretch {
+    margin: 0 -1rem;
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar) .stretch {
+    margin: 0 -0.6rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  body:not(.is-authenticated) .stretch {
+    margin: 0 -0.6rem;
+  }
+}
+
 @media screen and (max-width: 867px) {
   body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar-collapsed)
-    .stretch {
-    padding: 0 3.2rem;
+    .stretched-group {
+    margin: 0 -1px;
+  }
+
+  body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar)
+    .stretched-group {
+    margin: 0 -35px;
   }
 }
 
-@media screen and (max-width: 847px) {
-  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar-collapsed)
-    .stretch {
-    padding: 0 2.5rem;
+@media screen and (max-width: 807px) {
+  body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar)
+    .stretched-group {
+    margin: 0 -1px;
   }
 
-  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar) .stretch {
-    padding: 0 2.6rem;
-  }
-}
-
-@media screen and (max-width: 787px) {
-  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar-collapsed)
-    .stretch {
-    padding: 0 2.5rem;
-  }
-
-  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar) .stretch {
-    padding: 0 0.6rem;
+  body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar) .stretch {
+    padding: 0 1.2rem;
   }
 }
 
@@ -195,11 +218,15 @@ body:not(.is-authenticated).stretch {
   }
 
   body:not(.is-authenticated) .stretch {
-    padding: 0 !important;
+    padding: 0;
   }
 
   body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar-collapsed)
     .stretch {
+    padding: 0;
+  }
+
+  body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar) .stretch {
     padding: 0;
   }
 }
