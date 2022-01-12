@@ -104,36 +104,6 @@ body:not(.is-authenticated).stretch {
 }
 /* fix for section border to come around the stretched zone */
 
-@media screen and (max-width: 767px) {
-  body:not(.is-authenticated) .stretch {
-    padding: 0 !important;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 787px) {
-  body:not(.is-authenticated) .stretch {
-    padding: 2rem !important;
-  }
-}
-
-@media screen and (min-width: 767px) and (max-width: 847px) {
-  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar-collapsed)
-    .stretch {
-    padding: 0 2.5rem !important;
-  }
-}
-
-@media screen and (max-width: 847px) {
-  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar-collapsed)
-    .stretch {
-    padding: 0 2.5rem;
-  }
-
-  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar) .stretch {
-    padding: 0;
-  }
-}
-
 @media screen and (min-width: 1654px) {
   body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
     .stretched-group {
@@ -182,5 +152,54 @@ body:not(.is-authenticated).stretch {
     > fieldset
     legend {
     left: 5em !important;
+  }
+}
+
+@media screen and (max-width: 867px) {
+  body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar-collapsed)
+    .stretch {
+    padding: 0 3.2rem;
+  }
+}
+
+@media screen and (max-width: 847px) {
+  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar-collapsed)
+    .stretch {
+    padding: 0 2.5rem;
+  }
+
+  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar) .stretch {
+    padding: 0 2.6rem;
+  }
+}
+
+@media screen and (max-width: 787px) {
+  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar-collapsed)
+    .stretch {
+    padding: 0 2.5rem;
+  }
+
+  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar) .stretch {
+    padding: 0 0.6rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar-collapsed)
+    .stretch {
+    padding: 0;
+  }
+
+  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar) .stretch {
+    padding: 0;
+  }
+
+  body:not(.is-authenticated) .stretch {
+    padding: 0 !important;
+  }
+
+  body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar-collapsed)
+    .stretch {
+    padding: 0;
   }
 }
