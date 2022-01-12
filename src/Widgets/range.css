@@ -14,8 +14,8 @@
   margin-right: 0;
   margin-left: 0;
   background-clip: content-box;
-  transform: translate(-50%, 0%);
   box-shadow: none;
+  transform: translate(-50%, 0%);
 }
 
 body:not(.view-viewview) .stretch {
