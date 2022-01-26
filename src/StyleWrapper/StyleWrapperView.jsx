@@ -54,6 +54,7 @@ export function getInlineStyles(data, props = {}) {
     ...(data.fontSize
       ? { fontSize: data.fontSize, lineHeight: getLineHeight(data.fontSize) }
       : {}),
+    ...(data.height ? { height: data.height } : {}),
     ...(data.isScreenHeight && props.screen.height
       ? {
           minHeight: (
