@@ -48,6 +48,7 @@ export const StyleSchema = () => {
         title: 'Advanced',
         fields: [
           'hidden',
+          'height',
           'isScreenHeight',
           'customClass',
           'customId',
@@ -97,6 +98,11 @@ export const StyleSchema = () => {
       size: {
         title: 'Box size',
         widget: 'style_size',
+      },
+      height: {
+        title: 'Element height',
+        widget: 'text',
+        description: 'Element height, expressed as CSS dimmension',
       },
       isScreenHeight: {
         title: 'Screen height',
