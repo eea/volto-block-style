@@ -1,5 +1,5 @@
 
-.stretch {
+body:not(.view-defaultview).stretch {
   position: relative;
   z-index: 3;
   right: 50%;
@@ -28,7 +28,7 @@ body:not(.view-viewview) .stretch {
 }
 
 /* detect if is authenticated or anon */
-body:not(.is-authenticated) .stretch {
+body:not(.is-authenticated):not(.view-defaultview) .stretch {
   right: 0;
   left: 0;
   width: auto;
@@ -81,7 +81,7 @@ body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
   left: 19em !important;
 }
 
-body:not(.is-authenticated).stretch {
+body:not(.is-authenticated):not(.view-defaultview).stretch {
   padding: 0;
 }
 
@@ -97,7 +97,7 @@ body:not(.is-authenticated).stretch {
 }
 
 @media screen and (max-width: 1700px) {
-  .stretch {
+  body:not(.view-defaultview) .stretch {
     margin-right: 0;
     margin-left: 0;
     transform: translate(-50%, 0%);
@@ -120,7 +120,7 @@ body:not(.is-authenticated).stretch {
     max-width: 1778px;
   }
 
-  body:not(.is-authenticated) .stretch {
+  body:not(.is-authenticated):not(.view-defaultview) .stretch {
     max-width: 1700px;
   }
 
@@ -174,7 +174,7 @@ body:not(.is-authenticated).stretch {
 }
 
 @media screen and (max-width: 1200px) {
-  body:not(.is-authenticated) .stretch {
+  body:not(.is-authenticated):not(.view-defaultview) .stretch {
     margin: 0 -0.6rem;
   }
 }
@@ -212,7 +212,7 @@ body:not(.is-authenticated).stretch {
     padding: 0;
   }
 
-  body:not(.is-authenticated) .stretch {
+  body:not(.is-authenticated):not(.view-defaultview) .stretch {
     padding: 0;
   }
 
