@@ -1,4 +1,3 @@
-
 body:not(.view-defaultview).stretch {
   position: relative;
   z-index: 3;
@@ -11,20 +10,6 @@ body:not(.view-defaultview).stretch {
   background-clip: content-box;
   box-shadow: none;
   transform: translate(-50%, 0%);
-}
-
-body:not(.view-viewview) .stretch {
-  width: auto !important;
-  max-width: 1790px !important;
-  padding: 0;
-  margin-right: -1.2rem !important;
-
-  transform: translate(-50%, 0%);
-}
-
-/* overrides for stretched section */
-.stretched-group {
-  margin: 0 -50px;
 }
 
 /* detect if is authenticated or anon */
@@ -40,45 +25,7 @@ body:not(.is-authenticated):not(.view-defaultview) .stretch {
 /* detect if is logged in but in view with toolbar open */
 body:not(.view-editview):not(.view-defaultview):not(.is-anonymous) .stretch {
   max-width: 1780px;
-  padding: 0 4.5rem;
-}
-
-body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
-  .stretched-group {
-  margin: 0 -50px;
-}
-
-body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
-  .stretch
-  > fieldset
-  legend {
-  left: 19em !important;
-}
-
-body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar)
-  .stretch
-  > fieldset
-  legend {
-  left: 9em !important;
-}
-
-body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar-collapsed)
-  .stretch
-  > fieldset
-  legend {
-  left: 9em !important;
-}
-
-body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
-  .stretched-group {
-  margin: 0 -51px;
-}
-
-body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
-  .stretch
-  > fieldset
-  legend {
-  left: 19em !important;
+  margin: 0 -1rem;
 }
 
 body:not(.is-authenticated):not(.view-defaultview).stretch {
@@ -97,18 +44,9 @@ body:not(.is-authenticated):not(.view-defaultview).stretch {
 }
 
 @media screen and (max-width: 1700px) {
-  body:not(.view-defaultview) .stretch {
+  body:not(.view-defaultview):not(.view-editview) .stretch {
     margin-right: 0;
     margin-left: 0;
-    transform: translate(-50%, 0%);
-  }
-
-  body:not(.view-viewview) .stretch {
-    width: auto !important;
-    max-width: 1790px !important;
-    padding: 0;
-    margin-right: -1.2rem !important;
-
     transform: translate(-50%, 0%);
   }
 
@@ -123,37 +61,6 @@ body:not(.is-authenticated):not(.view-defaultview).stretch {
   body:not(.is-authenticated):not(.view-defaultview) .stretch {
     max-width: 1700px;
   }
-
-  /* media queries in edit both sidebars open */
-
-  body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
-    .stretch
-    > fieldset
-    legend {
-    left: 5em !important;
-  }
-}
-
-/* fix for section border to come around the stretched zone */
-
-@media screen and (max-width: 1654px) {
-  body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
-    .stretched-group {
-    margin: 0 -34px;
-  }
-}
-
-@media screen and (max-width: 1595px) {
-  body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
-    .stretched-group {
-    margin: 0px -35px;
-  }
-}
-
-@media screen and (max-width: 1299px) {
-  .stretched-group {
-    margin: 0 -33px;
-  }
 }
 
 @media screen and (max-width: 1280px) {
@@ -162,13 +69,15 @@ body:not(.is-authenticated):not(.view-defaultview).stretch {
     margin: 0 -0.6rem;
   }
 
-  body:not(.view-editview):not(.view-defaultview):not(.is-anonymous):not(.has-toolbar) .stretch {
+  body:not(.view-editview):not(.view-defaultview):not(.is-anonymous):not(.has-toolbar)
+    .stretch {
     margin: 0 -1rem;
   }
 }
 
 @media screen and (max-width: 1220px) {
-  body:not(.view-editview):not(.view-defaultview):not(.is-anonymous):not(.has-toolbar) .stretch {
+  body:not(.view-editview):not(.view-defaultview):not(.is-anonymous):not(.has-toolbar)
+    .stretch {
     margin: 0 -0.6rem;
   }
 }
@@ -179,49 +88,18 @@ body:not(.is-authenticated):not(.view-defaultview).stretch {
   }
 }
 
-@media screen and (max-width: 867px) {
-  body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar-collapsed)
-    .stretched-group {
-    margin: 0 -1px;
-  }
-
-  body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar)
-    .stretched-group {
-    margin: 0 -35px;
-  }
-}
-
-@media screen and (max-width: 807px) {
-  body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar)
-    .stretched-group {
-    margin: 0 -1px;
-  }
-
-  body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar) .stretch {
-    padding: 0 1.2rem;
-  }
-}
-
 @media screen and (max-width: 767px) {
   body:not(.view-editview):not(.view-defaultview):not(.is-anonymous):not(.has-toolbar-collapsed)
     .stretch {
     padding: 0;
   }
 
-  body:not(.view-editview):not(.view-defaultview):not(.is-anonymous):not(.has-toolbar) .stretch {
-    padding: 0;
-  }
-
-  body:not(.is-authenticated):not(.view-defaultview) .stretch {
-    padding: 0;
-  }
-
-  body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar-collapsed)
+  body:not(.view-editview):not(.view-defaultview):not(.is-anonymous):not(.has-toolbar)
     .stretch {
     padding: 0;
   }
 
-  body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar) .stretch {
+  body:not(.is-authenticated):not(.view-defaultview) .stretch {
     padding: 0;
   }
 }
