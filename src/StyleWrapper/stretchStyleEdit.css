@@ -1,0 +1,120 @@
+/* overrides for stretched section */
+.stretched-group {
+  margin: 0 -50px;
+}
+
+body:not(.view-viewview) .stretch {
+  width: auto !important;
+  max-width: 1790px !important;
+  padding: 0;
+}
+
+body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
+  .stretched-group {
+  margin: 0 -50px;
+}
+
+body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
+  .stretch
+  > fieldset
+  legend {
+  left: 19em !important;
+}
+
+body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar)
+  .stretch
+  > fieldset
+  legend {
+  left: 9em !important;
+}
+
+body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar-collapsed)
+  .stretch
+  > fieldset
+  legend {
+  left: 9em !important;
+}
+
+body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
+  .stretched-group {
+  margin: 0 -51px;
+}
+
+body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
+  .stretch
+  > fieldset
+  legend {
+  left: 19em !important;
+}
+
+@media screen and (max-width: 1700px) {
+  body:not(.view-viewview) .stretch {
+    width: auto !important;
+    max-width: 1790px !important;
+    padding: 0;
+  }
+
+  /* media queries in edit both sidebars open */
+  body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
+    .stretch
+    > fieldset
+    legend {
+    left: 5em !important;
+  }
+}
+
+/* fix for section border to come around the stretched zone */
+
+@media screen and (max-width: 1654px) {
+  body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
+    .stretched-group {
+    margin: 0 -34px;
+  }
+}
+
+@media screen and (max-width: 1595px) {
+  body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
+    .stretched-group {
+    margin: 0px -35px;
+  }
+}
+
+@media screen and (max-width: 1299px) {
+  .stretched-group {
+    margin: 0 -33px;
+  }
+}
+
+@media screen and (max-width: 867px) {
+  body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar-collapsed)
+    .stretched-group {
+    margin: 0 -1px;
+  }
+
+  body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar)
+    .stretched-group {
+    margin: 0 -35px;
+  }
+}
+
+@media screen and (max-width: 807px) {
+  body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar)
+    .stretched-group {
+    margin: 0 -1px;
+  }
+
+  body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar) .stretch {
+    padding: 0 1.2rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar-collapsed)
+    .stretch {
+    padding: 0;
+  }
+
+  body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar) .stretch {
+    padding: 0;
+  }
+}
