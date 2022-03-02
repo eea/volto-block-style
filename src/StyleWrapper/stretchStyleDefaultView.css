@@ -138,7 +138,7 @@ body:not(.is-authenticated):not(.document_wide_view).stretch {
     .stretch {
     margin: 0 -19.2vw;
   }
-  
+
   body:not(.is-authenticated):not(.document_wide_view) .stretch {
     margin: 0 -19.8vw;
   }
