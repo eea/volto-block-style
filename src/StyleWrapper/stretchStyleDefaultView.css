@@ -31,8 +31,7 @@ body:not(.view-editview):not(.document_wide_view):not(.is-anonymous) main {
 }
 
 /* detect if is logged in but in view with toolbar open */
-body:not(.view-editview):not(.document_wide_view):not(.is-anonymous)
-  .stretch {
+body:not(.view-editview):not(.document_wide_view):not(.is-anonymous) .stretch {
   max-width: 1636px;
   margin: 0;
 }

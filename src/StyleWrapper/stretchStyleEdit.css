@@ -10,41 +10,41 @@ body:not(.view-viewview) .stretch {
 }
 
 body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
-.stretched-group {
-margin: 0 -50px;
+  .stretched-group {
+  margin: 0 -50px;
 }
 
 body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
-.stretch
-> fieldset
-legend {
-left: 19em !important;
+  .stretch
+  > fieldset
+  legend {
+  left: 19em !important;
 }
 
 body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar)
-.stretch
-> fieldset
-legend {
-left: 9em !important;
+  .stretch
+  > fieldset
+  legend {
+  left: 9em !important;
 }
 
 body:not(.view-viewview):not(.has-sidebar):not(.has-toolbar-collapsed)
-.stretch
-> fieldset
-legend {
-left: 9em !important;
+  .stretch
+  > fieldset
+  legend {
+  left: 9em !important;
 }
 
 body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
-.stretched-group {
-margin: 0 -51px;
+  .stretched-group {
+  margin: 0 -51px;
 }
 
 body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
-.stretch
-> fieldset
-legend {
-left: 19em !important;
+  .stretch
+  > fieldset
+  legend {
+  left: 19em !important;
 }
 
 @media screen and (max-width: 1700px) {
