@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import cx from 'classnames';
 import config from '@plone/volto/registry';
 import { withCachedImages } from '@eeacms/volto-block-style/hocs';
+import './stretchStyleDefaultView.css';
+import './stretchStyleWideView.css';
+import './stretchStyleEdit.css';
 
 const getLineHeight = (fontSize) => {
   switch (fontSize) {
