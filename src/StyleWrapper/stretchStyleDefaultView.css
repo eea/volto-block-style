@@ -71,7 +71,7 @@ body:not(.is-authenticated):not(.document_wide_view).stretch {
 }
 
 @media screen and (max-width: 1700px) {
-  body:not(.document_wide_view):not(.view-editview).stretch {
+  body:not(.document_wide_view):not(.view-editview):not(.is-anonymous):not(.is-authenticated).stretch {
     margin-right: 0;
     margin-left: 0;
     transform: translate(-50%, 0%);

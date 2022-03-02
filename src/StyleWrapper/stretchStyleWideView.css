@@ -20,6 +20,7 @@ body:not(.is-authenticated):not(.view-defaultview) .stretch {
   padding: 0;
   margin: 0 -1rem;
   transform: none;
+  max-width: 1780px;
 }
 
 /* detect if is logged in but in view with toolbar open */
@@ -44,7 +45,7 @@ body:not(.is-authenticated):not(.view-defaultview).stretch {
 }
 
 @media screen and (max-width: 1700px) {
-  body:not(.view-defaultview):not(.view-editview) .stretch {
+  body:not(.view-defaultview):not(.view-editview):not(.is-anonymous):not(.is-authenticated) .stretch {
     margin-right: 0;
     margin-left: 0;
     transform: translate(-50%, 0%);
