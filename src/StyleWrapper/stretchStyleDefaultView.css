@@ -55,6 +55,7 @@ body:not(.is-authenticated):not(.document_wide_view).stretch {
     max-width: 100vw;
     margin: 0 -25.54vw;
   }
+
   body:not(.view-editview):not(.document_wide_view):not(.is-anonymous):not(.has-toolbar)
     .stretch {
     max-width: 100vw;
@@ -100,6 +101,7 @@ body:not(.is-authenticated):not(.document_wide_view).stretch {
     .stretch {
     margin: 0 -18.3vw;
   }
+
   body:not(.view-editview):not(.document_wide_view):not(.is-anonymous):not(.has-toolbar)
     .stretch {
     margin: 0 -18.9vw;
@@ -115,6 +117,7 @@ body:not(.is-authenticated):not(.document_wide_view).stretch {
     .stretch {
     margin: 0 -18.4vw;
   }
+
   body:not(.view-editview):not(.document_wide_view):not(.is-anonymous):not(.has-toolbar)
     .stretch {
     margin: 0 -19vw;
@@ -130,10 +133,12 @@ body:not(.is-authenticated):not(.document_wide_view).stretch {
     .stretch {
     margin: 0 -18.5vw;
   }
+
   body:not(.view-editview):not(.document_wide_view):not(.is-anonymous):not(.has-toolbar)
     .stretch {
     margin: 0 -19.2vw;
   }
+  
   body:not(.is-authenticated):not(.document_wide_view) .stretch {
     margin: 0 -19.8vw;
   }
