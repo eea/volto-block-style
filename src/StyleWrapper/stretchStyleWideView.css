@@ -1,4 +1,4 @@
-body:not(.view-defaultview).stretch {
+body:not(.view-editview).document_wide_view .stretch {
   position: relative;
   z-index: 3;
   right: 50%;
@@ -13,7 +13,7 @@ body:not(.view-defaultview).stretch {
 }
 
 /* detect if is authenticated or anon */
-body:not(.is-authenticated):not(.view-defaultview) .stretch {
+body:not(.is-authenticated).document_wide_view .stretch {
   right: 0;
   left: 0;
   width: auto;
@@ -24,17 +24,17 @@ body:not(.is-authenticated):not(.view-defaultview) .stretch {
 }
 
 /* detect if is logged in but in view with toolbar open */
-body:not(.view-editview):not(.view-defaultview):not(.is-anonymous) .stretch {
-  max-width: 1780px;
-  margin: 0 -1rem;
+body:not(.view-editview):not(.is-anonymous).document_wide_view .stretch {
+  max-width: 1636px;
+  /* margin: 0 -1rem; */
 }
 
-body:not(.is-authenticated):not(.view-defaultview).stretch {
+body:not(.is-authenticated).document_wide_view .stretch {
   padding: 0;
 }
 
 @media screen and (max-width: 1790px) {
-  body:not(.view-editview):not(.view-defaultview):not(.is-anonymous) .stretch {
+  body:not(.view-editview):not(.is-anonymous).document_wide_view .stretch {
     right: auto;
     left: auto;
     width: auto;
@@ -45,7 +45,7 @@ body:not(.is-authenticated):not(.view-defaultview).stretch {
 }
 
 @media screen and (max-width: 1700px) {
-  body:not(.view-defaultview):not(.view-editview):not(.is-anonymous):not(.is-authenticated)
+  body:not(.view-editview):not(.is-anonymous):not(.is-authenticated).document_wide_view
     .stretch {
     margin-right: 0;
     margin-left: 0;
@@ -60,48 +60,48 @@ body:not(.is-authenticated):not(.view-defaultview).stretch {
     max-width: 1778px;
   }
 
-  body:not(.is-authenticated):not(.view-defaultview) .stretch {
+  body:not(.is-authenticated).document_wide_view .stretch {
     max-width: 1700px;
   }
 }
 
 @media screen and (max-width: 1280px) {
-  body:not(.view-editview):not(.view-defaultview):not(.is-anonymous):not(.has-toolbar-collapsed)
+  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar-collapsed).document_wide_view
     .stretch {
     margin: 0 -0.6rem;
   }
 
-  body:not(.view-editview):not(.view-defaultview):not(.is-anonymous):not(.has-toolbar)
+  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar).document_wide_view
     .stretch {
     margin: 0 -1rem;
   }
 }
 
 @media screen and (max-width: 1220px) {
-  body:not(.view-editview):not(.view-defaultview):not(.is-anonymous):not(.has-toolbar)
+  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar).document_wide_view
     .stretch {
     margin: 0 -0.6rem;
   }
 }
 
 @media screen and (max-width: 1200px) {
-  body:not(.is-authenticated):not(.view-defaultview) .stretch {
+  body:not(.is-authenticated).document_wide_view .stretch {
     margin: 0 -0.6rem;
   }
 }
 
 @media screen and (max-width: 767px) {
-  body:not(.view-editview):not(.view-defaultview):not(.is-anonymous):not(.has-toolbar-collapsed)
+  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar-collapsed).document_wide_view
     .stretch {
     padding: 0;
   }
 
-  body:not(.view-editview):not(.view-defaultview):not(.is-anonymous):not(.has-toolbar)
+  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar).document_wide_view
     .stretch {
     padding: 0;
   }
 
-  body:not(.is-authenticated):not(.view-defaultview) .stretch {
+  body:not(.is-authenticated).document_wide_view .stretch {
     padding: 0;
   }
 }
