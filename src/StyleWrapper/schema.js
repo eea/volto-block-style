@@ -20,6 +20,7 @@ export const StyleSchema = () => {
         fields: [
           'textAlign',
           'fontSize',
+          'fontWeight',
           'align',
           'stretch',
           'size',
@@ -47,6 +48,7 @@ export const StyleSchema = () => {
         id: 'advanced',
         title: 'Advanced',
         fields: [
+          'theme',
           'hidden',
           'height',
           'isScreenHeight',
@@ -57,6 +59,14 @@ export const StyleSchema = () => {
       },
     ],
     properties: {
+      theme: {
+        title: 'Theme',
+        description: 'A predefined theme, applicable just to this block',
+        choices: [
+          ['primary', 'Primary'],
+          ['secondary', 'Secondary'],
+        ],
+      },
       style_name: {
         title: 'Style',
         widget: 'style_select',
@@ -87,6 +97,17 @@ export const StyleSchema = () => {
           ['xxx-large', 'xxx-large'],
         ],
       },
+      fontWeight: {
+        title: 'Font weight',
+        description: 'The weight (or boldness) of the font',
+        choices: [
+          ['300', 'Light'],
+          ['400', 'Regular'],
+          ['500', 'Medium'],
+          ['600', 'SemiBold'],
+          ['700', 'Bold'],
+        ],
+      },
       margin: {
         title: 'Margin',
         widget: 'quad_size',
@@ -102,7 +123,7 @@ export const StyleSchema = () => {
       height: {
         title: 'Element height',
         widget: 'text',
-        description: 'Element height, expressed as CSS dimmension',
+        description: 'Element height, expressed as CSS dimension',
       },
       isScreenHeight: {
         title: 'Screen height',
@@ -127,7 +148,7 @@ export const StyleSchema = () => {
       },
       customClass: {
         title: 'Custom CSS Class',
-        description: 'A custom CSS class, aplicable just to this block',
+        description: 'A custom CSS class, applicable just to this block',
       },
       customId: {
         title: 'Custom Id',
