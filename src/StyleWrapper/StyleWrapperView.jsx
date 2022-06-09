@@ -57,6 +57,7 @@ export function getInlineStyles(data, props = {}) {
     ...(data.fontSize
       ? { fontSize: data.fontSize, lineHeight: getLineHeight(data.fontSize) }
       : {}),
+    ...(data.fontWeight ? { fontWeight: data.fontWeight } : {}),
     ...(data.height ? { height: data.height } : {}),
     ...(data.isScreenHeight && props.screen.height
       ? {
@@ -96,6 +97,7 @@ const StyleWrapperView = (props) => {
     align,
     size,
     customClass,
+    theme,
     customId,
     isDropCap,
     isScreenHeight,
@@ -116,6 +118,7 @@ const StyleWrapperView = (props) => {
     align ||
     size ||
     customClass ||
+    theme ||
     isDropCap ||
     hidden ||
     customId ||
@@ -127,6 +130,7 @@ const StyleWrapperView = (props) => {
       `styled-${containerType}`,
       style?.cssClass,
       customClass,
+      theme,
       align,
       {
         align,
