@@ -1,4 +1,4 @@
-import colorscheme from './EEAColorscheme';
+import config from '@plone/volto/registry';
 
 export const StyleSchema = () => {
   return {
@@ -138,13 +138,13 @@ export const StyleSchema = () => {
         title: 'Background color',
         type: 'color',
         widget: 'style_simple_color',
-        available_colors: colorscheme,
+        available_colors: config.settings.available_colors,
       },
       textColor: {
         title: 'Text color',
         type: 'color',
         widget: 'style_simple_color',
-        available_colors: colorscheme,
+        available_colors: config.settings.available_colors,
       },
       customClass: {
         title: 'Custom CSS Class',
@@ -178,7 +178,7 @@ export const StyleSchema = () => {
         title: 'Shadow color',
         type: 'color',
         widget: 'style_simple_color',
-        available_colors: colorscheme,
+        available_colors: config.settings.available_colors,
       },
       borderRadius: {
         widget: 'slider',
