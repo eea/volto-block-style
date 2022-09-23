@@ -6,12 +6,14 @@ import alignLeftSVG from '@plone/volto/icons/align-left.svg';
 import alignRightSVG from '@plone/volto/icons/align-right.svg';
 import alignJustifySVG from '@plone/volto/icons/align-justify.svg';
 import alignCenterSVG from '@plone/volto/icons/align-center.svg';
+import clearSVG from '@plone/volto/icons/clear.svg';
 
 const VALUE_MAP = [
   ['left', alignLeftSVG],
   ['right', alignRightSVG],
   ['center', alignCenterSVG],
   ['justify', alignJustifySVG],
+  ['', clearSVG],
 ];
 
 export default (props) => {
