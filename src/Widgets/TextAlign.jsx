@@ -17,11 +17,11 @@ const VALUE_MAP = [
 ];
 
 export default (props) => {
-  const { value, onChange, id } = props;
+  const { value, onChange, id, actions = VALUE_MAP } = props;
   return (
     <FormFieldWrapper {...props}>
       <div className="align-tools">
-        {VALUE_MAP.map(([name, icon], index) => (
+        {actions.map(([name, icon], index) => (
           <Button.Group key={`button-group-${name}-${index}`}>
             <Button
               icon
