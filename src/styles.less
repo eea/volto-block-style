@@ -18,10 +18,15 @@
 .loadAddonVariables();
 
 .open-styles-button {
+  display: none;
   width: 100%;
   padding: 0 1em;
   margin: auto 0;
   text-align: right;
+
+  &:last-of-type {
+    display: block;
+  }
 
   button {
     color: @linkColor;
