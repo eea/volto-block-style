@@ -13,11 +13,15 @@ export const TEXT_ALIGN_VALUE_MAP = [
   ['right', alignRightSVG, 'Right align'],
   ['center', alignCenterSVG, 'Center align'],
   ['justify', alignJustifySVG, 'Justify align'],
-  ['', clearSVG, 'Clear selection'],
 ];
 
 export default (props) => {
   const { value, onChange, id, actions = TEXT_ALIGN_VALUE_MAP } = props;
+  // add clear selection button to the actions mapping if it's not already present
+  if (actions[actions.length - 1][0] !== '') {
+    actions.push(['', clearSVG, 'Clear selection']);
+  }
+
   return (
     <FormFieldWrapper {...props}>
       <div className="align-tools">
