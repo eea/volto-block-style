@@ -5,25 +5,109 @@
  */
 
 import React from 'react';
-import { injectIntl } from 'react-intl';
-
+import { defineMessages, useIntl } from 'react-intl';
 import { FormFieldWrapper } from '@plone/volto/components';
-import AlignBlock from '@plone/volto/components/manage/Sidebar/AlignBlock';
+import { Icon } from '@plone/volto/components';
+import { Button } from 'semantic-ui-react';
+import imageLeftSVG from '@plone/volto/icons/image-left.svg';
+import imageRightSVG from '@plone/volto/icons/image-right.svg';
+import imageFitSVG from '@plone/volto/icons/image-fit.svg';
+import imageNarrowSVG from '@eeacms/volto-block-style/icons/image-narrow.svg';
+import imageWideSVG from '@plone/volto/icons/image-wide.svg';
+import imageFullSVG from '@plone/volto/icons/image-full.svg';
+import clearSVG from '@plone/volto/icons/clear.svg';
+
+export const messages = defineMessages({
+  left: {
+    id: 'Left',
+    defaultMessage: 'Left',
+  },
+  right: {
+    id: 'Right',
+    defaultMessage: 'Right',
+  },
+  center: {
+    id: 'Center',
+    defaultMessage: 'Center',
+  },
+  narrow: {
+    id: 'Narrow',
+    defaultMessage: 'Narrow',
+  },
+  wide: {
+    id: 'Wide',
+    defaultMessage: 'Wide',
+  },
+  full: {
+    id: 'Full',
+    defaultMessage: 'Full',
+  },
+  '': {
+    id: 'Clear selection',
+    defaultMessage: 'Clear selection',
+  },
+});
+
+export const defaultActionsInfo = ({ intl }) => ({
+  left: [imageLeftSVG, intl.formatMessage(messages.left)],
+  right: [imageRightSVG, intl.formatMessage(messages.right)],
+  center: [imageFitSVG, intl.formatMessage(messages.center)],
+  narrow: [imageNarrowSVG, intl.formatMessage(messages.narrow)],
+  wide: [imageWideSVG, intl.formatMessage(messages.wide)],
+  full: [imageFullSVG, intl.formatMessage(messages.full)],
+  '': [clearSVG, intl.formatMessage(messages[''])],
+});
 
 const AlignWidget = (props) => {
-  const { id, onChange, value } = props;
+  const intl = useIntl();
+
+  const {
+    id,
+    onChange,
+    actions = ['left', 'right', 'center', 'full'],
+    actionsInfoMap = {},
+    value,
+  } = props;
+
+  React.useEffect(() => {
+    if (!props.value && props.default) {
+      props.onChange(props.id, props.default);
+    }
+  });
+
+  // add clear selection button to the actions mapping if it's not already present
+  if (actions[actions.length - 1] !== '') {
+    actions.push('');
+  }
+
+  const actionsInfo = {
+    ...defaultActionsInfo({ intl }),
+    ...actionsInfoMap,
+  };
+
   return (
     <FormFieldWrapper {...props} className="align-widget">
-      <div className="align-tools">
-        <AlignBlock
-          align={value}
-          onChangeBlock={(block, { align }) => onChange(id, align)}
-          data={{ align: value }}
-          block={id}
-        />
+      <div className="align-buttons">
+        {actions.map((action) => (
+          <Button.Group key={action}>
+            <Button
+              icon
+              basic
+              aria-label={actionsInfo[action][1]}
+              onClick={() => onChange(id, action)}
+              active={(action === 'center' && !value) || value === action}
+            >
+              <Icon
+                name={actionsInfo[action][0]}
+                title={actionsInfo[action][1] || action}
+                size="24px"
+              />
+            </Button>
+          </Button.Group>
+        ))}
       </div>
     </FormFieldWrapper>
   );
 };
 
-export default injectIntl(AlignWidget);
+export default AlignWidget;
