@@ -15,8 +15,9 @@ import imageFitSVG from '@plone/volto/icons/image-fit.svg';
 import imageNarrowSVG from '@eeacms/volto-block-style/icons/image-narrow.svg';
 import imageWideSVG from '@plone/volto/icons/image-wide.svg';
 import imageFullSVG from '@plone/volto/icons/image-full.svg';
+import clearSVG from '@plone/volto/icons/clear.svg';
 
-const messages = defineMessages({
+export const messages = defineMessages({
   left: {
     id: 'Left',
     defaultMessage: 'Left',
@@ -41,6 +42,10 @@ const messages = defineMessages({
     id: 'Full',
     defaultMessage: 'Full',
   },
+  '': {
+    id: 'Clear selection',
+    defaultMessage: 'Clear selection',
+  },
 });
 
 export const defaultActionsInfo = ({ intl }) => ({
@@ -50,6 +55,7 @@ export const defaultActionsInfo = ({ intl }) => ({
   narrow: [imageNarrowSVG, intl.formatMessage(messages.narrow)],
   wide: [imageWideSVG, intl.formatMessage(messages.wide)],
   full: [imageFullSVG, intl.formatMessage(messages.full)],
+  '': [clearSVG, intl.formatMessage(messages[''])],
 });
 
 const AlignWidget = (props) => {
@@ -68,6 +74,11 @@ const AlignWidget = (props) => {
       props.onChange(props.id, props.default);
     }
   });
+
+  // add clear selection button to the actions mapping if it's not already present
+  if (actions[actions.length - 1] !== '') {
+    actions.push('');
+  }
 
   const actionsInfo = {
     ...defaultActionsInfo({ intl }),
