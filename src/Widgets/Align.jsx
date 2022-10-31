@@ -48,23 +48,23 @@ export const messages = defineMessages({
   },
 });
 
-export const defaultActionsInfo = ({ intl }) => ({
-  left: [imageLeftSVG, intl.formatMessage(messages.left)],
-  right: [imageRightSVG, intl.formatMessage(messages.right)],
-  center: [imageFitSVG, intl.formatMessage(messages.center)],
-  narrow: [imageNarrowSVG, intl.formatMessage(messages.narrow)],
-  wide: [imageWideSVG, intl.formatMessage(messages.wide)],
-  full: [imageFullSVG, intl.formatMessage(messages.full)],
-  '': [clearSVG, intl.formatMessage(messages[''])],
-});
+export const defaultActionsInfo = {
+  left: [imageLeftSVG, messages.left],
+  right: [imageRightSVG, messages.right],
+  center: [imageFitSVG, messages.center],
+  narrow: [imageNarrowSVG, messages.narrow],
+  wide: [imageWideSVG, messages.wide],
+  full: [imageFullSVG, messages.full],
+  '': [clearSVG, messages['']],
+};
 
-const AlignWidget = (props) => {
+const AlignWidget = (props, rest) => {
   const intl = useIntl();
 
   const {
     id,
     onChange,
-    actions = ['left', 'right', 'center', 'full'],
+    actions = rest.actions || ['left', 'right', 'center', 'full'],
     actionsInfoMap = {},
     value,
   } = props;
@@ -81,30 +81,40 @@ const AlignWidget = (props) => {
   }
 
   const actionsInfo = {
-    ...defaultActionsInfo({ intl }),
+    ...defaultActionsInfo,
     ...actionsInfoMap,
   };
 
   return (
     <FormFieldWrapper {...props} className="align-widget">
       <div className="align-buttons">
-        {actions.map((action) => (
-          <Button.Group key={action}>
-            <Button
-              icon
-              basic
-              aria-label={actionsInfo[action][1]}
-              onClick={() => onChange(id, action)}
-              active={(action === 'center' && !value) || value === action}
-            >
-              <Icon
-                name={actionsInfo[action][0]}
-                title={actionsInfo[action][1] || action}
-                size="24px"
-              />
-            </Button>
-          </Button.Group>
-        ))}
+        {actions.map((action) => {
+          const action_info_list = actionsInfo[action];
+          const title = action_info_list[1];
+          return (
+            <Button.Group key={action}>
+              <Button
+                icon
+                basic
+                aria-label={action}
+                onClick={() => onChange(id, action)}
+                active={(action === 'center' && !value) || value === action}
+              >
+                <Icon
+                  name={action_info_list[0]}
+                  title={
+                    title
+                      ? typeof title === 'string'
+                        ? title
+                        : intl.formatMessage(title)
+                      : action
+                  }
+                  size="24px"
+                />
+              </Button>
+            </Button.Group>
+          );
+        })}
       </div>
     </FormFieldWrapper>
   );
