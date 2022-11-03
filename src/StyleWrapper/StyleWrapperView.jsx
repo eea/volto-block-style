@@ -132,7 +132,7 @@ const StyleWrapperView = (props) => {
       customClass,
       theme,
       align,
-      props.className,
+      // props.className,
       {
         align,
         styled,
