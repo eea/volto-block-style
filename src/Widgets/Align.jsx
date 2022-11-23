@@ -43,8 +43,8 @@ export const messages = defineMessages({
     defaultMessage: 'Full',
   },
   '': {
-    id: 'Clear selection',
-    defaultMessage: 'Clear selection',
+    id: 'None',
+    defaultMessage: 'None',
   },
 });
 
@@ -66,6 +66,7 @@ const AlignWidget = (props, rest) => {
     onChange,
     actions = rest.actions || ['left', 'right', 'center', 'full'],
     actionsInfoMap = {},
+    defaultAction = '',
     value,
   } = props;
 
@@ -98,7 +99,9 @@ const AlignWidget = (props, rest) => {
                 basic
                 aria-label={action}
                 onClick={() => onChange(id, action)}
-                active={(action === 'center' && !value) || value === action}
+                active={
+                  (action === defaultAction && !value) || value === action
+                }
               >
                 <Icon
                   name={action_info_list[0]}
