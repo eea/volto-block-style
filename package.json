@@ -22,7 +22,8 @@
   ],
   "dependencies": {
     "@eeacms/volto-resize-helper": "*",
-    "react-color": "~2.18.1"
+    "react-color": "~2.18.1",
+    "@eeacms/volto-widget-theme-picker": "*"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.10.0",

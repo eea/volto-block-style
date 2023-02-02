@@ -62,9 +62,14 @@ export const StyleSchema = () => {
       theme: {
         title: 'Theme',
         description: 'A predefined theme, applicable just to this block',
-        choices: [
-          ['primary', 'Primary'],
-          ['secondary', 'Secondary'],
+        widget: 'theme_picker',
+        colors: [
+          ...(config.settings && config.settings.themeColors
+            ? config.settings.themeColors.map(({ value, title }) => ({
+                name: value,
+                label: title,
+              }))
+            : []),
         ],
       },
       style_name: {
