@@ -22,14 +22,15 @@
   ],
   "dependencies": {
     "@eeacms/volto-resize-helper": "*",
-    "react-color": "~2.18.1",
-    "@eeacms/volto-widget-theme-picker": "*"
+    "@eeacms/volto-widget-theme-picker": "*",
+    "react-color": "~2.18.1"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.10.0",
     "@plone/scripts": "*",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "md5": "^2.3.0"
+    "md5": "^2.3.0",
+    "postcss-less": "6.0.0"
   },
   "scripts": {
     "release": "release-it",
