@@ -40,7 +40,7 @@ const StyleSelectWidget = (props) => {
                     onChange(id, style.id === value ? null : style.id)
                   }
                   key={style.id}
-                  className={cx({ active: style.id === value })}
+                  className={cx({ active: style.id === value }, 'styleCard')}
                 >
                   <Card.Content>
                     <Item.Image>{renderPreview(style)}</Item.Image>
