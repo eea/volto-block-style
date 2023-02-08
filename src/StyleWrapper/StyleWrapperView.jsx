@@ -155,13 +155,15 @@ const StyleWrapperView = (props) => {
     config.settings.integratesBlockStyles.includes(containerType);
 
   const children = nativeIntegration
-    ? React.Children.map(props.children, (child) => {
-        const childProps = { ...props, styling: attrs };
-        if (React.isValidElement(child)) {
-          return React.cloneElement(child, childProps);
-        }
-        return child;
-      })
+    ? Object.keys(styleData).length > 0
+      ? React.Children.map(props.children, (child) => {
+          const childProps = { ...props, styling: attrs };
+          if (React.isValidElement(child)) {
+            return React.cloneElement(child, childProps);
+          }
+          return child;
+        })
+      : props.children
     : props.children;
 
   const ViewComponentWrapper = style?.viewComponent;
