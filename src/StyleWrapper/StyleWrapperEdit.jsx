@@ -4,7 +4,7 @@ import { Icon, SidebarPopup } from '@plone/volto/components';
 import InlineForm from '@plone/volto/components/manage/Form/InlineForm';
 import { StyleSchema } from './schema';
 import clearSVG from '@plone/volto/icons/clear.svg';
-import deleteSVG from '@plone/volto/icons/delete.svg';
+import eraserSVG from '@eeacms/volto-block-style/icons/eraser.svg';
 
 const StyleWrapperEdit = (props) => {
   const {
@@ -68,7 +68,7 @@ const StyleWrapperEdit = (props) => {
               <Icon name={clearSVG} size="24px" title="Close" />
             </button>
             <button onClick={deleteAllStyle} style={{ float: 'right' }}>
-              <Icon name={deleteSVG} size="24px" title="Delete block style" />
+              <Icon name={eraserSVG} size="24px" title="Clear block style" />
             </button>
           </>
         }
