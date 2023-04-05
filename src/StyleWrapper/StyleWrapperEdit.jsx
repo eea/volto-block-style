@@ -68,7 +68,7 @@ const StyleWrapperEdit = (props) => {
               <Icon name={clearSVG} size="24px" title="Close" />
             </button>
             <button onClick={deleteAllStyle} style={{ float: 'right' }}>
-              <Icon name={eraserSVG} size="24px" title="Delete block style" />
+              <Icon name={eraserSVG} size="24px" title="Clear block style" />
             </button>
           </>
         }
