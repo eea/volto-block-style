@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import cx from 'classnames';
 import config from '@plone/volto/registry';
 import { withCachedImages } from '@eeacms/volto-block-style/hocs';
+import { getFieldURL } from '@eeacms/volto-block-style/helpers';
 import './stretchStyleDefaultView.css';
 import './stretchStyleWideView.css';
 import './stretchStyleEdit.css';
@@ -106,7 +107,7 @@ const StyleWrapperView = (props) => {
   } = styleData;
 
   const containerType = data['@type'];
-  const backgroundImage = styleData.backgroundImage;
+  const backgroundImage = getFieldURL(styleData.backgroundImage);
 
   const style = getStyle(style_name);
   const inlineStyles = getInlineStyles(styleData, props);
