@@ -19,8 +19,10 @@ const getLineHeight = (fontSize) => {
   }
 };
 
-const getSide = (side, v) =>
-  `${v[side] ? `${v[side]}${v.unit ? v.unit : 'px'}` : '0px'}`;
+const getSide = (side, v) => {
+  const v_unit = v.unit ? v.unit : 'px';
+  return `${v[side] ? `${v[side]}${v_unit}` : '0px'}`;
+};
 
 const getSides = (v) => {
   return `${getSide('top', v)} ${getSide('right', v)} ${getSide(
@@ -156,21 +158,28 @@ const StyleWrapperView = (props) => {
     config.settings.integratesBlockStyles.includes(containerType);
 
   const children = nativeIntegration
-    ? Object.keys(styleData).length > 0
-      ? React.Children.map(props.children, (child) => {
-          const childProps = { ...props, styling: attrs };
-          if (React.isValidElement(child)) {
-            return React.cloneElement(child, childProps);
-          }
-          return child;
-        })
-      : props.children
+    ? Object.keys(styleData).length > 0 &&
+      React.Children.map(props.children, (child) => {
+        const childProps = { ...props, styling: attrs };
+        if (React.isValidElement(child)) {
+          return React.cloneElement(child, childProps);
+        }
+        return child;
+      })
     : props.children;
 
   const ViewComponentWrapper = style?.viewComponent;
 
-  return styled ? (
-    nativeIntegration ? (
+  if (!styled)
+    return ViewComponentWrapper ? (
+      <ViewComponentWrapper {...props} />
+    ) : (
+      children
+    );
+
+  return (
+    styled &&
+    (nativeIntegration ? (
       children
     ) : (
       <div {...attrs} ref={props.setRef}>
@@ -188,11 +197,7 @@ const StyleWrapperView = (props) => {
 
         {ViewComponentWrapper ? <ViewComponentWrapper {...props} /> : children}
       </div>
-    )
-  ) : ViewComponentWrapper ? (
-    <ViewComponentWrapper {...props} />
-  ) : (
-    children
+    ))
   );
 };
 
