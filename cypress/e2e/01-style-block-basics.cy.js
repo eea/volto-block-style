@@ -5,7 +5,6 @@ describe('Blocks Tests', () => {
   afterEach(slateAfterEach);
 
   it('Style Block', () => {
-    console.log('=================', window);
     // Change page title
     cy.get('[contenteditable=true]').first().click();
 
