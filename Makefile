@@ -91,6 +91,7 @@ i18n:
 
 .PHONY: cypress-run
 cypress-run:
+	rm -rf .nyc_output
 	NODE_ENV=development  $(NODE_MODULES)/cypress/bin/cypress run
 
 .PHONY: cypress-open

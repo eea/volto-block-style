@@ -30,6 +30,22 @@ describe('Blocks Tests', () => {
     ).click();
     cy.get('.github-picker.color-picker div[title="#9dc6d4"]').click();
 
+    cy.get(
+      '.inline.field.field-wrapper-shadowDepth .slider-widget-wrapper .slider-knob.single',
+    ).dblclick();
+    cy.get(
+      '.inline.field.field-wrapper-shadowDepth .slider-widget-wrapper input',
+    ).type('3{enter}');
+
+    cy.get(
+      '.inline.field.field-wrapper-shadowDepth .slider-widget-wrapper .slider-knob.single',
+    ).trigger('mousedown', { which: 1 });
+    cy.get(
+      '.inline.field.field-wrapper-shadowDepth .slider-widget-wrapper .semantic_ui_range_inner',
+    )
+      .trigger('mousemove', { clientX: 500 })
+      .trigger('mouseup');
+
     cy.get('[contenteditable=true]').first().type('{enter}');
 
     // Save page
