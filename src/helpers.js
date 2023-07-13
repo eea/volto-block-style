@@ -21,7 +21,7 @@ export const getFieldURL = (data) => {
 
 export function getImageScaleParams(image, size) {
   const imageScale =
-    config.blocks.blocksConfig['teaser'].imageScale || size || 'preview';
+    config.blocks.blocksConfig?.['teaser']?.imageScale || size || 'preview';
 
   if (isString(image))
     return isInternalURL(image)
