@@ -25,8 +25,8 @@ export function getImageScaleParams(image, size) {
 
   if (isString(image))
     return isInternalURL(image)
-      ? flattenToAppURL(`${image}/@@images/image/${imageScale}`)
-      : image;
+      ? { download: flattenToAppURL(`${image}/@@images/image/${imageScale}`) }
+      : { download: image };
 
   if (image) {
     if (isInternalURL(getFieldURL(image))) {
