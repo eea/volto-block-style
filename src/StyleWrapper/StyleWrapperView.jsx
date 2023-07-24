@@ -19,8 +19,10 @@ const getLineHeight = (fontSize) => {
   }
 };
 
-const getSide = (side, v) =>
-  `${v[side] ? `${v[side]}${v.unit ? v.unit : 'px'}` : '0px'}`;
+const getSide = (side, v) => {
+  const v_unit = v.unit ? v.unit : 'px';
+  return `${v[side] ? `${v[side]}${v_unit}` : '0px'}`;
+};
 
 const getSides = (v) => {
   return `${getSide('top', v)} ${getSide('right', v)} ${getSide(
