@@ -14,6 +14,10 @@ const messages = defineMessages({
     id: 'Stretch',
     defaultMessage: 'Stretch',
   },
+  btnStretch: {
+    id: 'btn-stretch',
+    defaultMessage: 'Stretch block to the edges'
+  }
 });
 
 const StretchBlock = ({ stretch, onChangeBlock, data, intl, block }) => {
@@ -48,7 +52,7 @@ const StretchBlock = ({ stretch, onChangeBlock, data, intl, block }) => {
         <Button
           icon
           basic
-          title={'Stretch block to the edges'}
+          title={intl.formatMessage(messages.btnStretch)}
           aria-label={intl.formatMessage(messages.stretch)}
           onClick={() => onStretchBlock('stretch')}
           active={data.stretch === 'stretch'}
