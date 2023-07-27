@@ -1,2 +1,2 @@
-export BlockStyleWrapperEdit from './BlockStyleWrapperEdit';
-export BlockStyleWrapperView from './BlockStyleWrapperView';
+export {default as BlockStyleWrapperEdit} from './BlockStyleWrapperEdit';
+export {default as BlockStyleWrapperView} from './BlockStyleWrapperView';
