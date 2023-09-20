@@ -37,7 +37,7 @@ describe('BlockStyleWrapperEdit', () => {
   const store = mockStore(initialState);
 
   it('renders correctly when selected is true', () => {
-    const { container, getByTitle } = render(
+    const { container } = render(
       <Provider store={store}>
         <Router>
           <BlockStyleWrapperEdit {...defaultProps} />
