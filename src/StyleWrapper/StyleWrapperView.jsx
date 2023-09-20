@@ -172,7 +172,7 @@ const StyleWrapperView = (props) => {
   const ViewComponentWrapper = style?.viewComponent;
 
   return styled ? (
-    nativeIntegration && !style_name.includes('content-box') ? (
+    nativeIntegration && !style_name?.includes('content-box') ? (
       children
     ) : (
       <div {...attrs} ref={props.setRef}>
