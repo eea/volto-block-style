@@ -79,47 +79,6 @@ Go to http://localhost:3000
 
 1. Happy editing!
 
-### Add volto-block-style to your Volto project
-
-1. Make sure you have a [Plone backend](https://plone.org/download) up-and-running at http://localhost:8080/Plone
-
-   ```Bash
-   docker compose up backend
-   ```
-
-1. Start Volto frontend
-
-- If you already have a volto project, just update `package.json`:
-
-  ```JSON
-  "addons": [
-      "@eeacms/volto-block-style"
-  ],
-
-  "dependencies": {
-      "@eeacms/volto-block-style": "^1.0.0"
-  }
-  ```
-
-- If not, create one:
-
-  ```
-  npm install -g yo @plone/generator-volto
-  yo @plone/volto my-volto-project --addon @eeacms/volto-block-style
-  cd my-volto-project
-  ```
-
-1. Install new add-ons and restart Volto:
-
-   ```
-   yarn
-   yarn start
-   ```
-
-1. Go to http://localhost:3000
-
-1. Happy editing!
-
 ## Release
 
 See [RELEASE.md](https://github.com/eea/volto-block-style/blob/master/RELEASE.md).
