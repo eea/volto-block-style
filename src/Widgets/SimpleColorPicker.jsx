@@ -16,12 +16,11 @@ export default (props) => {
       draggable={false}
       className="simple-color-picker-widget"
     >
-      <div>
+      <div className="wrapper">
         <Button.Group>
           <Button
-            color={value}
             style={{ backgroundColor: value }}
-            onClick={() => setShowPicker(true)}
+            onClick={() => setShowPicker(!showPicker)}
             size="huge"
             title="Pick color"
           >
@@ -30,7 +29,10 @@ export default (props) => {
           <Button
             compact
             style={{ paddingLeft: '8px', paddingRight: '0px' }}
-            onClick={() => onChange(id, null)}
+            onClick={() => {
+              setShowPicker(false);
+              onChange(id, null);
+            }}
           >
             <Icon name={clearSVG} size="18px" color="red" />
           </Button>
@@ -39,7 +41,6 @@ export default (props) => {
         {showPicker ? (
           <GithubPicker
             width="220px"
-            triangle="top"
             className="color-picker"
             colors={available_colors}
             color={value || '#000'}

@@ -1,0 +1,107 @@
+body:not(.view-editview).document_wide_view .stretch {
+  position: relative;
+  z-index: 3;
+  right: 50%;
+  left: 50%;
+  width: 100vw;
+  border: none !important;
+  margin-right: 0;
+  margin-left: 0;
+  background-clip: content-box;
+  box-shadow: none;
+  transform: translate(-50%, 0%);
+}
+
+/* detect if is authenticated or anon */
+body:not(.is-authenticated).document_wide_view .stretch {
+  right: 0;
+  left: 0;
+  width: auto;
+  max-width: 1780px;
+  padding: 0;
+  margin: 0 -1rem;
+  transform: none;
+}
+
+/* detect if is logged in but in view with toolbar open */
+body:not(.view-editview):not(.is-anonymous).document_wide_view .stretch {
+  max-width: 1636px;
+  /* margin: 0 -1rem; */
+}
+
+body:not(.is-authenticated).document_wide_view .stretch {
+  padding: 0;
+}
+
+@media screen and (max-width: 1790px) {
+  body:not(.view-editview):not(.is-anonymous).document_wide_view .stretch {
+    right: auto;
+    left: auto;
+    width: auto;
+    padding: 0;
+    margin: 0 -1rem;
+    transform: none;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  body:not(.view-editview):not(.is-anonymous):not(.is-authenticated).document_wide_view
+    .stretch {
+    margin-right: 0;
+    margin-left: 0;
+    transform: translate(-50%, 0%);
+  }
+
+  body:not(.is-anonymous):not(.has-toolbar) .stretch {
+    max-width: 1720px;
+  }
+
+  body:not(.is-anonymous):not(.has-toolbar-collapsed) .stretch {
+    max-width: 1778px;
+  }
+
+  body:not(.is-authenticated).document_wide_view .stretch {
+    max-width: 1700px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar-collapsed).document_wide_view
+    .stretch {
+    margin: 0 -0.6rem;
+  }
+
+  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar).document_wide_view
+    .stretch {
+    margin: 0 -1rem;
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar).document_wide_view
+    .stretch {
+    margin: 0 -0.6rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  body:not(.is-authenticated).document_wide_view .stretch {
+    margin: 0 -0.6rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar-collapsed).document_wide_view
+    .stretch {
+    padding: 0;
+  }
+
+  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar).document_wide_view
+    .stretch {
+    padding: 0;
+  }
+
+  body:not(.is-authenticated).document_wide_view .stretch {
+    padding: 0;
+  }
+}
