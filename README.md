@@ -25,7 +25,7 @@ block types that you want to enable. By default it is enabled for all blocks.
 
 #### IMPORTANT! Because of the way it works, you should always load this addon as the last addon in Volto project configuration.
 
-![Screenshot](https://github.com/eea/volto-block-style/raw/master/docs/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/eea/volto-block-style/master/docs/screenshot.png)
 
 ## Getting started
 
