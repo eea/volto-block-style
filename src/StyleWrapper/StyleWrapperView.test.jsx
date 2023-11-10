@@ -31,6 +31,12 @@ describe('getInlineStyles', () => {
     borderRadius: '5px',
   };
 
+  const dataWithLessProperties = {
+    margin: { top: '1', right: '1', bottom: '1', left: '1', unit: 'em' },
+    padding: { top: '2', right: '2', bottom: '2', left: '2', unit: 'em' },
+    borderRadius: '5px',
+  };
+
   const expectedStyles = {
     backgroundColor: 'red',
     '--background-color': 'red',
@@ -46,6 +52,13 @@ describe('getInlineStyles', () => {
     padding: '2em 2em 2em 2em',
     borderRadius: '5px',
   };
+
+  const expectedStylesWithLessProperties = {
+    margin: '1em 1em 1em 1em',
+    padding: '2em 2em 2em 2em',
+    borderRadius: '5px',
+  };
+
   it('returns the correct styles', () => {
     const props = {
       mode: 'edit',
@@ -111,6 +124,25 @@ describe('getInlineStyles', () => {
       fontSize: 'medium',
       lineHeight: undefined,
       boxShadow: '0px 0px 10px rgba(0, 0, 0,  4166.666666666667)',
+    };
+
+    const props = {
+      mode: 'edit',
+    };
+
+    const styles = getInlineStyles(newData, props);
+    expect(styles).toEqual(newExpectedStyles);
+  });
+
+  it('returns the correct styles with missing properties', () => {
+    const newData = {
+      ...dataWithLessProperties,
+      shadowColor: '',
+    };
+
+    const newExpectedStyles = {
+      ...expectedStylesWithLessProperties,
+      lineHeight: undefined,
     };
 
     const props = {
