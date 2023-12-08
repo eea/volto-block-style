@@ -48,6 +48,7 @@ export const StyleSchema = () => {
         id: 'advanced',
         title: 'Advanced',
         fields: [
+          'useAsPageHeader',
           'theme',
           'hidden',
           'height',
@@ -162,6 +163,11 @@ export const StyleSchema = () => {
       isDropCap: {
         title: 'Drop cap',
         description: 'First letter is styled as a drop cop',
+        type: 'boolean',
+      },
+      useAsPageHeader: {
+        title: 'Use as page header',
+        description: 'Use this block as page header',
         type: 'boolean',
       },
       hidden: {
