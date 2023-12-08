@@ -1,6 +1,8 @@
 import React from 'react';
+import { Portal } from 'react-portal';
 import { connect } from 'react-redux';
 import cx from 'classnames';
+import { BodyClass } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
 import { withCachedImages } from '@eeacms/volto-block-style/hocs';
 import { getFieldURL } from '@eeacms/volto-block-style/helpers';
@@ -43,6 +45,17 @@ const h2rgb = (hex) => {
   const [R, G, B] = hexColorToRGB(hex);
   return `${R}, ${G}, ${B},`;
 };
+
+function IsomorphicPortal({ children }) {
+  const [isClient, setIsClient] = React.useState();
+  React.useEffect(() => setIsClient(true), []);
+
+  return isClient ? (
+    <Portal node={document.getElementById('page-header')}>{children}</Portal>
+  ) : (
+    children
+  );
+}
 
 export function getInlineStyles(data, props = {}) {
   return {
@@ -104,6 +117,7 @@ const StyleWrapperView = (props) => {
     customId,
     isDropCap,
     isScreenHeight,
+    useAsPageHeader = false,
     hidden = false,
     stretch,
   } = styleData;
@@ -170,8 +184,7 @@ const StyleWrapperView = (props) => {
     : props.children;
 
   const ViewComponentWrapper = style?.viewComponent;
-
-  return styled ? (
+  const StyleWrapperRendered = styled ? (
     nativeIntegration && !style_name?.includes('content-box') ? (
       children
     ) : (
@@ -195,6 +208,15 @@ const StyleWrapperView = (props) => {
     <ViewComponentWrapper {...props} />
   ) : (
     children
+  );
+
+  return useAsPageHeader ? (
+    <React.Fragment>
+      <BodyClass className="custom-page-header grey-breadcrumbs" />
+      <IsomorphicPortal>{StyleWrapperRendered}</IsomorphicPortal>
+    </React.Fragment>
+  ) : (
+    StyleWrapperRendered
   );
 };
 
