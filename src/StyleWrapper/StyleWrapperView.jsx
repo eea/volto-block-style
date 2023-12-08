@@ -212,7 +212,7 @@ const StyleWrapperView = (props) => {
 
   return useAsPageHeader ? (
     <React.Fragment>
-      <BodyClass className="custom-page-header grey-breadcrumbs" />
+      <BodyClass className="custom-page-header" />
       <IsomorphicPortal>{StyleWrapperRendered}</IsomorphicPortal>
     </React.Fragment>
   ) : (

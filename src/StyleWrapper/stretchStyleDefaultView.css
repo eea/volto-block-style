@@ -282,7 +282,3 @@ body:not(.is-authenticated):not(.document_wide_view).stretch {
     margin: 0 -1.3vw;
   }
 }
-
-#page-header .content-box {
-  margin-bottom: 0px;
-}
