@@ -16,8 +16,8 @@ const messages = defineMessages({
   },
   btnStretch: {
     id: 'btn-stretch',
-    defaultMessage: 'Stretch block to the edges'
-  }
+    defaultMessage: 'Stretch block to the edges',
+  },
 });
 
 const StretchBlock = ({ stretch, onChangeBlock, data, intl, block }) => {

@@ -90,11 +90,11 @@ const messages = defineMessages({
     id: 'properties-height-description',
     defaultMessage: 'Element height, expressed as CSS dimension',
   },
-  pIsScreenHeightTitle :{
+  pIsScreenHeightTitle: {
     id: 'properties-is-screen-height-title',
     defaultMessage: 'Screen height',
   },
-  pIsScreenHeightDescription :{
+  pIsScreenHeightDescription: {
     id: 'properties-is-screen-height-description',
     defaultMessage: 'Maximize block to viewport height',
   },

@@ -14,7 +14,7 @@ const messages = defineMessages({
     id: 'field-customize',
     defaultMessage: 'Customize',
   },
-})
+});
 
 const fields = {
   unitField: {
