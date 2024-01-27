@@ -213,6 +213,7 @@ export const StyleSchema = (props) => {
         id: 'advanced',
         title: intl.formatMessage(messages.advanced),
         fields: [
+          'useAsPageHeader',
           'theme',
           'hidden',
           'height',
@@ -327,6 +328,11 @@ export const StyleSchema = (props) => {
       isDropCap: {
         title: intl.formatMessage(messages.pIsDropCapTitle),
         description: intl.formatMessage(messages.pIsDropCapDescription),
+        type: 'boolean',
+      },
+      useAsPageHeader: {
+        title: 'Use as page header',
+        description: 'Use this block as page header',
         type: 'boolean',
       },
       hidden: {

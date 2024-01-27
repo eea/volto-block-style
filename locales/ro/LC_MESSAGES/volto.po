@@ -11,4 +11,60 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#: Widgets/Align
+#: Widgets/TextAlign
+# defaultMessage: Center
+msgid "Center"
+msgstr ""
 
+#: Widgets/TextAlign
+# defaultMessage: Clear selection
+msgid "Clear selection"
+msgstr ""
+
+#: Blocks/StretchBlock
+# defaultMessage: Fit
+msgid "Fit"
+msgstr ""
+
+#: Widgets/Align
+# defaultMessage: Full
+msgid "Full"
+msgstr ""
+
+#: Widgets/TextAlign
+# defaultMessage: Justify
+msgid "Justify"
+msgstr ""
+
+#: Widgets/Align
+#: Widgets/TextAlign
+# defaultMessage: Left
+msgid "Left"
+msgstr ""
+
+#: Widgets/Align
+# defaultMessage: Narrow
+msgid "Narrow"
+msgstr ""
+
+#: Widgets/Align
+# defaultMessage: None
+msgid "None"
+msgstr ""
+
+#: Widgets/Align
+#: Widgets/TextAlign
+# defaultMessage: Right
+msgid "Right"
+msgstr ""
+
+#: Blocks/StretchBlock
+# defaultMessage: Stretch
+msgid "Stretch"
+msgstr ""
+
+#: Widgets/Align
+# defaultMessage: Wide
+msgid "Wide"
+msgstr ""

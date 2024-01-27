@@ -25,32 +25,22 @@ block types that you want to enable. By default it is enabled for all blocks.
 
 #### IMPORTANT! Because of the way it works, you should always load this addon as the last addon in Volto project configuration.
 
-![Screenshot](https://github.com/eea/volto-block-style/raw/docs/docs/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/eea/volto-block-style/master/docs/screenshot.png)
+
+From version 5.2.7 you can use blocks as page header by enabling 'Use as page header' from the 'Advanced' tab.
+
+![Screenshot](https://raw.githubusercontent.com/eea/volto-block-style/develop/docs/Screenshot2.png)
 
 ## Getting started
 
 ### Try volto-block-style with Docker
 
-1. Get the latest Docker images
+      git clone https://github.com/eea/volto-block-style.git
+      cd volto-block-style
+      make
+      make start
 
-   ```
-   docker pull plone
-   docker pull plone/volto
-   ```
-
-1. Start Plone backend
-
-   ```
-   docker run -d --name plone -p 8080:8080 -e SITE=Plone -e PROFILES="profile-plone.restapi:blocks" plone
-   ```
-
-1. Start Volto frontend
-
-   ```
-   docker run -it --rm -p 3000:3000 --link plone -e ADDONS="@eeacms/volto-block-style" plone/volto
-   ```
-
-1. Go to http://localhost:3000
+Go to http://localhost:3000
 
 ### Add volto-block-style to your Volto project
 
@@ -62,25 +52,25 @@ block types that you want to enable. By default it is enabled for all blocks.
 
 1. Start Volto frontend
 
-- If you already have a volto project, just update `package.json`:
+* If you already have a volto project, just update `package.json`:
 
-  ```JSON
-  "addons": [
-      "@eeacms/volto-block-style"
-  ],
+   ```JSON
+   "addons": [
+       "@eeacms/volto-block-style"
+   ],
 
-  "dependencies": {
-      "@eeacms/volto-block-style": "^1.0.0"
-  }
-  ```
+   "dependencies": {
+       "@eeacms/volto-block-style": "*"
+   }
+   ```
 
-- If not, create one:
+* If not, create one:
 
-  ```
-  npm install -g yo @plone/generator-volto
-  yo @plone/volto my-volto-project --addon @eeacms/volto-block-style
-  cd my-volto-project
-  ```
+   ```
+   npm install -g yo @plone/generator-volto
+   yo @plone/volto my-volto-project --canary --addon @eeacms/volto-block-style
+   cd my-volto-project
+   ```
 
 1. Install new add-ons and restart Volto:
 
