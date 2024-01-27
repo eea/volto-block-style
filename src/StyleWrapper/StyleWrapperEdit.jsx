@@ -18,7 +18,7 @@ const StyleWrapperEdit = (props) => {
     setIsVisible,
   } = props;
 
-  const schema = React.useMemo(() => StyleSchema(), []);
+  const schema = React.useMemo(() => StyleSchema(props), [props]);
 
   const closeSidebar = React.useCallback(
     (e) => {
