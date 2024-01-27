@@ -25,6 +25,11 @@ describe('BlockStyleWrapperEdit', () => {
         textColor: 'blue',
       },
     },
+    intl: {
+      locale: 'en',
+      messages: {},
+      formatMessage: jest.fn(),
+    },
   };
 
   const initialState = {
