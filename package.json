@@ -1,6 +1,6 @@
 {
   "name": "@eeacms/volto-block-style",
-  "version": "6.0.0",
+  "version": "6.1.0",
   "description": "volto-block-style: Volto add-on",
   "main": "src/index.js",
   "author": "European Environment Agency: IDM2 A-Team",
@@ -29,6 +29,7 @@
     "@cypress/code-coverage": "^3.10.0",
     "@plone/scripts": "*",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "dotenv": "^16.3.2",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "md5": "^2.3.0",
