@@ -21,7 +21,7 @@ describe('Blocks Tests', () => {
       '.inline.field.align-widget.field-wrapper-textAlign .align-buttons .ui.buttons',
     )
       .eq(2)
-      .click();
+      .click({ force: true });
 
     // Change the background color of the block
     cy.contains('Decorations').click();
