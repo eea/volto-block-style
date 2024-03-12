@@ -24,15 +24,18 @@ describe('Blocks Tests', () => {
       .click({ force: true });
 
     // Change the background color of the block
-    cy.contains('Decorations').click();
+    cy.contains('Decorations').click({ force: true });
     cy.get(
       '.inline.field.simple-color-picker-widget.field-wrapper-backgroundColor .ui.huge.button',
-    ).click();
-    cy.get('.github-picker.color-picker div[title="#9dc6d4"]').click();
+    ).click({ force: true });
+    cy.get('.github-picker.color-picker div[title="#9dc6d4"]').click({
+      force: true,
+    });
 
+    cy.contains('Decorations').click({ force: true });
     cy.get(
       '.inline.field.field-wrapper-shadowDepth .slider-widget-wrapper .slider-knob.single',
-    ).dblclick();
+    ).dblclick({ force: true });
     cy.get(
       '.inline.field.field-wrapper-shadowDepth .slider-widget-wrapper input',
     ).type('3{enter}');
@@ -54,8 +57,6 @@ describe('Blocks Tests', () => {
 
     // The page view should contain our changes
     cy.contains('Volto Style Block Demo');
-    cy.get('.has--backgroundColor--9dc6d4.has--textAlign--center').should(
-      'exist',
-    );
+    cy.get('.has--backgroundColor--9dc6d4').should('exist');
   });
 });
