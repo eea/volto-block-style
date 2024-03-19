@@ -6,10 +6,8 @@ import cx from 'classnames';
 
 const StyleSelectWidget = (props) => {
   const { id, value, onChange } = props;
-  const {
-    pluggableStyles = [],
-    previewText = 'Block content',
-  } = config.settings;
+  const { pluggableStyles = [], previewText = 'Block content' } =
+    config.settings;
 
   const renderPreview = React.useCallback(
     (style) => {

@@ -55,7 +55,9 @@ body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
   }
 
   /* media queries in edit both sidebars open */
-  body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
+  body:not(.view-viewview):not(.has-sidebar-collapsed):not(
+      .has-toolbar-collapsed
+    )
     .stretch
     > fieldset
     legend {
@@ -66,7 +68,9 @@ body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar)
 /* fix for section border to come around the stretched zone */
 
 @media screen and (max-width: 1654px) {
-  body:not(.view-viewview):not(.has-sidebar-collapsed):not(.has-toolbar-collapsed)
+  body:not(.view-viewview):not(.has-sidebar-collapsed):not(
+      .has-toolbar-collapsed
+    )
     .stretched-group {
     margin: 0 -34px;
   }

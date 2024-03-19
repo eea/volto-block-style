@@ -45,7 +45,9 @@ body:not(.is-authenticated).document_wide_view .stretch {
 }
 
 @media screen and (max-width: 1700px) {
-  body:not(.view-editview):not(.is-anonymous):not(.is-authenticated).document_wide_view
+  body:not(.view-editview):not(.is-anonymous):not(
+      .is-authenticated
+    ).document_wide_view
     .stretch {
     margin-right: 0;
     margin-left: 0;
@@ -66,19 +68,25 @@ body:not(.is-authenticated).document_wide_view .stretch {
 }
 
 @media screen and (max-width: 1280px) {
-  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar-collapsed).document_wide_view
+  body:not(.view-editview):not(.is-anonymous):not(
+      .has-toolbar-collapsed
+    ).document_wide_view
     .stretch {
     margin: 0 -0.6rem;
   }
 
-  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar).document_wide_view
+  body:not(.view-editview):not(.is-anonymous):not(
+      .has-toolbar
+    ).document_wide_view
     .stretch {
     margin: 0 -1rem;
   }
 }
 
 @media screen and (max-width: 1220px) {
-  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar).document_wide_view
+  body:not(.view-editview):not(.is-anonymous):not(
+      .has-toolbar
+    ).document_wide_view
     .stretch {
     margin: 0 -0.6rem;
   }
@@ -91,12 +99,16 @@ body:not(.is-authenticated).document_wide_view .stretch {
 }
 
 @media screen and (max-width: 767px) {
-  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar-collapsed).document_wide_view
+  body:not(.view-editview):not(.is-anonymous):not(
+      .has-toolbar-collapsed
+    ).document_wide_view
     .stretch {
     padding: 0;
   }
 
-  body:not(.view-editview):not(.is-anonymous):not(.has-toolbar).document_wide_view
+  body:not(.view-editview):not(.is-anonymous):not(
+      .has-toolbar
+    ).document_wide_view
     .stretch {
     padding: 0;
   }
