@@ -32,7 +32,6 @@ describe('Blocks Tests', () => {
       force: true,
     });
 
-    cy.contains('Decorations').click({ force: true });
     cy.get(
       '.inline.field.field-wrapper-shadowDepth .slider-widget-wrapper .slider-knob.single',
     ).dblclick({ force: true });
