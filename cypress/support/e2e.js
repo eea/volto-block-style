@@ -22,6 +22,9 @@ import './commands';
 import '@cypress/code-coverage/support';
 
 export const slateBeforeEach = (contentType = 'Document') => {
+  cy.task('getVoltoVersion').then((version) => {
+    Cypress.env('VOLTO_VERSION', version);
+  });
   cy.autologin();
   cy.createContent({
     contentType: 'Document',
