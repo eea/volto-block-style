@@ -162,7 +162,7 @@ const StyleWrapperView = (props) => {
         small: size === 's',
         'drop-cap': isDropCap,
         [`has--fontSize--${inlineStyles['fontSize']}`]:
-          !!inlineStyles['fontSize'],
+          !!inlineStyles['fontSize'] && mode === 'edit',
       },
     ),
     id: customId,
