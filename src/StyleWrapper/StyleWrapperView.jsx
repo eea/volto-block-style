@@ -222,9 +222,9 @@ const StyleWrapperView = (props) => {
   );
 };
 
-export default connect((state, props) => ({
-  screen: state.screen,
-}))(
+export default connect((state, ownProps) =>
+  ownProps.styleData.isScreenHeight ? { screen: state.screen } : {},
+)(
   withCachedImages(StyleWrapperView, {
     getImage: (props) => props.styleData.backgroundImage || null,
   }),
