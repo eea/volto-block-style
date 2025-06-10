@@ -33,7 +33,9 @@ defaultActionsInfo['right'] = [alignRightSVG, messages.right];
 defaultActionsInfo['center'] = [alignCenterSVG, messages.center];
 defaultActionsInfo['justify'] = [alignJustifySVG, messages.justify];
 
-export default (props) => {
+const TextAlignWidget = (props) => {
   const actions = { actions: ['left', 'right', 'center', 'justify'] };
   return AlignWidget(props, actions);
 };
+
+export default TextAlignWidget;

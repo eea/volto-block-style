@@ -1,6 +1,6 @@
 import React from 'react';
 import { isEmpty } from 'lodash';
-import { getImageScaleParams } from '@eeacms/volto-block-style/helpers';
+import { getImageScaleParams } from '@eeacms/volto-object-widget/helpers';
 
 export default function withCachedImages(WrappedComponent, config = {}) {
   return (props) => {
