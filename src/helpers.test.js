@@ -1,9 +1,39 @@
-import { getFieldURL, getImageScaleParams } from './helpers';
-import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers';
+import { getImageScaleParams } from './helpers';
+import {
+  flattenToAppURL,
+  isInternalURL,
+  getFieldURL,
+} from '@plone/volto/helpers';
 
 jest.mock('@plone/volto/helpers', () => ({
-  flattenToAppURL: jest.fn((url) => url),
-  isInternalURL: jest.fn((url) => true),
+  flattenToAppURL: jest.fn((url) => {
+    if (typeof url === 'string') {
+      return url;
+    }
+    return '[object Object]';
+  }),
+  getFieldURL: jest.fn((data) => {
+    if (typeof data === 'string') return data;
+    if (Array.isArray(data)) {
+      return data.map((item) => {
+        if (item && typeof item === 'object') {
+          if (item['@type'] === 'URL') {
+            return item.value || item.url || item.href || item;
+          }
+          return item['@id'] || item.url || item.href || item;
+        }
+        return item;
+      });
+    }
+    if (data && typeof data === 'object') {
+      if (data['@type'] === 'URL') {
+        return data.value || data.url || data.href || data;
+      }
+      return data['@id'] || data.url || data.href || data;
+    }
+    return data;
+  }),
+  isInternalURL: jest.fn(() => true),
 }));
 
 describe('getImageScaleParams', () => {
@@ -88,7 +118,9 @@ describe('getImageScaleParams', () => {
     const url = 'http://localhost:3000/image';
     const size = 'large';
     getImageScaleParams(url, size);
-    expect(flattenToAppURL).toHaveBeenCalledWith('http://localhost:3000/image');
+    expect(flattenToAppURL).toHaveBeenCalledWith(
+      'http://localhost:3000/image/@@images/image/large',
+    );
   });
 
   it('returns expected image scale URL string when image url (string) is passed', () => {
