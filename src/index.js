@@ -64,6 +64,11 @@ const applyConfig = (config) => {
     blocksConfig[name] = applyStyleWrapperToBlock(blocksConfig[name]);
   });
 
+  config.settings.integratesBlockStyles = [
+    ...(config.settings.integratesBlockStyles || []),
+    'slate',
+  ];
+
   config.widgets.widget.style_select = StyleSelectWidget;
   config.widgets.widget.style_align = AlignWidget; // avoid conflict for now
   config.widgets.widget.style_stretch = StretchWidget; // Make stretch widget

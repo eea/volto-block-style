@@ -27,6 +27,10 @@ block types that you want to enable. By default it is enabled for all blocks.
 
 ![Screenshot](https://raw.githubusercontent.com/eea/volto-block-style/master/docs/screenshot.png)
 
+From version 5.2.7 you can use blocks as page header by enabling 'Use as page header' from the 'Advanced' tab.
+
+![Screenshot](https://raw.githubusercontent.com/eea/volto-block-style/develop/docs/Screenshot2.png)
+
 ## Getting started
 
 ### Try volto-block-style with Docker

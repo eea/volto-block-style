@@ -119,6 +119,18 @@
   }
 }
 
+.styled[class*='has--fontSize'] {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    font-size: inherit;
+  }
+}
+
 .styled-with-bg {
   padding: @styledPadding;
 }
@@ -153,15 +165,11 @@
 //   text-align: inherit;
 // }
 
-.block.align {
-  z-index: auto !important;
-}
-
 /* Demo styles */
 .green-demo-box {
   padding: 1em;
-  background-color: #aef2de;
   border-radius: 5px;
+  background-color: #aef2de;
   -webkit-box-shadow: 0 1px 6px 0 #c7d5d8;
   box-shadow: 0 1px 6px 0 #c7d5d8;
 }
@@ -169,8 +177,8 @@
 .preview-blue-demo-box,
 .blue-demo-box {
   padding: 0.3rem;
-  background: #1b217d;
   border-radius: 4px;
+  background: #1b217d;
   -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 11px rgba(0, 0, 0, 0.2);
   color: white !important;
