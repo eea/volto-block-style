@@ -12,10 +12,6 @@ jest.mock('../hocs', () => ({
   withCachedImages: jest.fn().mockImplementation((Component) => Component),
 }));
 
-jest.mock('../helpers', () => ({
-  getFieldURL: jest.fn(),
-}));
-
 describe('getInlineStyles', () => {
   const data = {
     backgroundColor: 'red',
