@@ -16,7 +16,7 @@ import QuadSizeWidget from './Widgets/QuadSize';
 import './styles.less';
 
 /**
- * Given a block's config object, it wrapps the view and edit in style wrappers
+ * Given a block's config object, it wraps the view and edit in style wrappers
  */
 export const applyStyleWrapperToBlock = (blockConfig) => {
   const BaseEditComponent = blockConfig.edit;

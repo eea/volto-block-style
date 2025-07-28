@@ -9,12 +9,12 @@ pipeline {
   environment {
     GIT_NAME = "volto-block-style"
     NAMESPACE = "@eeacms"
-    SONARQUBE_TAGS = "volto.eea.europa.eu,climate-energy.eea.europa.eu,forest.eea.europa.eu,clms.land.copernicus.eu,biodiversity.europa.eu,www.eea.europa.eu-ims,industry.eea.europa.eu,water.europa.eu-freshwater,demo-www.eea.europa.eu,clmsdemo.devel6cph.eea.europa.eu,water.europa.eu-marine,climate-adapt.eea.europa.eu,climate-advisory-board.devel4cph.eea.europa.eu,climate-advisory-board.europa.eu,www.eea.europa.eu-en,insitu-frontend.eionet.europa.eu,insitu.copernicus.eu"
+    SONARQUBE_TAGS = "volto.eea.europa.eu,climate-energy.eea.europa.eu,forest.eea.europa.eu,biodiversity.europa.eu,www.eea.europa.eu-ims,industry.eea.europa.eu,water.europa.eu-freshwater,demo-www.eea.europa.eu,clmsdemo.devel6cph.eea.europa.eu,water.europa.eu-marine,climate-adapt.eea.europa.eu,climate-advisory-board.devel4cph.eea.europa.eu,climate-advisory-board.europa.eu,www.eea.europa.eu-en,insitu.copernicus.eu,ask.copernicus.eu,land.copernicus.eu"
     DEPENDENCIES = ""
     BACKEND_PROFILES = "eea.kitkat:testing"
     BACKEND_ADDONS = ""
     VOLTO = "17"
-    VOLTO16_BREAKING_CHANGES = "no"
+    VOLTO16_BREAKING_CHANGES = "yes"
     IMAGE_NAME = BUILD_TAG.toLowerCase()
   }
 
