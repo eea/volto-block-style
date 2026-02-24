@@ -127,7 +127,7 @@ const applyConfig = (config) => {
   const existingColors = config.settings.available_colors || [];
   config.settings.available_colors = [
     ...new Set(
-      [...existingColors, ...defaultColors].map((c) => c.toUpperCase()),
+      [...existingColors, ...defaultColors],
     ),
   ];
 
