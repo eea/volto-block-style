@@ -89,7 +89,7 @@ const applyConfig = (config) => {
     config.settings.layoutOnlyBlockStyles = false;
   }
 
-  config.settings.available_colors = [
+  const defaultColors = [
     '#bbdbec',
     '#9dc6d4',
     '#5a93aa',
@@ -122,6 +122,13 @@ const applyConfig = (config) => {
     '#bcbcbc',
     '#e3e3e3',
     '#ffffff',
+  ];
+
+  const existingColors = config.settings.available_colors || [];
+  config.settings.available_colors = [
+    ...new Set(
+      [...existingColors, ...defaultColors].map((c) => c.toUpperCase()),
+    ),
   ];
 
   return config;
