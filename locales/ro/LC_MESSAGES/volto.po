@@ -11,275 +11,275 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "Center"
 #: Widgets/Align
 #: Widgets/TextAlign
-# defaultMessage: Center
 msgid "Center"
 msgstr ""
 
+#. Default: "Clear selection"
 #: Widgets/TextAlign
-# defaultMessage: Clear selection
 msgid "Clear selection"
 msgstr ""
 
+#. Default: "Fit"
 #: Blocks/StretchBlock
-# defaultMessage: Fit
 msgid "Fit"
 msgstr ""
 
+#. Default: "Full"
 #: Widgets/Align
-# defaultMessage: Full
 msgid "Full"
 msgstr ""
 
+#. Default: "Justify"
 #: Widgets/TextAlign
-# defaultMessage: Justify
 msgid "Justify"
 msgstr ""
 
+#. Default: "Left"
 #: Widgets/Align
 #: Widgets/TextAlign
-# defaultMessage: Left
 msgid "Left"
 msgstr ""
 
+#. Default: "Narrow"
 #: Widgets/Align
-# defaultMessage: Narrow
 msgid "Narrow"
 msgstr ""
 
+#. Default: "None"
 #: Widgets/Align
-# defaultMessage: None
 msgid "None"
 msgstr ""
 
+#. Default: "Right"
 #: Widgets/Align
 #: Widgets/TextAlign
-# defaultMessage: Right
 msgid "Right"
 msgstr ""
 
+#. Default: "Stretch"
 #: Blocks/StretchBlock
-# defaultMessage: Stretch
 msgid "Stretch"
 msgstr ""
 
+#. Default: "Wide"
 #: Widgets/Align
-# defaultMessage: Wide
 msgid "Wide"
 msgstr ""
 
+#. Default: "Stretch block to the edges"
 #: Blocks/StretchBlock
-# defaultMessage: Stretch block to the edges
 msgid "btn-stretch"
 msgstr ""
 
+#. Default: "Customize"
 #: Widgets/QuadSize
-# defaultMessage: Customize
 msgid "field-customize"
 msgstr ""
 
+#. Default: "Size"
 #: Widgets/QuadSize
-# defaultMessage: Size
 msgid "field-size"
 msgstr ""
 
+#. Default: "Advanced"
 #: StyleWrapper/schema
-# defaultMessage: Advanced
 msgid "fieldsets-advanced"
 msgstr ""
 
+#. Default: "Decorations"
 #: StyleWrapper/schema
-# defaultMessage: Decorations
 msgid "fieldsets-decorations"
 msgstr ""
 
+#. Default: "Default"
 #: StyleWrapper/schema
-# defaultMessage: Default
 msgid "fieldsets-default"
 msgstr ""
 
+#. Default: "Layout"
 #: StyleWrapper/schema
-# defaultMessage: Layout
 msgid "fieldsets-layout"
 msgstr ""
 
+#. Default: "Preset styles"
 #: StyleWrapper/schema
-# defaultMessage: Preset styles
 msgid "fieldsets-presets"
 msgstr ""
 
+#. Default: "Standard"
 #: StyleWrapper/schema
-# defaultMessage: Standard
 msgid "fieldsets-standard"
 msgstr ""
 
+#. Default: "Align"
 #: StyleWrapper/schema
-# defaultMessage: Align
 msgid "properties-align"
 msgstr ""
 
+#. Default: "Background color"
 #: StyleWrapper/schema
-# defaultMessage: Background color
 msgid "properties-background-color"
 msgstr ""
 
+#. Default: "Background image"
 #: StyleWrapper/schema
-# defaultMessage: Background image
 msgid "properties-background-image"
 msgstr ""
 
+#. Default: "Rounded Corner"
 #: StyleWrapper/schema
-# defaultMessage: Rounded Corner
 msgid "properties-border-radius"
 msgstr ""
 
+#. Default: "Pushes selected block under floated content"
 #: StyleWrapper/schema
-# defaultMessage: Pushes selected block under floated content
 msgid "properties-clear-description"
 msgstr ""
 
+#. Default: "Clear floats"
 #: StyleWrapper/schema
-# defaultMessage: Clear floats
 msgid "properties-clear-title"
 msgstr ""
 
+#. Default: "A custom CSS class, applicable just to this block"
 #: StyleWrapper/schema
-# defaultMessage: A custom CSS class, applicable just to this block
 msgid "properties-custom-class-description"
 msgstr ""
 
+#. Default: "Custom CSS Class"
 #: StyleWrapper/schema
-# defaultMessage: Custom CSS Class
 msgid "properties-custom-class-title"
 msgstr ""
 
+#. Default: "A custom id, applicable just to this block"
 #: StyleWrapper/schema
-# defaultMessage: A custom id, applicable just to this block
 msgid "properties-custom-id-description"
 msgstr ""
 
+#. Default: "Custom Id"
 #: StyleWrapper/schema
-# defaultMessage: Custom Id
 msgid "properties-custom-id-title"
 msgstr ""
 
+#. Default: "Relative to normal size of text in the block"
 #: StyleWrapper/schema
-# defaultMessage: Relative to normal size of text in the block
 msgid "properties-font-size-description"
 msgstr ""
 
+#. Default: "Font size"
 #: StyleWrapper/schema
-# defaultMessage: Font size
 msgid "properties-font-size-title"
 msgstr ""
 
+#. Default: "The weight (or boldness) of the font"
 #: StyleWrapper/schema
-# defaultMessage: The weight (or boldness) of the font
 msgid "properties-font-weight-description"
 msgstr ""
 
+#. Default: "Font weight"
 #: StyleWrapper/schema
-# defaultMessage: Font weight
 msgid "properties-font-weight-title"
 msgstr ""
 
+#. Default: "Element height, expressed as CSS dimension"
 #: StyleWrapper/schema
-# defaultMessage: Element height, expressed as CSS dimension
 msgid "properties-height-description"
 msgstr ""
 
+#. Default: "Element height"
 #: StyleWrapper/schema
-# defaultMessage: Element height
 msgid "properties-height-title"
 msgstr ""
 
+#. Default: "Hide this bloc"
 #: StyleWrapper/schema
-# defaultMessage: Hide this bloc
 msgid "properties-hidden-description"
 msgstr ""
 
+#. Default: "Hidden"
 #: StyleWrapper/schema
-# defaultMessage: Hidden
 msgid "properties-hidden-title"
 msgstr ""
 
+#. Default: "First letter is styled as a drop cop"
 #: StyleWrapper/schema
-# defaultMessage: First letter is styled as a drop cop
 msgid "properties-is-drop-cap-description"
 msgstr ""
 
+#. Default: "Drop cap"
 #: StyleWrapper/schema
-# defaultMessage: Drop cap
 msgid "properties-is-drop-cap-title"
 msgstr ""
 
+#. Default: "Maximize block to viewport height"
 #: StyleWrapper/schema
-# defaultMessage: Maximize block to viewport height
 msgid "properties-is-screen-height-description"
 msgstr ""
 
+#. Default: "Screen height"
 #: StyleWrapper/schema
-# defaultMessage: Screen height
 msgid "properties-is-screen-height-title"
 msgstr ""
 
+#. Default: "Margin"
 #: StyleWrapper/schema
-# defaultMessage: Margin
 msgid "properties-margin"
 msgstr ""
 
+#. Default: "Padding"
 #: StyleWrapper/schema
-# defaultMessage: Padding
 msgid "properties-padding"
 msgstr ""
 
+#. Default: "Shadow color"
 #: StyleWrapper/schema
-# defaultMessage: Shadow color
 msgid "properties-shadow-color"
 msgstr ""
 
+#. Default: "Shadow depth"
 #: StyleWrapper/schema
-# defaultMessage: Shadow depth
 msgid "properties-shadow-depth"
 msgstr ""
 
+#. Default: "Box size"
 #: StyleWrapper/schema
-# defaultMessage: Box size
 msgid "properties-size"
 msgstr ""
 
+#. Default: "Stretch"
 #: StyleWrapper/schema
-# defaultMessage: Stretch
 msgid "properties-stretch"
 msgstr ""
 
+#. Default: "Style"
 #: StyleWrapper/schema
-# defaultMessage: Style
 msgid "properties-style-name"
 msgstr ""
 
+#. Default: "Text align"
 #: StyleWrapper/schema
-# defaultMessage: Text align
 msgid "properties-text-align"
 msgstr ""
 
+#. Default: "Text color"
 #: StyleWrapper/schema
-# defaultMessage: Text color
 msgid "properties-text-color"
 msgstr ""
 
+#. Default: "A predefined theme, applicable just to this block"
 #: StyleWrapper/schema
-# defaultMessage: A predefined theme, applicable just to this block
 msgid "properties-theme-description"
 msgstr ""
 
+#. Default: "Theme"
 #: StyleWrapper/schema
-# defaultMessage: Theme
 msgid "properties-theme-title"
 msgstr ""
 
+#. Default: "Styles"
 #: StyleWrapper/schema
-# defaultMessage: Styles
 msgid "styles-block"
 msgstr ""

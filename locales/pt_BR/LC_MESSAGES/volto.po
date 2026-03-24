@@ -13,275 +13,275 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "X-Generator: Poedit 3.0.1\n"
 
+#. Default: "Center"
 #: Widgets/Align
 #: Widgets/TextAlign
-# defaultMessage: Center
 msgid "Center"
 msgstr "Centro"
 
+#. Default: "Clear selection"
 #: Widgets/TextAlign
-# defaultMessage: Clear selection
 msgid "Clear selection"
 msgstr "Limpar seleção"
 
+#. Default: "Fit"
 #: Blocks/StretchBlock
-# defaultMessage: Fit
 msgid "Fit"
 msgstr ""
 
+#. Default: "Full"
 #: Widgets/Align
-# defaultMessage: Full
 msgid "Full"
 msgstr "Completo"
 
+#. Default: "Justify"
 #: Widgets/TextAlign
-# defaultMessage: Justify
 msgid "Justify"
 msgstr "Justificado"
 
+#. Default: "Left"
 #: Widgets/Align
 #: Widgets/TextAlign
-# defaultMessage: Left
 msgid "Left"
 msgstr "Esquerda"
 
+#. Default: "Narrow"
 #: Widgets/Align
-# defaultMessage: Narrow
 msgid "Narrow"
 msgstr "Estreito"
 
+#. Default: "None"
 #: Widgets/Align
-# defaultMessage: None
 msgid "None"
 msgstr ""
 
+#. Default: "Right"
 #: Widgets/Align
 #: Widgets/TextAlign
-# defaultMessage: Right
 msgid "Right"
 msgstr "Direita"
 
+#. Default: "Stretch"
 #: Blocks/StretchBlock
-# defaultMessage: Stretch
 msgid "Stretch"
 msgstr "Esticar"
 
+#. Default: "Wide"
 #: Widgets/Align
-# defaultMessage: Wide
 msgid "Wide"
 msgstr "Largo"
 
+#. Default: "Stretch block to the edges"
 #: Blocks/StretchBlock
-# defaultMessage: Stretch block to the edges
 msgid "btn-stretch"
 msgstr "Estique o bloco até as bordas"
 
+#. Default: "Customize"
 #: Widgets/QuadSize
-# defaultMessage: Customize
 msgid "field-customize"
 msgstr "Customizar"
 
+#. Default: "Size"
 #: Widgets/QuadSize
-# defaultMessage: Size
 msgid "field-size"
 msgstr "Tamanho"
 
+#. Default: "Advanced"
 #: StyleWrapper/schema
-# defaultMessage: Advanced
 msgid "fieldsets-advanced"
 msgstr "Avançado"
 
+#. Default: "Decorations"
 #: StyleWrapper/schema
-# defaultMessage: Decorations
 msgid "fieldsets-decorations"
 msgstr "Decorações"
 
+#. Default: "Default"
 #: StyleWrapper/schema
-# defaultMessage: Default
 msgid "fieldsets-default"
 msgstr "Padrão"
 
+#. Default: "Layout"
 #: StyleWrapper/schema
-# defaultMessage: Layout
 msgid "fieldsets-layout"
 msgstr "Disposição"
 
+#. Default: "Preset styles"
 #: StyleWrapper/schema
-# defaultMessage: Preset styles
 msgid "fieldsets-presets"
 msgstr "Estilos predefinidos"
 
+#. Default: "Standard"
 #: StyleWrapper/schema
-# defaultMessage: Standard
 msgid "fieldsets-standard"
 msgstr "Padrões"
 
+#. Default: "Align"
 #: StyleWrapper/schema
-# defaultMessage: Align
 msgid "properties-align"
 msgstr "Alinhar"
 
+#. Default: "Background color"
 #: StyleWrapper/schema
-# defaultMessage: Background color
 msgid "properties-background-color"
 msgstr "Cor de fundo"
 
+#. Default: "Background image"
 #: StyleWrapper/schema
-# defaultMessage: Background image
 msgid "properties-background-image"
 msgstr "Imagem de fundo"
 
+#. Default: "Rounded Corner"
 #: StyleWrapper/schema
-# defaultMessage: Rounded Corner
 msgid "properties-border-radius"
 msgstr "Raio da borda"
 
+#. Default: "Pushes selected block under floated content"
 #: StyleWrapper/schema
-# defaultMessage: Pushes selected block under floated content
 msgid "properties-clear-description"
 msgstr "Empurra o bloco selecionado sob o conteúdo flutuante"
 
+#. Default: "Clear floats"
 #: StyleWrapper/schema
-# defaultMessage: Clear floats
 msgid "properties-clear-title"
 msgstr "Flutuadores transparentes"
 
+#. Default: "A custom CSS class, applicable just to this block"
 #: StyleWrapper/schema
-# defaultMessage: A custom CSS class, applicable just to this block
 msgid "properties-custom-class-description"
 msgstr "Uma classe CSS personalizada, aplicável apenas a este bloco"
 
+#. Default: "Custom CSS Class"
 #: StyleWrapper/schema
-# defaultMessage: Custom CSS Class
 msgid "properties-custom-class-title"
 msgstr "Classe CSS personalizada"
 
+#. Default: "A custom id, applicable just to this block"
 #: StyleWrapper/schema
-# defaultMessage: A custom id, applicable just to this block
 msgid "properties-custom-id-description"
 msgstr "Um ID personalizado, aplicável apenas a este bloco"
 
+#. Default: "Custom Id"
 #: StyleWrapper/schema
-# defaultMessage: Custom Id
 msgid "properties-custom-id-title"
 msgstr "ID personalizado"
 
+#. Default: "Relative to normal size of text in the block"
 #: StyleWrapper/schema
-# defaultMessage: Relative to normal size of text in the block
 msgid "properties-font-size-description"
 msgstr "Relativo ao tamanho normal do texto no bloco"
 
+#. Default: "Font size"
 #: StyleWrapper/schema
-# defaultMessage: Font size
 msgid "properties-font-size-title"
 msgstr "Tamanho da fonte"
 
+#. Default: "The weight (or boldness) of the font"
 #: StyleWrapper/schema
-# defaultMessage: The weight (or boldness) of the font
 msgid "properties-font-weight-description"
 msgstr "O peso da fonte"
 
+#. Default: "Font weight"
 #: StyleWrapper/schema
-# defaultMessage: Font weight
 msgid "properties-font-weight-title"
 msgstr "Espessura da fonte"
 
+#. Default: "Element height, expressed as CSS dimension"
 #: StyleWrapper/schema
-# defaultMessage: Element height, expressed as CSS dimension
 msgid "properties-height-description"
 msgstr "Altura do elemento, expressa como dimensão CSS"
 
+#. Default: "Element height"
 #: StyleWrapper/schema
-# defaultMessage: Element height
 msgid "properties-height-title"
 msgstr "Altura do elemento"
 
+#. Default: "Hide this bloc"
 #: StyleWrapper/schema
-# defaultMessage: Hide this bloc
 msgid "properties-hidden-description"
 msgstr "Ocultar este bloco"
 
+#. Default: "Hidden"
 #: StyleWrapper/schema
-# defaultMessage: Hidden
 msgid "properties-hidden-title"
 msgstr "Ocultar"
 
+#. Default: "First letter is styled as a drop cop"
 #: StyleWrapper/schema
-# defaultMessage: First letter is styled as a drop cop
 msgid "properties-is-drop-cap-description"
 msgstr "A primeira letra é estilizada como destaque"
 
+#. Default: "Drop cap"
 #: StyleWrapper/schema
-# defaultMessage: Drop cap
 msgid "properties-is-drop-cap-title"
 msgstr "Capitular"
 
+#. Default: "Maximize block to viewport height"
 #: StyleWrapper/schema
-# defaultMessage: Maximize block to viewport height
 msgid "properties-is-screen-height-description"
 msgstr "Maximizar o bloco para a altura da janela de visualização"
 
+#. Default: "Screen height"
 #: StyleWrapper/schema
-# defaultMessage: Screen height
 msgid "properties-is-screen-height-title"
 msgstr "Altura da tela"
 
+#. Default: "Margin"
 #: StyleWrapper/schema
-# defaultMessage: Margin
 msgid "properties-margin"
 msgstr "Margem"
 
+#. Default: "Padding"
 #: StyleWrapper/schema
-# defaultMessage: Padding
 msgid "properties-padding"
 msgstr "Espaçamento"
 
+#. Default: "Shadow color"
 #: StyleWrapper/schema
-# defaultMessage: Shadow color
 msgid "properties-shadow-color"
 msgstr "Cor da sombra"
 
+#. Default: "Shadow depth"
 #: StyleWrapper/schema
-# defaultMessage: Shadow depth
 msgid "properties-shadow-depth"
 msgstr "Profundidade da sombra"
 
+#. Default: "Box size"
 #: StyleWrapper/schema
-# defaultMessage: Box size
 msgid "properties-size"
 msgstr "Tamanho"
 
+#. Default: "Stretch"
 #: StyleWrapper/schema
-# defaultMessage: Stretch
 msgid "properties-stretch"
 msgstr "Esticar"
 
+#. Default: "Style"
 #: StyleWrapper/schema
-# defaultMessage: Style
 msgid "properties-style-name"
 msgstr "Estilo"
 
+#. Default: "Text align"
 #: StyleWrapper/schema
-# defaultMessage: Text align
 msgid "properties-text-align"
 msgstr "Alinhamento de texto"
 
+#. Default: "Text color"
 #: StyleWrapper/schema
-# defaultMessage: Text color
 msgid "properties-text-color"
 msgstr "Cor do texto"
 
+#. Default: "A predefined theme, applicable just to this block"
 #: StyleWrapper/schema
-# defaultMessage: A predefined theme, applicable just to this block
 msgid "properties-theme-description"
 msgstr "Um tema predefinido, aplicável apenas a este bloco"
 
+#. Default: "Theme"
 #: StyleWrapper/schema
-# defaultMessage: Theme
 msgid "properties-theme-title"
 msgstr "Tema"
 
+#. Default: "Styles"
 #: StyleWrapper/schema
-# defaultMessage: Styles
 msgid "styles-block"
 msgstr "Estilos"

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, act } from '@testing-library/react';
 import withCachedImages from './withCachedImages';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 describe('withCachedImages', () => {
   const TestComponent = ({ images }) => {
