@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleWrapperEdit, StyleWrapperView } from '../StyleWrapper';
 import { Portal } from 'react-portal';
 import themeSVG from '@plone/volto/icons/theme.svg';
-import { Icon } from '@plone/volto/components';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 import config from '@plone/volto/registry';
 
 // For blocks, store the style data in data.styles, then

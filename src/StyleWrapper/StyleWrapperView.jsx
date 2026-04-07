@@ -2,7 +2,9 @@ import React from 'react';
 import { Portal } from 'react-portal';
 import { connect } from 'react-redux';
 import cx from 'classnames';
-import { BodyClass, getFieldURL } from '@plone/volto/helpers';
+import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
+import { getFieldURL } from '@plone/volto/helpers/Url/Url';
+import Image from '@plone/volto/components/theme/Image/Image';
 import config from '@plone/volto/registry';
 import { withCachedImages } from '@eeacms/volto-block-style/hocs';
 import './stretchStyleDefaultView.css';
@@ -191,7 +193,7 @@ const StyleWrapperView = (props) => {
     ) : (
       <div {...attrs} ref={props.setRef}>
         {Object.keys(props.images || {}).map((bgImage) => (
-          <img
+          <Image
             key={`styled-bg-image-${bgImage}`}
             alt=""
             src={props.images[bgImage]?.src}

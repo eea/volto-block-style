@@ -1,5 +1,5 @@
 import React from 'react';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash/isEmpty';
 import { getImageScaleParams } from '@eeacms/volto-block-style/helpers';
 
 export default function withCachedImages(WrappedComponent, config = {}) {

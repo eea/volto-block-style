@@ -22,11 +22,12 @@ export const applyStyleWrapperToBlock = (blockConfig) => {
   const BaseEditComponent = blockConfig.edit;
   let EditComponent = BaseEditComponent;
   if (EditComponent && !EditComponent._styleWrapped) {
-    EditComponent = (props) => (
-      <BlockStyleWrapperEdit {...props}>
-        <BaseEditComponent {...props} />
-      </BlockStyleWrapperEdit>
-    );
+    EditComponent = (props) =>
+      React.createElement(
+        BlockStyleWrapperEdit,
+        props,
+        React.createElement(BaseEditComponent, props),
+      );
     EditComponent.displayName = `<EditBlockWithStyleWrapperFor(${blockConfig.id})>`;
     EditComponent._styleWrapped = true;
   }
@@ -34,11 +35,12 @@ export const applyStyleWrapperToBlock = (blockConfig) => {
   const BaseViewComponent = blockConfig.view;
   let ViewComponent = BaseViewComponent;
   if (ViewComponent && !ViewComponent._styleWrapped) {
-    ViewComponent = (props) => (
-      <BlockStyleWrapperView {...props}>
-        <BaseViewComponent {...props} />
-      </BlockStyleWrapperView>
-    );
+    ViewComponent = (props) =>
+      React.createElement(
+        BlockStyleWrapperView,
+        props,
+        React.createElement(BaseViewComponent, props),
+      );
     ViewComponent.displayName = `<ViewBlockWithStyleWrapperFor(${blockConfig.id})>`;
     ViewComponent._styleWrapped = true;
   }
@@ -146,14 +148,18 @@ export const installDemoStyles = (config) => {
       id: 'blueShade',
       title: 'Blue Shade',
       cssClass: 'blue-demo-box',
-      previewComponent: (props) => (
-        <div className={`${props.className} preview-blue-demo-box`}>
-          {props.children}
-        </div>
-      ),
-      viewComponent: (props) => (
-        <div className="blue-demo-box">{props.children}</div>
-      ),
+      previewComponent: (props) =>
+        React.createElement(
+          'div',
+          { className: `${props.className} preview-blue-demo-box` },
+          props.children,
+        ),
+      viewComponent: (props) =>
+        React.createElement(
+          'div',
+          { className: 'blue-demo-box' },
+          props.children,
+        ),
       // TODO: support also editComponent ?
     },
   ];
