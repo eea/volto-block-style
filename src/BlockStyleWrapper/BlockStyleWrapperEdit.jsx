@@ -1,5 +1,8 @@
 import React from 'react';
-import { StyleWrapperEdit, StyleWrapperView } from '../StyleWrapper';
+import {
+  StyleWrapperEdit,
+  StyleWrapperView,
+} from '@eeacms/volto-block-style/StyleWrapper';
 import { Portal } from 'react-portal';
 import themeSVG from '@plone/volto/icons/theme.svg';
 import Icon from '@plone/volto/components/theme/Icon/Icon';

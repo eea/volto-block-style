@@ -7,8 +7,8 @@
 import React from 'react';
 import { injectIntl } from 'react-intl';
 
+import StretchBlock from '@eeacms/volto-block-style/Blocks/StretchBlock';
 import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
-import StretchBlock from '../Blocks/StretchBlock';
 
 const StretchWidget = (props) => {
   const { id, onChange, value } = props;
