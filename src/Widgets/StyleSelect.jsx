@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Item } from 'semantic-ui-react';
-import { FormFieldWrapper } from '@plone/volto/components/manage/Widgets';
+import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
 import config from '@plone/volto/registry';
 import cx from 'classnames';
 
