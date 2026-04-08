@@ -8,7 +8,7 @@ jest.mock('@plone/volto/registry', () => ({
   },
 }));
 
-jest.mock('../hocs', () => ({
+jest.mock('@eeacms/volto-block-style/hocs', () => ({
   withCachedImages: jest.fn().mockImplementation((Component) => Component),
 }));
 

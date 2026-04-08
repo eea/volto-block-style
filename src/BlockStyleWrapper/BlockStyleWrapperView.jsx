@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleWrapperView } from '../StyleWrapper';
+import { StyleWrapperView } from '@eeacms/volto-block-style/StyleWrapper';
 
 const BlockStyleWrapperView = ({ data, children, ...props }) => (
   <StyleWrapperView {...props} data={data} styleData={data.styles || {}}>
