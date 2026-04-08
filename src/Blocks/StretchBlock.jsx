@@ -1,6 +1,6 @@
 import React from 'react';
 import { defineMessages, injectIntl } from 'react-intl';
-import { Icon } from '@plone/volto/components';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 import { Button } from 'semantic-ui-react';
 import imageFitSVG from '@plone/volto/icons/image-fit.svg';
 import imageFullSVG from '@plone/volto/icons/image-full.svg';

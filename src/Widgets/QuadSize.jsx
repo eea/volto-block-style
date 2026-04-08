@@ -1,7 +1,8 @@
 import React from 'react';
 import { defineMessages } from 'react-intl';
-import { Field, FormFieldWrapper } from '@plone/volto/components';
-import ErrorBoundary from '../ErrorBoundary';
+import ErrorBoundary from '@eeacms/volto-block-style/ErrorBoundary';
+import Field from '@plone/volto/components/manage/Form/Field';
+import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
 import { Grid } from 'semantic-ui-react';
 import { Slider } from './Slider';
 

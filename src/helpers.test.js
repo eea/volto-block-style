@@ -3,9 +3,9 @@ import {
   flattenToAppURL,
   isInternalURL,
   getFieldURL,
-} from '@plone/volto/helpers';
+} from '@plone/volto/helpers/Url/Url';
 
-jest.mock('@plone/volto/helpers', () => ({
+jest.mock('@plone/volto/helpers/Url/Url', () => ({
   flattenToAppURL: jest.fn((url) => {
     if (typeof url === 'string') {
       return url;
