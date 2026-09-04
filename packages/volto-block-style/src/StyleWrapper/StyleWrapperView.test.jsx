@@ -1,15 +1,22 @@
+import { vi } from 'vitest';
 import { getInlineStyles, getStyle } from './StyleWrapperView';
 import '@plone/volto/registry';
 
-jest.mock('@plone/volto/registry', () => ({
+vi.mock('@plone/volto/registry', () => ({
+  default: {
+    settings: {
+      pluggableStyles: [{ id: 'style1', cssClass: 'someClass1' }],
+      integratesBlockStyles: [],
+    },
+  },
   settings: {
     pluggableStyles: [{ id: 'style1', cssClass: 'someClass1' }],
     integratesBlockStyles: [],
   },
 }));
 
-jest.mock('@eeacms/volto-block-style/hocs', () => ({
-  withCachedImages: jest.fn().mockImplementation((Component) => Component),
+vi.mock('@eeacms/volto-block-style/hocs', () => ({
+  withCachedImages: vi.fn().mockImplementation((Component) => Component),
 }));
 
 describe('getInlineStyles', () => {
