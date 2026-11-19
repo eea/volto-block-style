@@ -1,5 +1,7 @@
-import { jest } from '@jest/globals';
+import { vi } from 'vitest';
 import configureStore from 'redux-mock-store';
+
+global.jest = vi;
 
 const mockStore = configureStore();
 
@@ -15,10 +17,10 @@ global.store = mockStore({
   connected_data_parameters: {},
 });
 
-const mockSemanticComponents = jest.requireActual('semantic-ui-react');
-const mockComponents = jest.requireActual('@plone/volto/components');
+const mockSemanticComponents = await vi.importActual('semantic-ui-react');
+const mockComponents = await vi.importActual('@plone/volto/components');
 
-jest.mock('semantic-ui-react', () => ({
+vi.doMock('semantic-ui-react', () => ({
   ...mockSemanticComponents,
   Popup: ({ content, trigger }) => {
     return (
@@ -30,7 +32,7 @@ jest.mock('semantic-ui-react', () => ({
   },
 }));
 
-jest.doMock('@plone/volto/components', () => {
+vi.doMock('@plone/volto/components', () => {
   return {
     __esModule: true,
     ...mockComponents,
@@ -38,7 +40,7 @@ jest.doMock('@plone/volto/components', () => {
   };
 });
 
-global.fetch = jest.fn(() =>
+global.fetch = vi.fn(() =>
   Promise.resolve({
     json: () => Promise.resolve({}),
   }),
