@@ -1,3 +1,4 @@
+import { vi } from 'vitest';
 import React from 'react';
 import { render, act } from '@testing-library/react';
 import withCachedImages from './withCachedImages';
@@ -31,7 +32,7 @@ describe('withCachedImages', () => {
     // mock Image constructor
     // the provided url in the test is not valid and should not be loaded
     // so we override the behaviour
-    window.Image = jest.fn(() => mockImage);
+    window.Image = vi.fn(() => mockImage);
     const { getByTestId, rerender } = render(
       <WrappedComponent image={'mock-image'} />,
     );

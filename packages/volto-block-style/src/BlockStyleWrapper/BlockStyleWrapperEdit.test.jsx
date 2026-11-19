@@ -1,3 +1,4 @@
+import { vi } from 'vitest';
 import React from 'react';
 import { render } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -7,7 +8,7 @@ import '@testing-library/jest-dom';
 
 import BlockStyleWrapperEdit from './BlockStyleWrapperEdit';
 
-jest.mock('react-portal', () => {
+vi.mock('react-portal', () => {
   return {
     Portal: ({ children }) => children,
   };
@@ -28,7 +29,7 @@ describe('BlockStyleWrapperEdit', () => {
     intl: {
       locale: 'en',
       messages: {},
-      formatMessage: jest.fn(),
+      formatMessage: vi.fn(),
     },
   };
 

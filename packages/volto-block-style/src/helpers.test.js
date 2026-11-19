@@ -1,3 +1,4 @@
+import { vi } from 'vitest';
 import { getImageScaleParams } from './helpers';
 import {
   flattenToAppURL,
@@ -5,14 +6,14 @@ import {
   getFieldURL,
 } from '@plone/volto/helpers/Url/Url';
 
-jest.mock('@plone/volto/helpers/Url/Url', () => ({
-  flattenToAppURL: jest.fn((url) => {
+vi.mock('@plone/volto/helpers/Url/Url', () => ({
+  flattenToAppURL: vi.fn((url) => {
     if (typeof url === 'string') {
       return url;
     }
     return '[object Object]';
   }),
-  getFieldURL: jest.fn((data) => {
+  getFieldURL: vi.fn((data) => {
     if (typeof data === 'string') return data;
     if (Array.isArray(data)) {
       return data.map((item) => {
@@ -33,7 +34,7 @@ jest.mock('@plone/volto/helpers/Url/Url', () => ({
     }
     return data;
   }),
-  isInternalURL: jest.fn(() => true),
+  isInternalURL: vi.fn(() => true),
 }));
 
 describe('getImageScaleParams', () => {

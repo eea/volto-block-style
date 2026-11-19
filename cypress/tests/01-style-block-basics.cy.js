@@ -24,8 +24,6 @@ describe('Blocks Tests', () => {
       .click({ force: true });
 
     // Change the background color of the block
-    if (Cypress.env('VOLTO_VERSION').startsWith('16'))
-      cy.contains('Decorations').click({ force: true });
     cy.get(
       '.inline.field.simple-color-picker-widget.field-wrapper-backgroundColor .ui.huge.button',
     ).click({ force: true });
