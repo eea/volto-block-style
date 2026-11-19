@@ -21,6 +21,21 @@ From version 5.2.7 you can use blocks as page header by enabling 'Use as page he
 
 ![Screenshot](https://raw.githubusercontent.com/eea/volto-block-style/develop/docs/Screenshot2.png)
 
+## Upgrade
+
+### Upgrading to 10.x
+
+> This version requires `Volto 18` or `Volto 19` and Node.js 22.
+
+The block keeps the same API, so upgrading from 9.x on Volto 18 needs no code changes. The release adds Volto 19 support and moves the repository to the Volto 19 layout, where the published package lives in `packages/volto-block-style`.
+
+#### Breaking changes
+
+- **Node.js 22 or newer is required** (`engines.node >= 22`), 9.x declared no engine.
+- **React 18 is required.** The package declares `react` and `react-dom` as `^18.2.0` peers, 9.x declared no peers.
+
+The package also declares `react-portal` (`^4.3.0`), which it imports; 9.x relied on it being hoisted from the project.
+
 ## Requirements
 
 ### Backend
